@@ -1,0 +1,19 @@
+
+@mixin flexrowcenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;    
+}
+@mixin flexrowbetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;    
+}
+@mixin flexcolcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
