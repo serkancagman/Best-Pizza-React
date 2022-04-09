@@ -1,0 +1,18 @@
+.brandImgWrapper {
+  padding: 1rem 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.brandImgWrapper:hover .brandImg {
+  opacity: 1 !important;
+}
+
+.brandImgWrapper .brandImg {
+  opacity: .6;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+/*# sourceMappingURL=Brands.module.css.map */

@@ -1,0 +1,111 @@
+.bannerSwiper {
+  &:hover {
+    .swiper-button-prev {
+      opacity: 1;
+      margin-left: 40px !important;
+    }
+    .swiper-button-next {
+      opacity: 1;
+      margin-right: 40px !important;
+    }
+  }
+  .swiper-button-prev {
+    color: #fff !important;
+    border-radius: 50%;
+    font-size: 15px !important;
+    border: 2px solid #fff;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin-left: 30px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: #f5bf1a !important;
+      border: 2px solid #f5bf1a !important;
+      color: #000 !important;
+    }
+  }
+
+  .swiper-button-next {
+    color: #fff !important;
+    border-radius: 50%;
+    font-size: 15px !important;
+    border: 2px solid #fff;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin-left: 30px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: #f5bf1a !important;
+      border: 2px solid #f5bf1a !important;
+      color: #000 !important;
+    }
+  }
+}
+
+.newsSwiper {
+  &:hover {
+    .swiper-button-prev {
+      opacity: 1;
+      margin-left: 20px !important;
+    }
+    .swiper-button-next {
+      opacity: 1;
+      margin-right: 20px !important;
+    }
+  }
+  .swiper-button-prev {
+    border-radius: 50%;
+    font-size: 15px !important;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background: #a5301f !important;
+    border: 2px solid #f5bf1a !important;
+    color: #fff !important;
+    &::after {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .swiper-button-next {
+    color: #fff !important;
+    border-radius: 50%;
+    font-size: 15px !important;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background: #a5301f !important;
+    border: 2px solid #f5bf1a !important;
+    color: #fff !important;
+    &::after {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+}
+
+.reviewSwiper {
+  .swiper-pagination-bullet-active {
+    background: #f5bf1a !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .swiper-pagination-bullet {
+    background: #fff;
+    width: 11px;
+    height: 11px;
+  }
+}

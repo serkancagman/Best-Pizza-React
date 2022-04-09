@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.reviews {
+  background: url("Assets/wood.jpg");
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.reviewSlideImg {
+  margin: 1.2rem 0;
+}
+
+.reviewSlideImg .userIcon {
+  width: 100%;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+.reviewText {
+  padding: 1rem 0;
+  font-size: 17px;
+  color: #999;
+}
+
+.reviewerName {
+  color: #F5BF1A;
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+}
+
+.reviewerDesignation {
+  color: #fff;
+  display: block;
+}
+/*# sourceMappingURL=Reviews.module.css.map */

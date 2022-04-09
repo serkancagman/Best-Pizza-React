@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.mainAboutBanner {
+  margin-top: 5rem;
+}
+
+.aboutInfoWrapper {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutInfoWrapper .aboutBannerTitle {
+  font-family: "Beau Rivage", cursive;
+  color: #F5BF1A;
+  font-size: 5rem;
+  margin: 0 !important;
+  line-height: 0.6;
+}
+
+.aboutInfoWrapper .aboutInfo {
+  text-align: center;
+  position: relative;
+}
+
+.aboutInfoWrapper .aboutBannerSubTitle {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+}
+
+.aboutInfoWrapper .aboutBannerText {
+  color: #999;
+  font-size: 1rem;
+}
+
+.adBannerButton {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #A5301F;
+  color: #fff;
+  outline: none;
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.adBannerButton:hover {
+  background-color: #F5BF1A !important;
+  color: #000 !important;
+}
+
+.aboutBannerImageArea {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.aboutBannerImageArea:hover .aboutBannerImageAreaOverlay {
+  width: 100%;
+  height: 100%;
+}
+
+.aboutBannerImageArea:hover .bannerImg {
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
+}
+
+.aboutBannerImageArea .aboutBannerImageAreaOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(153, 153, 153, 0.205);
+  width: 0;
+  height: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 10s linear;
+  transition: all 10s linear;
+}
+
+.rightAboutImg {
+  margin-top: 4rem;
+}
+/*# sourceMappingURL=AboutBanner.module.css.map */

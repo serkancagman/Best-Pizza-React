@@ -1,0 +1,33 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.mainAdBanner{
+    background: url("Assets/adBanner.jpg") no-repeat center center;
+    background-attachment: fixed;
+    margin-top: 10rem;
+}
+.adBannerArea{
+    padding: 2rem 0;
+    @include flexcolcenter;
+    .adBannerTitle{
+        font-size: 5rem;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 1rem 0;
+        font-family: "Bangers", cursive;
+        letter-spacing: 5px;
+    }
+    .adBannerText{
+        padding: 10px 1rem;
+        background-color: $secondaryColor;
+        font-size: 18px;
+    }
+    .adBannerSubTitle{
+        color: #fff;
+        font-size: 4rem;
+    }
+    .adBannerButton{
+        @include redButton;
+    }
+}

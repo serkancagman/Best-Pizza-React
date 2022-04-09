@@ -1,0 +1,19 @@
+
+
+.brandImgWrapper{
+    padding: 1rem 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+     &:hover{
+        .brandImg{
+            opacity: 1 !important;
+        }
+     }
+
+    .brandImg{
+        opacity: .6;
+        transition: all .3s ease-in-out;
+    }
+}

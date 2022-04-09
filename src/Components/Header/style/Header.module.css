@@ -3,10 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 .mainHeader {
   background-color: #A5301F;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerWrapper {
   position: relative;
 }
 
-.mainHeader::after {
+.headerWrapper::after {
   content: "";
   background: url("Assets/headerpattern.png") repeat scroll 0 0;
   position: absolute;

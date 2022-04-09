@@ -1,19 +1,48 @@
-
 @mixin flexrowcenter {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;    
+  align-items: center;
 }
 @mixin flexrowbetween {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;    
+  align-items: center;
 }
 @mixin flexcolcenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;    
+  align-items: center;
+}
+@mixin flexcolstart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@mixin redButton {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: $mainColor;
+  color: #fff;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $secondaryColor !important;
+    color: #000 !important;
+  }
+}
+
+@mixin subscribeIcon($color) {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+  &:hover {
+    color: $color;
+  }
 }

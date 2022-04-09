@@ -17,7 +17,7 @@ const Banner = () => {
       slogan: "Hurry, Tasty Fast Food, on Big Stock Available",
       link: "/pizza/pizza-resto",
       image: slide,
-      icon: slideIcon,
+      icon: slideIcon1,
     },
     {
       title: "Combo Pack",
@@ -25,7 +25,7 @@ const Banner = () => {
       slogan: "Hurry, Tasty Fast Food, on Big Stock Available",
       link: "/pizza/jumbo-slice-pizza",
       image: slide1,
-      icon: slideIcon1,
+      icon: slideIcon,
     },
   ];
 

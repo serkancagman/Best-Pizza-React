@@ -46,6 +46,7 @@ const Header = () => {
 
   return (
     <header className={style.mainHeader}>
+      <div className={style.headerWrapper}>
       <div className="container">
         <nav className="navbar justify-content-between">
           <Link className="navbar-brand" to="/">
@@ -83,6 +84,7 @@ const Header = () => {
             </Dropdown>
           </div>
         </nav>
+      </div>
       </div>
     </header>
   );

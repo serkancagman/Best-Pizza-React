@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.promotionLink {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.promotionLink:hover .fade {
+  width: 100%;
+  height: 100%;
+}
+
+.fade {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(153, 153, 153, 0.205);
+  width: 0;
+  height: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.promotionTitleArea {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  padding: 0 20px;
+  text-align: center;
+  left: 5%;
+  right: auto;
+}
+
+.promotionTitleArea .promotionTitle {
+  font-size: 2rem;
+  color: #F5BF1A;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.promotionTitleArea .promotionSubTitle {
+  font-family: "Bangers", cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 0.9;
+}
+
+.promoImg {
+  width: 100%;
+  height: auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/*# sourceMappingURL=Promotion.module.css.map */

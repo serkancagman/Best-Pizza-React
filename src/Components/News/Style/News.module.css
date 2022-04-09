@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.news {
+  padding: 1rem 0;
+}
+
+.newsTitleWrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.newsTitleMain {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  color: #000;
+}
+
+.newsBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.newsBox:hover .newsTitle {
+  color: #A5301F;
+}
+
+.newsBox .newsImg {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.newsBox .newsTitle {
+  font-family: "Oswald", sans-serif;
+  color: #333;
+  font-size: 1.3rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.newsImgArea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.newsImgArea:hover .newsFade {
+  opacity: 1 !important;
+}
+
+.newsFade {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+
+.newsIcon {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 3rem;
+  color: #F5BF1A;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.newsIcon:hover {
+  background-color: #fff;
+}
+
+.newsLink {
+  font-size: 17px;
+  color: #000;
+}
+/*# sourceMappingURL=News.module.css.map */

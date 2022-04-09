@@ -1,0 +1,28 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.subFoods{
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+.subFood{
+    @include flexcolcenter;
+} 
+.subFoodLink{
+   height: 100%;
+   display: inline-block;
+   @include flexcolcenter;
+}
+.img{
+    width: 100%;
+    height: auto;
+}
+.subTitle{
+    color: $mainColor;
+    font-family: 'Oswald', sans-serif;
+}
+.subText{
+    color: #666;
+    font-size: 15px;
+    text-align: center;
+}

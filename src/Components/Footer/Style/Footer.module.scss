@@ -1,0 +1,110 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.footer {
+  padding: 1rem 0;
+  background: url("Assets/wood.jpg") no-repeat center center fixed;
+}
+
+.footerMainTitle {
+  @include flexrowcenter;
+  padding: 1rem 0;
+
+  .footerTitle {
+    font-size: 18px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 2px;
+    font-family: $mainFont;
+    letter-spacing: 1px;
+  }
+  .footerTitleDash {
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
+.instagramTitle {
+  text-align: center;
+  font-family: $mainFont;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.instagramImg {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    .instaImgFade {
+      opacity: 1 !important;
+    }
+  }
+  .instaImg {
+    width: 100%;
+    height: auto;
+  }
+}
+.instaImgFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  @include flexcolcenter;
+}
+.instaImgIcon {
+  font-size: 35px;
+  color: #fff;
+  background-color: $secondaryColor;
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.contactList {
+  margin: 0;
+
+  .contactListItem {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    .contactListIcon {
+      font-size: 17px;
+      color: $secondaryColor;
+      margin-right: 10px;
+    }
+    .contactListItemTitle {
+      font-size: 15px;
+      color: #fff;
+      font-family: $mainFont;
+      margin-right: 10px;
+    }
+  }
+}
+
+.footerBottom {
+  border-top: 2px solid rgba(201, 181, 128, 0.555);
+  @include flexrowbetween;
+  padding: 1rem 0;
+
+  .footerBottomText {
+    color: #fff;
+    font-size: 17px;
+    margin: 5px 0;
+  }
+  .footerBottomHeart {
+    color: $mainColor;
+  }
+}
+
+.payImg {
+  margin: 5px 10px;
+}

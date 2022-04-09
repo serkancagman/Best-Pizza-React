@@ -1,14 +1,37 @@
-import {Header,Banner} from 'Components';
+import {
+  Header,
+  Banner,
+  AdBanner,
+  AboutBanner,
+  SubFoods,
+  Promotion,
+  Reviews,
+  News,
+  Brands,
+  Subscribe,
+  Promo,
+  Footer,
+} from "Components";
 
-import React from 'react'
+import React from "react";
 
 const Home = () => {
   return (
     <>
-    <Header/>
-    <Banner/>
+      <Header />
+      <Banner />
+      <AdBanner />
+      <AboutBanner />
+      <SubFoods />
+      <Promotion />
+      <Reviews />
+      <News />
+      <Brands />
+      <Subscribe />
+      <Promo />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

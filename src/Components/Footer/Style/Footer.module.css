@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.footer {
+  padding: 1rem 0;
+  background: url("Assets/wood.jpg") no-repeat center center fixed;
+}
+
+.footerMainTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+
+.footerMainTitle .footerTitle {
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+  margin: 0 2px;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+}
+
+.footerMainTitle .footerTitleDash {
+  font-size: 18px;
+  color: #fff;
+}
+
+.instagramTitle {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.instagramImg {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.instagramImg:hover .instaImgFade {
+  opacity: 1 !important;
+}
+
+.instagramImg .instaImg {
+  width: 100%;
+  height: auto;
+}
+
+.instaImgFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.instaImgIcon {
+  font-size: 35px;
+  color: #fff;
+  background-color: #F5BF1A;
+  border-radius: 50%;
+  padding: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.instaImgIcon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.contactList {
+  margin: 0;
+}
+
+.contactList .contactListItem {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.contactList .contactListItem .contactListIcon {
+  font-size: 17px;
+  color: #F5BF1A;
+  margin-right: 10px;
+}
+
+.contactList .contactListItem .contactListItemTitle {
+  font-size: 15px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  margin-right: 10px;
+}
+
+.footerBottom {
+  border-top: 2px solid rgba(201, 181, 128, 0.555);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+
+.footerBottom .footerBottomText {
+  color: #fff;
+  font-size: 17px;
+  margin: 5px 0;
+}
+
+.footerBottom .footerBottomHeart {
+  color: #A5301F;
+}
+
+.payImg {
+  margin: 5px 10px;
+}
+/*# sourceMappingURL=Footer.module.css.map */

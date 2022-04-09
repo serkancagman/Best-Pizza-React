@@ -1,0 +1,47 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.promo {
+  background-color: $mainColor;
+  padding: 1rem 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url("Assets/headerpattern.png") repeat scroll 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    bottom: -8px;
+    z-index: 99;
+    animation: headerPattern 30s infinite linear;
+  }
+}
+@keyframes headerPattern {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 932px 0;
+  }
+}
+
+.icon {
+  margin: 0 20px;
+  font-size: 30px;
+  transition: all 0.3s ease-in-out;
+  color: #888;
+  color: $secondaryColor;
+}
+.title {
+  margin: 10px;
+  color: #fff;
+  font-family: $mainFont;
+}
+.promoCode {
+  background-color: $secondaryColor;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 0 20px;
+}

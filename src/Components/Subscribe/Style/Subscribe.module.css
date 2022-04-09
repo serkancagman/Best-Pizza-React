@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.subscribe {
+  padding: 2rem 0;
+  background-color: #f6f6f7;
+}
+
+.subscribeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subscribeIcon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.subscribeTitle {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.subscribeText {
+  color: #999;
+  font-style: italic;
+}
+
+.subscribeForm {
+  width: 50%;
+}
+
+.subscribeInput {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border: 2px solid #efefef;
+  padding: 0 120px 0 20px;
+  font-size: 20px;
+  margin: 1rem 0;
+  color: #A5301F;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  border-radius: 25px;
+}
+
+.subscribeInput:focus {
+  border: 2px solid #000;
+}
+
+.subscribeButton {
+  width: 120px;
+  height: 50px;
+  border: none;
+  right: 0;
+  border-radius: 25px;
+  position: absolute;
+  background-color: #000;
+  font-size: 17px;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.subscribeButton:hover {
+  background-color: #F5BF1A !important;
+  color: #000;
+}
+
+.facebook {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.facebook:hover {
+  color: #3b5998;
+}
+
+.twitter {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.twitter:hover {
+  color: #00aced;
+}
+
+.instagram {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.instagram:hover {
+  color: #e1306c;
+}
+
+.youtube {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.youtube:hover {
+  color: #ff0000;
+}
+
+.rss {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.rss:hover {
+  color: #f26522;
+}
+
+.pinterest {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.pinterest:hover {
+  color: #bd081c;
+}
+
+.vimeo {
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #888;
+  padding: 15px;
+}
+
+.vimeo:hover {
+  color: #1ab7ea;
+}
+/*# sourceMappingURL=Subscribe.module.css.map */

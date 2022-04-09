@@ -1,0 +1,32 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+
+
+.reviews{
+    background: url("Assets/wood.jpg");
+    padding: 1rem 0;
+    margin: 1rem 0;
+}
+.reviewSlideImg{
+    margin: 1.2rem 0;
+    .userIcon{
+        width: 100%;
+        border: 5px solid #fff;
+        border-radius: 50%;
+    }
+}
+.reviewText{
+    padding: 1rem 0;
+    font-size: 17px;
+    color: #999;
+}
+.reviewerName{
+    color: $secondaryColor;
+    font-family: $mainFont;
+    font-size: 22px;
+}
+.reviewerDesignation{
+    color: #fff;
+    display: block;
+}
