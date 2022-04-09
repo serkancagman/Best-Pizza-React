@@ -1,0 +1,65 @@
+@import "../../../SCSS/Variables.scss";
+.bannerMain {
+  width: 100%;
+  height: 100%;
+}
+.slideWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .slideItemArea {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    padding: 0 20px;
+    left: 10%;
+    right: auto;
+  }
+}
+
+.slideItemAreaSecond {
+  left: auto !important;
+  right: 10% !important;
+}
+.slideItemTitle {
+  font-family: "Beau Rivage", cursive;
+  font-size: 7rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  margin-right: 20px;
+}
+.slideIcon {
+  width: 150px;
+  height: auto;
+}
+.sloganTitle {
+  font-family: "Bangers", cursive;
+  font-size: 6rem;
+  color: $secondaryColor;
+  text-align: center;
+  margin: 0;
+  margin-right: 20px;
+}
+.sloganText {
+  padding: 10px;
+  background-color: $mainColor;
+  color: #fff;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+.orderBtn {
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $secondaryColor;
+    color: #fff !important;
+  }
+}

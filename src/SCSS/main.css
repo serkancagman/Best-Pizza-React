@@ -1,0 +1,40 @@
+.bannerSwiper .swiper-button-prev {
+  color: #fff !important;
+  border-radius: 50%;
+  font-size: 15px !important;
+  border: 2px solid #fff;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin-left: 30px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.bannerSwiper .swiper-button-next {
+  color: #fff !important;
+  border-radius: 50%;
+  font-size: 15px !important;
+  border: 2px solid #fff;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin-right: 30px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.bannerSwiper:hover .swiper-button-prev {
+  opacity: 1;
+  margin-left: 20px !important;
+}
+.bannerSwiper:hover .swiper-button-next {
+  opacity: 1;
+  margin-right: 20px !important;
+}
+.swiper-button-prev:hover {
+  background: #f5bf1a !important;
+}
+.swiper-button-next:hover {
+  background: #f5bf1a !important;
+}

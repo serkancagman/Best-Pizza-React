@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.bannerMain {
+  width: 100%;
+  height: 100%;
+}
+
+.slideWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slideWrapper .slideItemArea {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 99;
+  padding: 0 20px;
+  left: 10%;
+  right: auto;
+}
+
+.slideItemAreaSecond {
+  left: auto !important;
+  right: 10% !important;
+}
+
+.slideItemTitle {
+  font-family: "Beau Rivage", cursive;
+  font-size: 7rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.slideIcon {
+  width: 150px;
+  height: auto;
+}
+
+.sloganTitle {
+  font-family: "Bangers", cursive;
+  font-size: 6rem;
+  color: #F5BF1A;
+  text-align: center;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.sloganText {
+  padding: 10px;
+  background-color: #A5301F;
+  color: #fff;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.orderBtn {
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.orderBtn:hover {
+  background-color: #F5BF1A;
+  color: #fff !important;
+}
+/*# sourceMappingURL=Banner.module.css.map */

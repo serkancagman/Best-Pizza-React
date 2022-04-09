@@ -1,6 +1,6 @@
 @import "../../../SCSS/Variables.scss";
 @import "../../../SCSS/Mixins.scss";
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 .mainHeader {
   background-color: $mainColor;
   position: relative;
@@ -12,7 +12,7 @@
     right: 0;
     height: 16px;
     bottom: -8px;
-    z-index: 1;
+    z-index: 99;
     animation: headerPattern 30s infinite linear;
   }
 }

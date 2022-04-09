@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 .mainHeader {
   background-color: #A5301F;
@@ -12,7 +14,7 @@
   right: 0;
   height: 16px;
   bottom: -8px;
-  z-index: 1;
+  z-index: 99;
   -webkit-animation: headerPattern 30s infinite linear;
           animation: headerPattern 30s infinite linear;
 }
