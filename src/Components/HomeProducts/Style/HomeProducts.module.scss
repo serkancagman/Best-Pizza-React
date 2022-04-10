@@ -1,0 +1,39 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.categoryWrapper {
+  background-color: $secondaryColor;
+}
+.categoryItem {
+  @include flexcolcenter;
+  border-left: 2px solid rgb(212, 176, 13);
+  height: 100%;
+  cursor: pointer;
+  &:hover {
+    .categoryTitle {
+      color: $mainColor !important;
+    }
+    .categoryIcon{
+        transform: scaleX(-1);
+    }
+  }
+}
+.categoryIcon {
+  width: 70px;
+  height: 70px;
+  margin: 20px 0;
+  transition: all .3s ease-in-out;
+}
+.categoryTitle {
+  font-size: 21px;
+  font-family: $mainFont;
+  color: #000;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.categoryLength {
+  font-size: 17px;
+  font-family: $mainFont;
+  color: #000;
+  text-align: center;
+}

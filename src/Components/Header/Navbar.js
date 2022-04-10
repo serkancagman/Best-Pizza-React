@@ -49,17 +49,17 @@ const Navbar = () => {
   ];
 
   const pizzaMenu = (
-    <Menu className={style.pizzaMenu}>
+    <div className={style.pizzaMenu}>
       <div className={style.pizzaMenuInner}>
         <DropdownItem title="Pizza" items={pizzaItem} />
         <DropdownItem title="Dishes" items={pizzaItem} />
         <DropdownItem title="Sweet Corn" items={pizzaItem} />
       </div>
       <img className={style.pizzaMenuImg} src={navImage} alt="Pizza Menu" />
-    </Menu>
+    </div>
   );
   const fastFood = (
-    <Menu className={style.pizzaMenu}>
+    <div className={style.pizzaMenu}>
       <div className={style.fastWrapper}>
         <div className={style.fastMenuInner}>
           <div className={style.fastFood}>
@@ -82,10 +82,10 @@ const Navbar = () => {
           <span className={style.fastFoodTitle}>Cheese Burger</span>
         </div>
       </div>
-    </Menu>
+    </div>
   );
   const juiceMenu = (
-    <Menu className={style.juiceMenu}>
+    <div className={style.juiceMenu}>
       <ul className={style.pizzaMenuList}>
         <li className={style.pizzaMenuItem}>
           <Link className={style.pizzaMenuLink} to="/">
@@ -98,40 +98,24 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-    </Menu>
+    </div>
   );
 
   const burgerMenu = (
-    <Menu className={style.burgerMenu}>
-      <SubMenu title="Best Burgers">
-        <ul className={style.pizzaMenuList}>
-          <li className={style.pizzaMenuItem}>
-            <Link className={style.pizzaMenuLink} to="/">
-              Cheese Burger
-            </Link>
-          </li>
-          <li className={style.pizzaMenuItem}>
-            <Link className={style.pizzaMenuLink} to="/">
-              Cheese Burger
-            </Link>
-          </li>
-        </ul>
-      </SubMenu>
-      <SubMenu title="Big Burgers">
-        <ul className={style.pizzaMenuList}>
-          <li className={style.pizzaMenuItem}>
-            <Link className={style.pizzaMenuLink} to="/">
-              Cheese Burger
-            </Link>
-          </li>
-          <li className={style.pizzaMenuItem}>
-            <Link className={style.pizzaMenuLink} to="/">
-              Cheese Burger
-            </Link>
-          </li>
-        </ul>
-      </SubMenu>
-    </Menu>
+    <div className={style.burgerMenu}>
+      <ul className={style.pizzaMenuList}>
+        <li className={style.pizzaMenuItem}>
+          <Link className={style.pizzaMenuLink} to="/">
+            Cheese Burger
+          </Link>
+        </li>
+        <li className={style.pizzaMenuItem}>
+          <Link className={style.pizzaMenuLink} to="/">
+            Cheese Burger
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 
   return (

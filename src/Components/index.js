@@ -10,3 +10,4 @@ export {default as Brands} from './Brands/Brands';
 export {default as Subscribe} from './Subscribe/Subscribe';
 export {default as Promo} from './Promo/Promo';
 export {default as Footer} from './Footer/Footer';
+export {default as HomeProducts} from './HomeProducts/HomeProducts';

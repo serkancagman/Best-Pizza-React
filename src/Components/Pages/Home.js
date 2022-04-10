@@ -11,6 +11,7 @@ import {
   Subscribe,
   Promo,
   Footer,
+  HomeProducts,
 } from "Components";
 
 import React from "react";
@@ -20,6 +21,7 @@ const Home = () => {
     <>
       <Header />
       <Banner />
+      <HomeProducts />
       <AdBanner />
       <AboutBanner />
       <SubFoods />

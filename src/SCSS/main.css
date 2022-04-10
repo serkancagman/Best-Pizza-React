@@ -110,4 +110,34 @@
   width: 11px;
   height: 11px;
 }
+
+.categorySwipper .swiper-button-prev {
+  background: #a5301f !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 10px;
+  height: 100% !important;
+}
+
+.categorySwipper .swiper-button-prev:after {
+  font-size: 17px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.categorySwipper .swiper-button-next {
+  background: #a5301f !important;
+  right: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 10px;
+  height: 100% !important;
+}
+
+.categorySwipper .swiper-button-next:after {
+  font-size: 17px;
+  color: #fff;
+  font-weight: bold;
+}
 /*# sourceMappingURL=main.css.map */

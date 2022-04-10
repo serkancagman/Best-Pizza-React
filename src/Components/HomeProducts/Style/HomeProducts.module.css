@@ -1,1 +1,59 @@
-/* No CSS *//*# sourceMappingURL=HomeProducts.module.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.categoryWrapper {
+  background-color: #F5BF1A;
+}
+
+.categoryItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 2px solid #d4b00d;
+  height: 100%;
+  cursor: pointer;
+}
+
+.categoryItem:hover .categoryTitle {
+  color: #A5301F !important;
+}
+
+.categoryItem:hover .categoryIcon {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.categoryIcon {
+  width: 70px;
+  height: 70px;
+  margin: 20px 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.categoryTitle {
+  font-size: 21px;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.categoryLength {
+  font-size: 17px;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: center;
+}
+/*# sourceMappingURL=HomeProducts.module.css.map */
