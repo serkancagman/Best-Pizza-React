@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.productItem {
+  padding: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productItem .productImage {
+  width: 100%;
+  position: relative;
+  border-bottom: 7px double #e6e6e6;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.productItem .productImage:hover .productOptionView {
+  opacity: 1 !important;
+}
+
+.productItem .productImage:hover .productOptionView .productUpperInfo {
+  margin-left: 0 !important;
+}
+
+.productItem .productImage:hover .productOptionView .productOption {
+  margin-bottom: 0 !important;
+}
+
+.productItem .productImage .productImg {
+  width: 100%;
+  height: auto;
+}
+
+.productItem .productOptionView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.productItem .productOptionView .productUpperInfo {
+  text-align: start;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  margin-left: -15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .productOptionView .productOptions {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productItem .productOptionView .productOptions .productOption {
+  margin: 0 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: -15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .productOptionView .productOptions .productOption .productOptionIcon {
+  font-size: 35px;
+  color: #fff;
+  background-color: #A5301F;
+  padding: 6px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .productOptionView .productOptions .productOption .productOptionIcon:hover {
+  background-color: #F5BF1A !important;
+  color: #000 !important;
+}
+
+.productInfo {
+  margin: 5px 0;
+}
+
+.productInfo .productTitle {
+  font-size: 21px;
+  color: #666;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.productPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productPrice .productPriceOld {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 10px;
+  color: #A5301F;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+}
+
+.productPrice .productPriceNew {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 10px;
+  color: #666;
+  text-decoration: line-through;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+}
+/*# sourceMappingURL=ProductionBox.module.css.map */

@@ -6,6 +6,7 @@
 }
 
 .categoryItem {
+  padding: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,8 +38,8 @@
   width: 70px;
   height: 70px;
   margin: 20px 0;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .categoryTitle {

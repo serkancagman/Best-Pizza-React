@@ -1,0 +1,108 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.productItem {
+  padding: 10px;
+  width: 100%;
+  @include flexcolcenter;
+
+  .productImage {
+    width: 100%;
+    position: relative;
+    border-bottom: 7px double #e6e6e6;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+      .productOptionView {
+        opacity: 1 !important;
+
+        .productUpperInfo {
+          margin-left: 0 !important;
+        }
+        .productOption {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+    .productImg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .productOptionView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    @include flexcolbetween;
+
+    .productUpperInfo {
+      text-align: start;
+      font-size: 16px;
+      font-family: $mainFont;
+      margin-left: -15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .productOptions {
+      margin-top: auto;
+      @include flexrowcenter;
+      .productOption {
+        margin: 0 10px;
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: -15px;
+        transition: all 0.3s ease-in-out;
+        .productOptionIcon {
+          font-size: 35px;
+          color: #fff;
+          background-color: $mainColor;
+          padding: 6px;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: $secondaryColor !important;
+            color: #000 !important;
+          }
+        }
+      }
+    }
+  }
+}
+.productInfo {
+  margin: 5px 0;
+
+  .productTitle {
+    font-size: 21px;
+    color: #666;
+    font-family: $mainFont;
+    text-align: center
+  }
+}
+.productPrice{
+  @include flexrowcenter;
+
+  .productPriceOld{
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 10px;
+    color: $mainColor;
+    font-family: $mainFont;
+    font-weight: 600;
+  }
+  .productPriceNew{
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 10px;
+    color: #666;
+    text-decoration: line-through;
+    font-family: $mainFont;
+    font-weight: 600;
+  }
+}

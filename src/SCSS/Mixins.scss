@@ -16,6 +16,11 @@
   justify-content: center;
   align-items: center;
 }
+@mixin flexcolbetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 @mixin flexcolstart {
   display: flex;
   flex-direction: column;
