@@ -1,0 +1,112 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.shopCartList {
+  padding: 5px;
+  margin: 0 10px;
+
+  .shopCartItem {
+    @include flexrowcenter;
+    margin-bottom: 10px;
+
+    .shopCartItemImg {
+      width: 100px;
+      .shopCartImg {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .shopCartItemInfo {
+      padding: 0 10px;
+      min-width: 200px;
+      .shopCartItemTitle {
+        color: #000;
+        font-family: $mainFont;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .shopCartItemPrice {
+        margin-bottom: 5px;
+
+        .shopCartItemPriceNew {
+          display: inline-block;
+          font-size: 15px;
+          color: $mainColor;
+          margin-right: 10px;
+          font-family: $mainFont;
+        }
+        .shopCartItemPriceOld {
+          font-family: $mainFont;
+          color: #666;
+          text-decoration: line-through;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+.quantityOptions {
+  margin: 1rem 0;
+
+  .quantityTitle {
+    font-size: 16px;
+    color: #000;
+    font-family: $mainFont;
+  }
+  .quantityItems {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+
+    .quantityIcon {
+      cursor: pointer;
+      display: inline-block;
+      padding: 7px;
+      background-color: #efefef;
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
+    .quantityNumber {
+      text-align: center;
+      width: 60px;
+      outline: none;
+      background-color: $secondaryColor;
+      padding: 7px 10px;
+    }
+  }
+}
+.quantityIconTrash {
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px;
+  color: $mainColor;
+  background-color: #efefef;
+  &:hover {
+    background-color: #e6e6e6;
+  }
+}
+.goToCart {
+  @include flexrowcenter;
+  border-radius: 10px;
+  border: 1px solid $mainColor;
+  overflow: hidden;
+  .goToCartBtn {
+    width: 100%;
+    background-color: $mainColor;
+    color: #fff;
+    padding: 10px;
+    font-family: $mainFont;
+    font-size: 17px;
+  }
+  .totalTitle {
+    display: inline-block;
+    font-size: 15px;
+    padding: 7px;
+    font-family: $mainFont;
+    min-width: 70px;
+    text-align: center;
+  }
+}

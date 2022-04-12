@@ -6,12 +6,15 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 import style from "./Style/ProductionBox.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 import { TiArrowBack } from "react-icons/ti";
-const ProductModal = ({ isOpen, onClose, modalData }) => {
+
+const ProductModal = ({ isOpen, onClose, product }) => {
+
+
   const [quantity, setQuantity] = React.useState(1);
 
   const handleDecrease = () => {
@@ -22,7 +25,7 @@ const ProductModal = ({ isOpen, onClose, modalData }) => {
 
   React.useEffect(() => {
     setQuantity(1);
-  }, [modalData]);
+  }, [product]);
 
   return (
     <Modal
@@ -42,42 +45,29 @@ const ProductModal = ({ isOpen, onClose, modalData }) => {
         <ModalCloseButton />
         <ModalBody>
           <div className={style.productModal}>
-            <TransformWrapper initialScale={1}>
-              {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-                <TransformComponent>
-                  <div
-                    onMouseLeave={() => resetTransform()}
-                    className={style.productModalImage}
-                  >
-                    <img
-                      src={modalData.photos[0]}
-                      alt="product"
-                      className={style.productImg}
-                    />
-                  </div>
-                </TransformComponent>
-              )}
-            </TransformWrapper>
+            <div className={style.productModalImage}>
+              <img
+                src={product.photos[0]}
+                alt="product"
+                className={style.productImg}
+              />
+            </div>
 
             <div className={style.productModalInfo}>
               <div className={style.productModalTitleWrapper}>
-                <h4 className={style.modalTitle}>{modalData.title}</h4>
+                <h4 className={style.modalTitle}>{product.title}</h4>
               </div>
 
               <div className={style.productModalPriceWrapper}>
-                {modalData.salePrice && (
-                  <span className={style.modalPrice}>
-                    ${modalData.salePrice}
-                  </span>
+                {product.salePrice && (
+                  <span className={style.modalPrice}>${product.salePrice}</span>
                 )}
                 <span
                   className={
-                    modalData.salePrice
-                      ? style.modalSalePrice
-                      : style.modalPrice
+                    product.salePrice ? style.modalSalePrice : style.modalPrice
                   }
                 >
-                  ${modalData.price}
+                  ${product.price}
                 </span>
               </div>
               <p className={style.modalDescription}>
@@ -114,7 +104,10 @@ const ProductModal = ({ isOpen, onClose, modalData }) => {
                 </div>
               </div>
               <div className={style.productModalButtons}>
-                <button className={style.addToCartBtn}>
+                <button
+                 
+                  className={style.addToCartBtn}
+                >
                   <IoMdCart className={style.modalBtnIcon} />
                   <span className={style.modalBtnText}>Add to cart</span>
                 </button>

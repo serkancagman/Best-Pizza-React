@@ -101,6 +101,12 @@
   border-top: 5px solid $secondaryColor;
   padding: 10px !important;
 }
+.cartMenu{
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .pizzaMenuInner {
   @include flexrowbetween;
   width: 100%;
@@ -194,10 +200,9 @@
     top: -5px;
     right: -5px;
     background-color: $secondaryColor;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 2px 5px;
+    color: #000; 
+    font-size: 15px;
+    padding: 2px 7px;
     border-radius: 50%;
     font-family: "Oswald", sans-serif;
   }

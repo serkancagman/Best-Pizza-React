@@ -4,7 +4,12 @@ import { IoMdCart } from "react-icons/io";
 import { useDisclosure } from "@chakra-ui/react";
 import { AiFillHeart, AiFillEye } from "react-icons/ai";
 import ProductModal from "./ProductModal";
+import { ShopCartContext } from "Context/ShopCartContext";
+
 const ProductionBox = ({ data }) => {
+
+  const {cart,addToCart} = React.useContext(ShopCartContext);
+  
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [currentData, setCurrentData] = React.useState("");
@@ -31,7 +36,10 @@ const ProductionBox = ({ data }) => {
                     <div className={style.productUpperInfo}>New Product</div>
                   )}
                   <div className={style.productOptions}>
-                    <div className={style.productOption}>
+                    <div
+                      onClick={()=> addToCart(item,1)}
+                      className={style.productOption}
+                    >
                       <IoMdCart className={style.productOptionIcon} />
                     </div>
                     <div className={style.productOption}>
@@ -49,13 +57,20 @@ const ProductionBox = ({ data }) => {
               <div className={style.productInfo}>
                 <h4 className={style.productTitle}>{item.title}</h4>
                 <div className={style.productPrice}>
-                 
                   {item.salePrice && (
                     <span className={style.productPriceOld}>
                       ${item.salePrice}
                     </span>
                   )}
-                   <span className={item.salePrice ? style.productPriceNew : style.productPriceOld}>${item.price}</span>
+                  <span
+                    className={
+                      item.salePrice
+                        ? style.productPriceNew
+                        : style.productPriceOld
+                    }
+                  >
+                    ${item.price}
+                  </span>
                 </div>
               </div>
             </div>
@@ -63,11 +78,7 @@ const ProductionBox = ({ data }) => {
         );
       })}
       {currentData !== "" && (
-        <ProductModal
-          isOpen={isOpen}
-          onClose={onClose}
-          modalData={currentData}
-        />
+        <ProductModal isOpen={isOpen} onClose={onClose} product={currentData} />
       )}
     </>
   );

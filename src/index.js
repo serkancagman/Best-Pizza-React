@@ -7,12 +7,14 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import 'antd/dist/antd.min.css';
 import "./SCSS/main.css"
 import { ChakraProvider } from '@chakra-ui/react'
-
+import {ShopCartProvider} from './Context/ShopCartContext'
 ReactDOM.render(
   <React.StrictMode>
      <BrowserRouter>
      <ChakraProvider >
+      <ShopCartProvider>
        <App />
+      </ShopCartProvider>
        </ChakraProvider>
      </BrowserRouter>,
   </React.StrictMode>,
