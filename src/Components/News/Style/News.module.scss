@@ -23,9 +23,13 @@
   &:hover {
     .newsTitle {
       color: $mainColor;
+
     }
   }
-
+.newsText {
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
   .newsImg {
     width: 100%;
     height: auto;

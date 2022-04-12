@@ -4,7 +4,7 @@
 .mainAdBanner {
   background: url("Assets/adBanner.jpg") no-repeat center center;
   background-attachment: fixed;
-  margin-top: 10rem;
+  margin: 1rem 0;
 }
 
 .adBannerArea {
@@ -38,11 +38,13 @@
   padding: 10px 1rem;
   background-color: #F5BF1A;
   font-size: 18px;
+  margin: 1rem 0;
 }
 
 .adBannerArea .adBannerSubTitle {
   color: #fff;
   font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
 .adBannerArea .adBannerButton {

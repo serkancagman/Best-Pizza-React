@@ -6,11 +6,12 @@ import burgerIcon from "Assets/burgerIcon.png";
 import dishesIcon from "Assets/dishesIcon.png";
 import juicyIcon from "Assets/drinkIcon.png";
 import { useQuery } from "react-query";
-
 import { getProducts } from "API/API";
 import ProductionBox from "Components/ProductionBox/ProductionBox";
 const HomeProducts = () => {
   const [products, setProducts] = React.useState([]);
+  const [isFade, setIsFade] = React.useState(false);
+  const [selectedCategory, setSelectedCategory] = React.useState("pizza");
   const { data, error, isLoading } = useQuery("homeProducts", getProducts);
 
   React.useEffect(() => {
@@ -23,12 +24,23 @@ const HomeProducts = () => {
     let useProduct;
     if (type === "pizza") {
       useProduct = data.filter((item) => item.productType === "pizza");
+      setSelectedCategory("pizza");
     } else if (type === "fastfood") {
       useProduct = data.filter((item) => item.productType === "fastfood");
+      setSelectedCategory("fastfood");
+    } else if (type === "drinks") {
+      useProduct = data.filter((item) => item.productType === "drinks");
+      setSelectedCategory("drinks");
     } else {
       useProduct = data.filter((item) => item.productType === "dishes");
+      setSelectedCategory("dishes");
     }
     setProducts(useProduct);
+    setIsFade(true);
+
+    setTimeout(() => {
+      setIsFade(false);
+    }, 700);
   };
 
   return (
@@ -50,7 +62,13 @@ const HomeProducts = () => {
                   alt="pizza"
                   className={style.categoryIcon}
                 />
-                <h3 className={style.categoryTitle}>Pizza</h3>
+                <h3
+                  className={`${style.categoryTitle} ${
+                    selectedCategory === "pizza" && style.activeCat
+                  }`}
+                >
+                  Pizza
+                </h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -63,32 +81,60 @@ const HomeProducts = () => {
                   alt="pizza"
                   className={style.categoryIcon}
                 />
-                <h3 className={style.categoryTitle}>Fast Foods</h3>
+                <h3
+                  className={`${style.categoryTitle} ${
+                    selectedCategory === "fastfood" && style.activeCat
+                  }`}
+                >
+                  Fast Foods
+                </h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className={style.categoryItem}>
+              <div
+                onClick={() => handleFilter("dishes")}
+                className={style.categoryItem}
+              >
                 <img
                   src={dishesIcon}
                   alt="pizza"
                   className={style.categoryIcon}
                 />
-                <h3 className={style.categoryTitle}>Dishes</h3>
+                <h3
+                  className={`${style.categoryTitle} ${
+                    selectedCategory === "dishes" && style.activeCat
+                  }`}
+                >
+                  Dishes
+                </h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className={style.categoryItem}>
+              <div
+                onClick={() => handleFilter("drinks")}
+                className={style.categoryItem}
+              >
                 <img
                   src={juicyIcon}
                   alt="pizza"
                   className={style.categoryIcon}
                 />
-                <h3 className={style.categoryTitle}>Drinks</h3>
+                <h3
+                  className={`${style.categoryTitle} ${
+                    selectedCategory === "drinks" && style.activeCat
+                  }`}
+                >
+                  Drinks
+                </h3>
               </div>
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="row g-3 align-items-center">
+        <div
+          className={`row g-3 align-items-center ${
+            isFade ? style.catproductFade : ""
+          }`}
+        >
           {!isLoading && <ProductionBox data={products} />}
         </div>
       </div>

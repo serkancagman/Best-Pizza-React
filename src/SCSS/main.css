@@ -140,4 +140,8 @@
   color: #fff;
   font-weight: bold;
 }
+
+svg {
+  display: inline-block !important;
+}
 /*# sourceMappingURL=main.css.map */

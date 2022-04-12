@@ -82,13 +82,14 @@
     font-size: 21px;
     color: #666;
     font-family: $mainFont;
-    text-align: center
+    text-align: center;
+    margin-bottom: 10px;
   }
 }
-.productPrice{
+.productPrice {
   @include flexrowcenter;
 
-  .productPriceOld{
+  .productPriceOld {
     display: inline-block;
     font-size: 18px;
     margin: 0 10px;
@@ -96,7 +97,7 @@
     font-family: $mainFont;
     font-weight: 600;
   }
-  .productPriceNew{
+  .productPriceNew {
     display: inline-block;
     font-size: 18px;
     margin: 0 10px;
@@ -104,5 +105,158 @@
     text-decoration: line-through;
     font-family: $mainFont;
     font-weight: 600;
+  }
+}
+
+// Production Modal Styles
+
+.productModal {
+  @include flexrowcenter;
+  margin: 1rem;
+  padding: 1rem 0;
+
+  .productModalImage {
+    margin-right: 20px;
+    overflow: hidden;
+
+    .productImg {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .productModalInfo {
+    padding: 10px;
+
+    .productModalTitleWrapper {
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 10px;
+
+      .modalTitle {
+        font-size: 21px;
+        color: #000;
+        font-family: $mainFont;
+        margin-bottom: 10px;
+      }
+    }
+    .productModalPriceWrapper {
+      margin-bottom: 10px;
+    }
+    .modalPrice {
+      font-size: 19px;
+      color: $mainColor;
+      font-family: $mainFont;
+    }
+    .modalSalePrice {
+      font-size: 19px;
+      color: #666;
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: line-through;
+      font-family: $mainFont;
+    }
+    .modalDescription {
+      font-size: 16px;
+      color: #666;
+      font-family: $mainFont;
+      margin-bottom: 30px;
+    }
+  }
+  .quantityOptions {
+    margin: 1rem 0;
+
+    .quantityTitle {
+      font-size: 16px;
+      color: #000;
+      font-family: $mainFont;
+    }
+    .quantityItems {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 10px 0;
+
+      .quantityIcon {
+        cursor: pointer;
+        display: inline-block;
+        padding: 7px;
+        background-color: #efefef;
+        &:hover {
+          background-color: #e6e6e6;
+        }
+      }
+      .quantityNumber {
+        text-align: center;
+        width: 40px;
+        outline: none;
+        background-color: #efefef;
+        padding: 7px 10px;
+        &:hover {
+          background-color: #e6e6e6;
+        }
+      }
+    }
+  }
+  .productModalButtons {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .addToCartBtn {
+      padding: 10px 15px;
+      background-color: $mainColor;
+      @include flexrowcenter;
+      outline: none;
+      border-radius: 25px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $secondaryColor;
+        .modalBtnIcon {
+          color: #000;
+        }
+        .modalBtnText {
+          color: #000;
+        }
+      }
+      .modalBtnIcon {
+        font-size: 18px;
+        color: #fff;
+        margin-right: 5px;
+      }
+      .modalBtnText {
+        font-size: 16px;
+        color: #fff;
+        font-family: $mainFont;
+      }
+    }
+
+    .buyNowBtn {
+      padding: 10px 15px;
+      margin: 0 10px;
+      background-color: $secondaryColor;
+      @include flexrowcenter;
+      outline: none;
+      border-radius: 25px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $mainColor;
+        .modalBtnIcon {
+          color: #fff;
+        }
+        .modalBtnText {
+          color: #fff;
+        }
+      }
+      .modalBtnIcon {
+        font-size: 18px;
+        color: #000;
+        margin-right: 5px;
+      }
+      .modalBtnText {
+        font-size: 16px;
+        color: #000;
+        font-family: $mainFont;
+      }
+    }
   }
 }

@@ -52,6 +52,11 @@
   color: #A5301F;
 }
 
+.newsBox .newsText {
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
+
 .newsBox .newsImg {
   width: 100%;
   height: auto;

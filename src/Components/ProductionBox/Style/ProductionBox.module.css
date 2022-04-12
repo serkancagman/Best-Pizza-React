@@ -125,6 +125,7 @@
   color: #666;
   font-family: "Oswald", sans-serif;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .productPrice {
@@ -160,5 +161,227 @@
   text-decoration: line-through;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
+}
+
+.productModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.productModal .productModalImage {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.productModal .productModalImage .productImg {
+  width: 100%;
+  height: auto;
+}
+
+.productModal .productModalInfo {
+  padding: 10px;
+}
+
+.productModal .productModalInfo .productModalTitleWrapper {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 10px;
+}
+
+.productModal .productModalInfo .productModalTitleWrapper .modalTitle {
+  font-size: 21px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 10px;
+}
+
+.productModal .productModalInfo .productModalPriceWrapper {
+  margin-bottom: 10px;
+}
+
+.productModal .productModalInfo .modalPrice {
+  font-size: 19px;
+  color: #A5301F;
+  font-family: "Oswald", sans-serif;
+}
+
+.productModal .productModalInfo .modalSalePrice {
+  font-size: 19px;
+  color: #666;
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: line-through;
+  font-family: "Oswald", sans-serif;
+}
+
+.productModal .productModalInfo .modalDescription {
+  font-size: 16px;
+  color: #666;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+}
+
+.productModal .quantityOptions {
+  margin: 1rem 0;
+}
+
+.productModal .quantityOptions .quantityTitle {
+  font-size: 16px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+}
+
+.productModal .quantityOptions .quantityItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.productModal .quantityOptions .quantityItems .quantityIcon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px;
+  background-color: #efefef;
+}
+
+.productModal .quantityOptions .quantityItems .quantityIcon:hover {
+  background-color: #e6e6e6;
+}
+
+.productModal .quantityOptions .quantityItems .quantityNumber {
+  text-align: center;
+  width: 40px;
+  outline: none;
+  background-color: #efefef;
+  padding: 7px 10px;
+}
+
+.productModal .quantityOptions .quantityItems .quantityNumber:hover {
+  background-color: #e6e6e6;
+}
+
+.productModal .productModalButtons {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.productModal .productModalButtons .addToCartBtn {
+  padding: 10px 15px;
+  background-color: #A5301F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  border-radius: 25px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.productModal .productModalButtons .addToCartBtn:hover {
+  background-color: #F5BF1A;
+}
+
+.productModal .productModalButtons .addToCartBtn:hover .modalBtnIcon {
+  color: #000;
+}
+
+.productModal .productModalButtons .addToCartBtn:hover .modalBtnText {
+  color: #000;
+}
+
+.productModal .productModalButtons .addToCartBtn .modalBtnIcon {
+  font-size: 18px;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.productModal .productModalButtons .addToCartBtn .modalBtnText {
+  font-size: 16px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+}
+
+.productModal .productModalButtons .buyNowBtn {
+  padding: 10px 15px;
+  margin: 0 10px;
+  background-color: #F5BF1A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  border-radius: 25px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.productModal .productModalButtons .buyNowBtn:hover {
+  background-color: #A5301F;
+}
+
+.productModal .productModalButtons .buyNowBtn:hover .modalBtnIcon {
+  color: #fff;
+}
+
+.productModal .productModalButtons .buyNowBtn:hover .modalBtnText {
+  color: #fff;
+}
+
+.productModal .productModalButtons .buyNowBtn .modalBtnIcon {
+  font-size: 18px;
+  color: #000;
+  margin-right: 5px;
+}
+
+.productModal .productModalButtons .buyNowBtn .modalBtnText {
+  font-size: 16px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
 }
 /*# sourceMappingURL=ProductionBox.module.css.map */

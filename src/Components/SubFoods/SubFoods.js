@@ -34,7 +34,7 @@ const SubFoods = () => {
               <div className="col-md-4" key={subFood.id}>
                 <Link className={style.subFoodLink} to="/">
                   <div className={style.subFood}>
-                    <img src={subFood.img} alt={subFood.name} />
+                    <img src={subFood.img} className={style.subImg} alt={subFood.name} />
                     <h3 className={style.subTitle}>{subFood.name}</h3>
                     <p className={style.subText}>{subFood.text}</p>
                   </div>

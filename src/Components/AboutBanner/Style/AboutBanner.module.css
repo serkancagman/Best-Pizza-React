@@ -26,7 +26,6 @@
   font-family: "Beau Rivage", cursive;
   color: #F5BF1A;
   font-size: 5rem;
-  margin: 0 !important;
   line-height: 0.6;
 }
 
@@ -38,11 +37,13 @@
 .aboutInfoWrapper .aboutBannerSubTitle {
   font-family: "Oswald", sans-serif;
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .aboutInfoWrapper .aboutBannerText {
   color: #999;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .adBannerButton {

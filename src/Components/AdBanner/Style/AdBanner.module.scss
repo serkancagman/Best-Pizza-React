@@ -4,7 +4,7 @@
 .mainAdBanner{
     background: url("Assets/adBanner.jpg") no-repeat center center;
     background-attachment: fixed;
-    margin-top: 10rem;
+    margin: 1rem 0;
 }
 .adBannerArea{
     padding: 2rem 0;
@@ -22,10 +22,12 @@
         padding: 10px 1rem;
         background-color: $secondaryColor;
         font-size: 18px;
+        margin: 1rem 0;
     }
     .adBannerSubTitle{
         color: #fff;
         font-size: 4rem;
+        margin-bottom: 1rem;
     }
     .adBannerButton{
         @include redButton;

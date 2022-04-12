@@ -1,8 +1,19 @@
 import React from "react";
 import style from "./Style/ProductionBox.module.css";
 import { IoMdCart } from "react-icons/io";
+import { useDisclosure } from "@chakra-ui/react";
 import { AiFillHeart, AiFillEye } from "react-icons/ai";
+import ProductModal from "./ProductModal";
 const ProductionBox = ({ data }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [currentData, setCurrentData] = React.useState("");
+
+  const handleModal = (product) => {
+    onOpen();
+    setCurrentData(product);
+  };
+
   return (
     <>
       {data.map((item, index) => {
@@ -26,7 +37,10 @@ const ProductionBox = ({ data }) => {
                     <div className={style.productOption}>
                       <AiFillHeart className={style.productOptionIcon} />
                     </div>
-                    <div className={style.productOption}>
+                    <div
+                      onClick={() => handleModal(item)}
+                      className={style.productOption}
+                    >
                       <AiFillEye className={style.productOptionIcon} />
                     </div>
                   </div>
@@ -35,18 +49,26 @@ const ProductionBox = ({ data }) => {
               <div className={style.productInfo}>
                 <h4 className={style.productTitle}>{item.title}</h4>
                 <div className={style.productPrice}>
-                  <span className={style.productPriceOld}>${item.price}</span>
+                 
                   {item.salePrice && (
-                    <span className={style.productPriceNew}>
+                    <span className={style.productPriceOld}>
                       ${item.salePrice}
                     </span>
                   )}
+                   <span className={item.salePrice ? style.productPriceNew : style.productPriceOld}>${item.price}</span>
                 </div>
               </div>
             </div>
           </div>
         );
       })}
+      {currentData !== "" && (
+        <ProductModal
+          isOpen={isOpen}
+          onClose={onClose}
+          modalData={currentData}
+        />
+      )}
     </>
   );
 };
