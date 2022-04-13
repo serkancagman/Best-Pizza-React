@@ -12,3 +12,4 @@ export {default as Promo} from './Promo/Promo';
 export {default as Footer} from './Footer/Footer';
 export {default as HomeProducts} from './HomeProducts/HomeProducts';
 export {default as LoginForm} from './LoginandRegister/LoginForm';
+export {default as RegisterForm} from './LoginandRegister/RegisterForm';
