@@ -1,0 +1,78 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.loginForm {
+  padding: 3rem 0;
+}
+
+.submitBtn {
+  background-color: $mainColor !important;
+  color: #fff !important;
+  width: 150px;
+  margin: 0 auto !important;
+  border: none !important;
+  font-family: $mainFont;
+  font-size: 15px;
+  &:hover {
+    background-color: $secondaryColor !important;
+    color: #000 !important;
+  }
+}
+.label {
+  font-family: $mainFont;
+  font-size: 17px !important;
+}
+.checkBox {
+  font-family: $mainFont;
+  font-size: 15px !important;
+}
+.formTitle {
+  text-align: center;
+  font-size: 30px;
+  font-family: $mainFont;
+  margin-bottom: 30px;
+}
+.socialArea {
+  @include flexrowcenter;
+  margin: 20px 0;
+
+  .socialItem {
+    @include flexrowcenter;
+    padding: 10px;
+    margin: 0 10px;
+    .socialText {
+      font-size: 15px;
+      font-family: $mainFont;
+      margin-left: 10px;
+    }
+  }
+}
+.facebook {
+  background-color: #3b5998;
+  color: #fff !important;
+  &:hover {
+    background-color: #4c68a0;
+  }
+}
+.google {
+  background-color: #dd4b39;
+  color: #fff !important;
+  &:hover {
+    background-color: #e75a4b;
+  }
+}
+.icon {
+  font-size: 17px;
+}
+.formWrapper{
+    padding: 10px 0;
+}
+.forgotPassword{
+    margin: 15px 0;
+    color: rgb(59, 104, 161);
+    cursor: pointer;
+}
+.registerLink{
+    display: inline-block;
+    margin: 15px auto;
+}

@@ -11,8 +11,9 @@ import style from "./Style/ProductionBox.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 import { TiArrowBack } from "react-icons/ti";
-
+import {ShopCartContext} from 'Context/ShopCartContext'
 const ProductModal = ({ isOpen, onClose, product }) => {
+  const {addToCart} = React.useContext(ShopCartContext);
 
 
   const [quantity, setQuantity] = React.useState(1);
@@ -105,7 +106,7 @@ const ProductModal = ({ isOpen, onClose, product }) => {
               </div>
               <div className={style.productModalButtons}>
                 <button
-                 
+                  onClick={() =>  addToCart(product, quantity)}
                   className={style.addToCartBtn}
                 >
                   <IoMdCart className={style.modalBtnIcon} />

@@ -19,6 +19,9 @@ export const ShopCartProvider = ({ children }) => {
         discount += usePrice * item.quantity;
       }
     });
+    const calculateTotalPrice = cart
+    .reduce((a, b) => a + b.price * b.quantity, 0)
+    .toFixed(2);
     let useTotal = calculateTotalPrice - discount
     setCartTotalDiscount(discount.toFixed(2));
     setCartTotalPrice(calculateTotalPrice);
@@ -44,9 +47,7 @@ export const ShopCartProvider = ({ children }) => {
 
   // Cart Calculates
 
-  const calculateTotalPrice = cart
-    .reduce((a, b) => a + b.price * b.quantity, 0)
-    .toFixed(2);
+  
 
   const removeFromCart = (product) => {
     setCart(cart.filter((item) => item._id !== product._id));

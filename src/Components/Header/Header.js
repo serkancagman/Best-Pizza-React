@@ -3,7 +3,7 @@ import style from "./style/Header.module.css";
 import logo from "Assets/Logo/logo.png";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { Menu, Dropdown, Badge } from "antd";
+import { Menu, Dropdown, Badge,Alert } from "antd";
 import { BsPersonFill } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { IoMdCart } from "react-icons/io";
@@ -53,7 +53,12 @@ const Header = () => {
 
   const cartItem = (
     <div className={style.cartMenu}>
-      <ShopCart key="1" />
+      {cart.length > 0 ?  <ShopCart key="1" /> : <Alert
+      message="Your cart is empty"
+      description="Please add some items to your cart"
+      type="warning"
+    />}
+     
     </div>
   );
 

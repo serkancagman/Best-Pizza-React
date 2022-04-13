@@ -384,4 +384,9 @@
   color: #000;
   font-family: "Oswald", sans-serif;
 }
+
+.loaderSpinner {
+  display: inline-block;
+  width: 25px;
+}
 /*# sourceMappingURL=ProductionBox.module.css.map */

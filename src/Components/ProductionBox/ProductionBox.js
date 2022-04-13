@@ -2,22 +2,20 @@ import React from "react";
 import style from "./Style/ProductionBox.module.css";
 import { IoMdCart } from "react-icons/io";
 import { useDisclosure } from "@chakra-ui/react";
-import { AiFillHeart, AiFillEye } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 import ProductModal from "./ProductModal";
 import { ShopCartContext } from "Context/ShopCartContext";
 
 const ProductionBox = ({ data }) => {
 
-  const {cart,addToCart} = React.useContext(ShopCartContext);
-  
+  const {addToCart} = React.useContext(ShopCartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [currentData, setCurrentData] = React.useState("");
-
   const handleModal = (product) => {
     onOpen();
     setCurrentData(product);
   };
+
 
   return (
     <>
@@ -40,10 +38,8 @@ const ProductionBox = ({ data }) => {
                       onClick={()=> addToCart(item,1)}
                       className={style.productOption}
                     >
+                      
                       <IoMdCart className={style.productOptionIcon} />
-                    </div>
-                    <div className={style.productOption}>
-                      <AiFillHeart className={style.productOptionIcon} />
                     </div>
                     <div
                       onClick={() => handleModal(item)}

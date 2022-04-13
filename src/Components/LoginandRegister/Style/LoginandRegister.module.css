@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.loginForm {
+  padding: 3rem 0;
+}
+
+.submitBtn {
+  background-color: #A5301F !important;
+  color: #fff !important;
+  width: 150px;
+  margin: 0 auto !important;
+  border: none !important;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+}
+
+.submitBtn:hover {
+  background-color: #F5BF1A !important;
+  color: #000 !important;
+}
+
+.label {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px !important;
+}
+
+.checkBox {
+  font-family: "Oswald", sans-serif;
+  font-size: 15px !important;
+}
+
+.formTitle {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+}
+
+.socialArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.socialArea .socialItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.socialArea .socialItem .socialText {
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  margin-left: 10px;
+}
+
+.facebook {
+  background-color: #3b5998;
+  color: #fff !important;
+}
+
+.facebook:hover {
+  background-color: #4c68a0;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: #fff !important;
+}
+
+.google:hover {
+  background-color: #e75a4b;
+}
+
+.icon {
+  font-size: 17px;
+}
+
+.formWrapper {
+  padding: 10px 0;
+}
+
+.forgotPassword {
+  margin: 15px 0;
+  color: #3b68a1;
+  cursor: pointer;
+}
+
+.registerLink {
+  display: inline-block;
+  margin: 15px auto;
+}
+/*# sourceMappingURL=LoginandRegister.module.css.map */
