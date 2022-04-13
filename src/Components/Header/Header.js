@@ -52,13 +52,15 @@ const Header = () => {
   );
 
   const cartItem = (
-    <div className={style.cartMenu}>
+    <div className={style.cartWrapperMenu}>
+    <div className={`${style.cartMenu} ${cart.length > 1 && style.inProduct}`}>
       {cart.length > 0 ?  <ShopCart key="1" /> : <Alert
       message="Your cart is empty"
       description="Please add some items to your cart"
       type="warning"
     />}
      
+    </div>
     </div>
   );
 

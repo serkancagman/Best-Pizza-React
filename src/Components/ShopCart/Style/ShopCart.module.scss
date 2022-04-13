@@ -88,11 +88,20 @@
     background-color: #e6e6e6;
   }
 }
+.totalPriceWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
 .goToCart {
   @include flexrowcenter;
   border-radius: 10px;
   border: 1px solid $mainColor;
   overflow: hidden;
+
   .goToCartBtn {
     width: 100%;
     background-color: $mainColor;

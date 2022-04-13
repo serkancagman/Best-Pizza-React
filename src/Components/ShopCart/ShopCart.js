@@ -75,9 +75,11 @@ const ShopCart = () => {
           </li>
         );
       })}
+      <div className={style.totalPriceWrapper}>
       <div className={style.goToCart}>
         <button className={style.goToCartBtn}>Go to cart</button>
         <span className={style.totalTitle}>${totalPrice}</span>
+      </div>
       </div>
     </ul>
   );
