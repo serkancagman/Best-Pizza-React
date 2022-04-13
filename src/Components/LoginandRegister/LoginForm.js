@@ -2,8 +2,19 @@ import React from "react";
 import style from "./Style/LoginandRegister.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
-import {GrFacebook,GrGooglePlus} from "react-icons/gr";
+import { GrFacebook, GrGooglePlus } from "react-icons/gr";
+import { useFormik } from "formik";
 const LoginForm = () => {
+  const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      onSubmit: (values) => {
+        console.log(values);
+      },
+    });
   return (
     <section className={style.loginForm}>
       <div className="container">
@@ -11,20 +22,20 @@ const LoginForm = () => {
           <div className={style.formWrapper}>
             <h3 className={style.formTitle}>Login To Order Now !</h3>
             <div className={style.socialArea}>
-                <Link to="#" className={`${style.socialItem} ${style.facebook}`}>
-                    <GrFacebook className={style.icon} /> <span className={style.socialText}>Sign in with Facebook</span>
-                </Link>
-                <Link to="#" className={`${style.socialItem} ${style.google}`}>
-                    <GrGooglePlus className={style.icon} /> <span className={style.socialText}>Sign in with Google</span>
-                </Link>
-
+              <Link to="#" className={`${style.socialItem} ${style.facebook}`}>
+                <GrFacebook className={style.icon} />{" "}
+                <span className={style.socialText}>Sign in with Facebook</span>
+              </Link>
+              <Link to="#" className={`${style.socialItem} ${style.google}`}>
+                <GrGooglePlus className={style.icon} />{" "}
+                <span className={style.socialText}>Sign in with Google</span>
+              </Link>
             </div>
             <Form
-              name="basic"
+              onSubmitCapture={handleSubmit}
               labelCol={{
                 span: 8,
               }}
-            
               wrapperCol={{
                 span: 8,
               }}
@@ -34,23 +45,25 @@ const LoginForm = () => {
               autoComplete="off"
             >
               <Form.Item
-                label={
-                    <label className={style.label}>Email</label>
-                }
-                name="Email"
-                
+                label={<label className={style.label}>Email</label>}
+                name="email"
+                id="name"
+                help={errors.name && touched.name && errors.name}
+                hasFeedback
+                validateStatus={errors.name && touched.name && "error"}
               >
-                <Input />
+                <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
 
               <Form.Item
-                label={
-                    <label className={style.label}>Password</label>
-                }
+                label={<label className={style.label}>Password</label>}
                 name="password"
                 className={style.label}
+                help={errors.password && touched.password && errors.password}
+                hasFeedback
+                validateStatus={errors.password && touched.password && "error"}
               >
-                <Input.Password />
+                <Input.Password onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
 
               <Form.Item
@@ -71,15 +84,20 @@ const LoginForm = () => {
                 }}
                 className="text-center"
               >
-                <Button type="btn" className={style.submitBtn} htmlType="submit">
+                <Button
+                  type="btn"
+                  className={style.submitBtn}
+                  htmlType="submit"
+                >
                   Sign in
                 </Button>
                 <p className={style.forgotPassword}> Forgot Password?</p>
-                <Link to="/register" className={style.registerLink}> Don't have an account? Let's join us!</Link>
+                <Link to="/register" className={style.registerLink}>
+                  {" "}
+                  Don't have an account? Let's join us!
+                </Link>
               </Form.Item>
-             
             </Form>
-            
           </div>
         </div>
       </div>

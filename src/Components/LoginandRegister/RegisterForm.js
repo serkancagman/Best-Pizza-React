@@ -3,8 +3,25 @@ import style from "./Style/LoginandRegister.module.css";
 import { Form, Input, Select, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
+import { useFormik } from "formik";
 const RegisterForm = () => {
   const { Option } = Select;
+
+  const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
+    useFormik({
+      initialValues: {
+        name: "",
+        surname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        gender: "",
+      },
+      onSubmit: (values) => {
+        console.log(values);
+      },
+    });
+
   return (
     <section className={style.loginForm}>
       <div className="container">
@@ -24,7 +41,6 @@ const RegisterForm = () => {
               </Link>
             </div>
             <Form
-              name="basic"
               labelCol={{
                 span: 8,
               }}
@@ -35,42 +51,72 @@ const RegisterForm = () => {
                 remember: true,
               }}
               autoComplete="off"
+              onSubmitCapture={handleSubmit}
             >
               <Form.Item
                 label={<label className={style.label}>Name</label>}
-                name="Email"
+                name="name"
+                id="name"
+                help={errors.name && touched.name && errors.name}
+                hasFeedback
+                validateStatus={errors.name && touched.name && "error"}
               >
-                <Input />
+                <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item
                 label={<label className={style.label}>Surname</label>}
-                name="Email"
+                name="surname"
+                id="surname"
+                help={errors.surname && touched.surname && errors.surname}
+                hasFeedback
+                validateStatus={errors.surname && touched.surname && "error"}
               >
-                <Input />
+                <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item
                 label={<label className={style.label}>Email</label>}
-                name="Email"
+                name="email"
+                help={errors.email && touched.email && errors.email}
+                hasFeedback
+                validateStatus={errors.email && touched.email && "error"}
               >
-                <Input />
+                <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
 
               <Form.Item
                 label={<label className={style.label}>Password</label>}
                 name="password"
                 className={style.label}
+                help={errors.password && touched.password && errors.password}
+                hasFeedback
+                validateStatus={errors.password && touched.password && "error"}
               >
-                <Input.Password />
+                <Input.Password onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item
-                label={<label className={style.label}>Password Confirm</label>}
-                name="password"
+                label={<label className={style.label}>Confirm Password</label>}
+                name="confirmPassword"
+                id="confirmPassword"
                 className={style.label}
+                help={
+                  errors.confirmPassword &&
+                  touched.confirmPassword &&
+                  errors.confirmPassword
+                }
+                hasFeedback
+                validateStatus={
+                  errors.confirmPassword && touched.confirmPassword && "error"
+                }
               >
-                <Input.Password />
+                <Input.Password onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item label={<label className={style.label}>Gender</label>}>
-                <Select defaultValue="Select" style={{ width: 120 }}>
+                <Select
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  defaultValue="Select"
+                  style={{ width: 120 }}
+                >
                   <Option value="female">Female</Option>
                   <Option value="male">Male</Option>
                 </Select>
