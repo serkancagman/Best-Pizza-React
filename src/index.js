@@ -9,7 +9,7 @@ import "./SCSS/main.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import {ShopCartProvider} from './Context/ShopCartContext'
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
      <BrowserRouter>
      <ChakraProvider >
       <ShopCartProvider>
@@ -17,7 +17,7 @@ ReactDOM.render(
       </ShopCartProvider>
        </ChakraProvider>
      </BrowserRouter>,
-  </React.StrictMode>,
+ // </React.StrictMode>,
    document.getElementById("root")
  );
 // If you want to start measuring performance in your app, pass a function

@@ -4,6 +4,7 @@ import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
+import { validationSchema } from "./LoginValidation";
 const LoginForm = () => {
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
@@ -11,6 +12,7 @@ const LoginForm = () => {
         email: "",
         password: "",
       },
+      validationSchema,
       onSubmit: (values) => {
         console.log(values);
       },
@@ -47,10 +49,8 @@ const LoginForm = () => {
               <Form.Item
                 label={<label className={style.label}>Email</label>}
                 name="email"
-                id="name"
-                help={errors.name && touched.name && errors.name}
-                hasFeedback
-                validateStatus={errors.name && touched.name && "error"}
+                help={errors.email && touched.email && errors.email}
+                validateStatus={errors.email && touched.email && "error"}
               >
                 <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
@@ -58,9 +58,7 @@ const LoginForm = () => {
               <Form.Item
                 label={<label className={style.label}>Password</label>}
                 name="password"
-                className={style.label}
                 help={errors.password && touched.password && errors.password}
-                hasFeedback
                 validateStatus={errors.password && touched.password && "error"}
               >
                 <Input.Password onBlur={handleBlur} onChange={handleChange} />
