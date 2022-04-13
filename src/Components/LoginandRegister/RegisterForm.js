@@ -4,19 +4,21 @@ import { Form, Input, Select, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
+import { validationSchema } from "./RegisterValidation";
 const RegisterForm = () => {
   const { Option } = Select;
-
+  const [genderValue, setGenderValue] = React.useState("");
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
       initialValues: {
         name: "",
-        surname: "",
+        lastname: "",
         email: "",
         password: "",
         confirmPassword: "",
-        gender: "",
+        gender: genderValue,
       },
+      validationSchema,
       onSubmit: (values) => {
         console.log(values);
       },
@@ -58,26 +60,26 @@ const RegisterForm = () => {
                 name="name"
                 id="name"
                 help={errors.name && touched.name && errors.name}
-                hasFeedback
                 validateStatus={errors.name && touched.name && "error"}
+                className={style.label}
               >
                 <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item
-                label={<label className={style.label}>Surname</label>}
-                name="surname"
-                id="surname"
-                help={errors.surname && touched.surname && errors.surname}
-                hasFeedback
-                validateStatus={errors.surname && touched.surname && "error"}
+                label={<label className={style.label}>Last Name</label>}
+                name="lastname"
+                className={style.label}
+                id="lastname"
+                help={errors.lastname && touched.lastname && errors.lastname}
+                validateStatus={errors.lastname && touched.lastname && "error"}
               >
                 <Input onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
               <Form.Item
                 label={<label className={style.label}>Email</label>}
                 name="email"
+                className={style.label}
                 help={errors.email && touched.email && errors.email}
-                hasFeedback
                 validateStatus={errors.email && touched.email && "error"}
               >
                 <Input onBlur={handleBlur} onChange={handleChange} />
@@ -88,7 +90,6 @@ const RegisterForm = () => {
                 name="password"
                 className={style.label}
                 help={errors.password && touched.password && errors.password}
-                hasFeedback
                 validateStatus={errors.password && touched.password && "error"}
               >
                 <Input.Password onBlur={handleBlur} onChange={handleChange} />
@@ -103,19 +104,27 @@ const RegisterForm = () => {
                   touched.confirmPassword &&
                   errors.confirmPassword
                 }
-                hasFeedback
                 validateStatus={
                   errors.confirmPassword && touched.confirmPassword && "error"
                 }
               >
                 <Input.Password onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
-              <Form.Item label={<label className={style.label}>Gender</label>}>
+              <Form.Item help={
+                  errors.gender &&
+                  touched.gender &&
+                  errors.gender
+                }
+                className={style.label}
+                validateStatus={
+                  errors.gender && touched.gender && "error"
+                } label={<label className={style.label}>Gender</label>}>
                 <Select
                   onBlur={handleBlur}
-                  onChange={handleChange}
+                  onChange={(value) => setGenderValue((values.gender = value))}
                   defaultValue="Select"
                   style={{ width: 120 }}
+                  
                 >
                   <Option value="female">Female</Option>
                   <Option value="male">Male</Option>
