@@ -6,32 +6,21 @@ import Navbar from "./Navbar";
 import { Menu, Dropdown, Badge, Alert } from "antd";
 import { BsPersonFill } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { getMe } from "API/API";
+import { userLogout } from "API/API";
 import { IoMdCart, IoMdClose } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import ShopCart from "Components/ShopCart/ShopCart";
 import { ShopCartContext } from "Context/ShopCartContext";
 import { UserContext } from "Context/UserContext";
 const Header = () => {
-  const { cart } = React.useContext(ShopCartContext);
-  const { user } = React.useContext(UserContext);
+  const { cart} = React.useContext(ShopCartContext);
+  const { user,handleLogout } = React.useContext(UserContext);
   const [cartvisible, setCartVisible] = React.useState(false);
   const [searchVisible, setSearchVisible] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
 
-  const getUserInfo = async() => {
-    try{
-        const response = await getMe();
-        console.log(response);
-    }
-    catch(err){
-        console.log(err);
-    }
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    getUserInfo();
   };
 
   const handleVisibleChange = (flag) => {
@@ -70,7 +59,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={style.profileMenuItem}>
-              <span className={style.logoutLink}>
+              <span onClick={handleLogout} className={style.logoutLink}>
                 <FiLogOut className={style.logoutIcon} /> Logout
               </span>
             </li>
@@ -103,7 +92,10 @@ const Header = () => {
           type="text"
           placeholder="Search our foods"
         />
-        <button className={style.searchButton}> <BiSearchAlt2 className={style.searchIcon} /></button>
+        <button className={style.searchButton}>
+          {" "}
+          <BiSearchAlt2 className={style.searchIcon} />
+        </button>
       </form>
     </div>
   );

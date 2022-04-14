@@ -1,5 +1,5 @@
 import React from "react";
-import { getMe } from "API/API";
+import { getMe, userLogout } from "API/API";
 export const UserContext = React.createContext();
 
 export const UserProvider = ({ children }) => {
@@ -24,6 +24,21 @@ export const UserProvider = ({ children }) => {
     })();
   }, []);
 
+  const handleLogout = async () => {
+    setUser(null);
+    setIsAuthenticated(false);
+    setIsAdmin(false);
+    localStorage.removeItem("access-token");
+    localStorage.removeItem("refresh-token");
+
+    try {
+      await userLogout();
+    } catch (err) {}
+    
+
+    window.location.reload();
+  };
+
   const values = {
     user,
     setUser,
@@ -31,6 +46,7 @@ export const UserProvider = ({ children }) => {
     setIsAuthenticated,
     isAdmin,
     userData,
+    handleLogout,
   };
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;

@@ -43,7 +43,6 @@ const LoginForm = () => {
       onSubmit: async (values) => {
         try {
           const response = await userLogin(values);
-          console.log(response);
           showToast(response.user.name, "success");
           userData(response);
         } catch (error) {

@@ -44,3 +44,13 @@ export const getMe = async () => {
   const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/auth/me`);
   return data;
 };
+
+export const userLogout = async () => {
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_API_URL}/auth/logout`
+  ,{
+    refreshToken: localStorage.getItem("refresh-token")
+  });
+  return data;
+}
+  
