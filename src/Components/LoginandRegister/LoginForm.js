@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
 import { validationSchema } from "./LoginValidation";
+import { userLogin } from "API/API";
 const LoginForm = () => {
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
@@ -13,8 +14,13 @@ const LoginForm = () => {
         password: "",
       },
       validationSchema,
-      onSubmit: (values) => {
-        console.log(values);
+      onSubmit: async (values) => {
+        try {
+          const response = await userLogin(values);
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
       },
     });
   return (

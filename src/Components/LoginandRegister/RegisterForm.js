@@ -1,13 +1,23 @@
 import React from "react";
 import style from "./Style/LoginandRegister.module.css";
-import { Form, Input, Select, Button, Checkbox } from "antd";
+import { Form, Input, Select,message, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
 import { validationSchema } from "./RegisterValidation";
+import { userRegister } from "API/API";
+import { UserContext } from "Context/UserContext";
 const RegisterForm = () => {
+  const {userData,user} = React.useContext(UserContext);
+  const key = 'updatable';
   const { Option } = Select;
   const [genderValue, setGenderValue] = React.useState("");
+  const openMessage = () => {
+    message.loading({ content: 'Loading...', key });
+    setTimeout(() => {
+      message.success({ content: 'Loaded!', key, duration: 2 });
+    }, 1000);
+  };
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
       initialValues: {
@@ -19,8 +29,22 @@ const RegisterForm = () => {
         gender: genderValue,
       },
       validationSchema,
-      onSubmit: (values) => {
-        console.log(values);
+      onSubmit: async(values) => {
+          try{
+            const response = await userRegister({
+              name:values.name,
+              lastname:values.lastname,
+              email:values.email,
+              password:values.password,
+              gender:values.gender
+            })
+            console.log(response);
+            userData(response)
+            openMessage()
+          }
+          catch(error){
+            console.log(error);
+          }
       },
     });
 

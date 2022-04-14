@@ -8,12 +8,15 @@ import 'antd/dist/antd.min.css';
 import "./SCSS/main.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import {ShopCartProvider} from './Context/ShopCartContext'
+import {UserProvider} from './Context/UserContext'
 ReactDOM.render(
   // <React.StrictMode>
      <BrowserRouter>
      <ChakraProvider >
       <ShopCartProvider>
+      <UserProvider>
        <App />
+        </UserProvider>
       </ShopCartProvider>
        </ChakraProvider>
      </BrowserRouter>,
