@@ -1,12 +1,36 @@
 import React from "react";
 import style from "./Style/LoginandRegister.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
 import { validationSchema } from "./LoginValidation";
 import { userLogin } from "API/API";
+import { UserContext } from "Context/UserContext";
+import { useToast } from "@chakra-ui/react";
 const LoginForm = () => {
+  const toast = useToast();
+  const navigate = useNavigate();
+  const showToast = (message, type) => {
+    if (type === "success") {
+      toast({
+        title: "Register Successful",
+        description: "Welcome" + " " + message + "👋",
+        status: "success",
+        duration: 2000,
+        position: "top",
+      });
+    } else {
+      toast({
+        title: "Register Failed",
+        description: message,
+        status: "error",
+        duration: 2000,
+        position: "top",
+      });
+    }
+  };
+  const { userData, user } = React.useContext(UserContext);
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
       initialValues: {
@@ -18,8 +42,13 @@ const LoginForm = () => {
         try {
           const response = await userLogin(values);
           console.log(response);
+          showToast(response.user.name, "success");
+          userData(response);
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         } catch (error) {
-          console.log(error);
+          showToast(error.response.data.message, "failed");
         }
       },
     });

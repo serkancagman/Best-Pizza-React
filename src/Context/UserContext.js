@@ -4,7 +4,7 @@ export const UserContext = React.createContext();
 
 export const UserProvider = ({ children }) => {
   const localUser = JSON.parse(localStorage.getItem("user"));
-  const localRole = localUser ? localUser.user.role : null;
+  const localRole = localUser ? localUser.role : null;
   const [user, setUser] = React.useState(localUser || null);
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [isAdmin, setIsAdmin] = React.useState(
@@ -12,14 +12,13 @@ export const UserProvider = ({ children }) => {
   );
 
   const userData = (data) => {
-    setUser(data);
+    setUser(data.user);
     setIsAuthenticated(true);
     setIsAdmin(data.user.role === "admin" ? true : false);
-
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(data.user));
+    localStorage.setItem("access-token", data.accessToken);
+    localStorage.setItem("refresh-token", data.refreshToken);
   };
-
-  console.log(user.user);
 
   const values = {
     user,

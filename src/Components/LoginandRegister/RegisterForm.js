@@ -1,23 +1,44 @@
 import React from "react";
 import style from "./Style/LoginandRegister.module.css";
-import { Form, Input, Select,message, Button, Checkbox } from "antd";
-import { Link } from "react-router-dom";
+import { Form, Input, Select, message, Button, Checkbox } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
 import { validationSchema } from "./RegisterValidation";
 import { userRegister } from "API/API";
 import { UserContext } from "Context/UserContext";
+import { useToast } from "@chakra-ui/react";
 const RegisterForm = () => {
-  const {userData,user} = React.useContext(UserContext);
-  const key = 'updatable';
-  const { Option } = Select;
+  const { userData } = React.useContext(UserContext);
   const [genderValue, setGenderValue] = React.useState("");
-  const openMessage = () => {
-    message.loading({ content: 'Loading...', key });
-    setTimeout(() => {
-      message.success({ content: 'Loaded!', key, duration: 2 });
-    }, 1000);
+  const { Option } = Select;
+  const toast = useToast();
+  const navigate = useNavigate();
+
+  const showToast = (message, type) => {
+    if (type === "success") {
+      toast({
+        title: "Register Successful",
+        description: "Welcome to Pizza Stop" + " " + message + "👋",
+        status: "success",
+        duration: 2000,
+        position: "top",
+      });
+    } else {
+      toast({
+        title: "Register Failed",
+        description: message,
+        status: "error",
+        duration: 2000,
+        position: "top",
+      });
+    }
   };
+
+  const upToFirsLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
     useFormik({
       initialValues: {
@@ -29,22 +50,23 @@ const RegisterForm = () => {
         gender: genderValue,
       },
       validationSchema,
-      onSubmit: async(values) => {
-          try{
-            const response = await userRegister({
-              name:values.name,
-              lastname:values.lastname,
-              email:values.email,
-              password:values.password,
-              gender:values.gender
-            })
-            console.log(response);
-            userData(response)
-            openMessage()
-          }
-          catch(error){
-            console.log(error);
-          }
+      onSubmit: async (values) => {
+        try {
+          const response = await userRegister({
+            name: upToFirsLetter(values.name),
+            lastname: upToFirsLetter(values.lastname),
+            email: values.email,
+            password: values.password,
+            gender: values.gender,
+          });
+          userData(response);
+          showToast(response.user.name, "success");
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        } catch (error) {
+          showToast(error.response.data.message, "failed");
+        }
       },
     });
 
@@ -134,21 +156,17 @@ const RegisterForm = () => {
               >
                 <Input.Password onBlur={handleBlur} onChange={handleChange} />
               </Form.Item>
-              <Form.Item help={
-                  errors.gender &&
-                  touched.gender &&
-                  errors.gender
-                }
+              <Form.Item
+                help={errors.gender && touched.gender && errors.gender}
                 className={style.label}
-                validateStatus={
-                  errors.gender && touched.gender && "error"
-                } label={<label className={style.label}>Gender</label>}>
+                validateStatus={errors.gender && touched.gender && "error"}
+                label={<label className={style.label}>Gender</label>}
+              >
                 <Select
                   onBlur={handleBlur}
                   onChange={(value) => setGenderValue((values.gender = value))}
                   defaultValue="Select"
                   style={{ width: 120 }}
-                  
                 >
                   <Option value="female">Female</Option>
                   <Option value="male">Male</Option>
