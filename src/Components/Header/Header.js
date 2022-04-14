@@ -3,10 +3,9 @@ import style from "./style/Header.module.css";
 import logo from "Assets/Logo/logo.png";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { Menu, Dropdown, Badge, Alert } from "antd";
+import { Dropdown, Badge, Alert } from "antd";
 import { BsPersonFill } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { userLogout } from "API/API";
 import { IoMdCart, IoMdClose } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import ShopCart from "Components/ShopCart/ShopCart";
@@ -24,7 +23,7 @@ const Header = () => {
   const [searchValue, setSearchValue] = React.useState("");
   const [searchResult, setSearchResult] = React.useState([]);
   const [currentData, setCurrentData] = React.useState("");
- 
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   React.useEffect(() => {
     if (searchValue.length > 1) {
@@ -35,10 +34,10 @@ const Header = () => {
   }, [searchValue]);
 
   React.useEffect(() => {
-    if(!searchVisible){
+    if (!searchVisible) {
       setSearchValue("");
     }
-  },[searchVisible])
+  }, [searchVisible]);
 
   const handleModal = (product) => {
     onOpen();
@@ -139,24 +138,22 @@ const Header = () => {
                     />
                   </div>
                   <div className={style.searchResultInfo}>
-                    <h5 className={style.searchResultName}>
-                      {product.title}
-                    </h5>
+                    <h5 className={style.searchResultName}>{product.title}</h5>
                     <div className={style.searchResultPrice}>
-                    {product.salePrice && (
-                      <span className={style.shopCartItemPriceNew}>
-                        ${product.salePrice}
-                      </span>
-                    )}
-                    <span
-                      className={
-                        product.salePrice
-                          ? style.shopCartItemPriceOld
-                          : style.shopCartItemPriceNew
-                      }
-                    >
-                      ${product.price}
-                    </span>{" "}
+                      {product.salePrice && (
+                        <span className={style.shopCartItemPriceNew}>
+                          ${product.salePrice}
+                        </span>
+                      )}
+                      <span
+                        className={
+                          product.salePrice
+                            ? style.shopCartItemPriceOld
+                            : style.shopCartItemPriceNew
+                        }
+                      >
+                        ${product.price}
+                      </span>{" "}
                     </div>
                   </div>
                 </div>
@@ -236,11 +233,10 @@ const Header = () => {
           </nav>
         </div>
       </div>
-      
-        {currentData !== "" && (
-          <ProductModal isOpen={isOpen} onClose={onClose} product={currentData} />
-        )}
-      
+
+      {currentData !== "" && (
+        <ProductModal isOpen={isOpen} onClose={onClose} product={currentData} />
+      )}
     </header>
   );
 };

@@ -136,18 +136,24 @@
   background-color: #fff;
   border-top: 5px solid #F5BF1A;
   padding: 20px !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .juiceMenu {
   background-color: #fff;
   border-top: 5px solid #F5BF1A;
   padding: 10px !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .burgerMenu {
   background-color: #fff;
   border-top: 5px solid #F5BF1A;
   padding: 10px !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .cartWrapperMenu {
@@ -349,6 +355,8 @@
   border-top: 5px solid #F5BF1A;
   padding: 10px;
   width: 260px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .personMenu {

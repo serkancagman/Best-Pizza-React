@@ -126,7 +126,7 @@
   }
   .productModalInfo {
     padding: 10px;
-
+    width: 100%;
     .productModalTitleWrapper {
       border-bottom: 1px solid #e6e6e6;
       margin-bottom: 10px;
@@ -260,7 +260,17 @@
     }
   }
 }
-.loaderSpinner{
+.loaderSpinner {
   display: inline-block;
   width: 25px;
+}
+.productModalIngredients {
+  padding: 5px 0;
+
+  .modalIngredientsTitle {
+    font-size: 16px;
+    color: #000;
+    font-family: $mainFont;
+    margin-bottom: 5px;
+  }
 }

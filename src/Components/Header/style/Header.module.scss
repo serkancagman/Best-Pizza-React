@@ -90,16 +90,19 @@
   background-color: #fff;
   border-top: 5px solid $secondaryColor;
   padding: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .juiceMenu {
   background-color: #fff;
   border-top: 5px solid $secondaryColor;
   padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .burgerMenu {
   background-color: #fff;
   border-top: 5px solid $secondaryColor;
   padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .cartWrapperMenu {
   position: relative;
@@ -223,6 +226,7 @@
   border-top: 5px solid $secondaryColor;
   padding: 10px;
   width: 260px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .personMenu {
   background-color: #fff;

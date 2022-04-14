@@ -6,15 +6,14 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-
 import style from "./Style/ProductionBox.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 import { TiArrowBack } from "react-icons/ti";
-import {ShopCartContext} from 'Context/ShopCartContext'
+import { ShopCartContext } from "Context/ShopCartContext";
+import { Tag } from "antd";
 const ProductModal = ({ isOpen, onClose, product }) => {
-  const {addToCart} = React.useContext(ShopCartContext);
-
+  const { addToCart } = React.useContext(ShopCartContext);
 
   const [quantity, setQuantity] = React.useState(1);
 
@@ -28,6 +27,8 @@ const ProductModal = ({ isOpen, onClose, product }) => {
     setQuantity(1);
   }, [product]);
 
+  const splitIngredients = product.Ingredients[0].split(",");
+  console.log(splitIngredients);
   return (
     <Modal
       isOpen={isOpen}
@@ -71,10 +72,17 @@ const ProductModal = ({ isOpen, onClose, product }) => {
                   ${product.price}
                 </span>
               </div>
-              <p className={style.modalDescription}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, vitae.
-              </p>
+
+              {product.Ingredients !== " " && (
+                <div className={style.productModalIngredients}>
+                  <h5 className={style.modalIngredientsTitle}>Ingredients</h5>
+                  {splitIngredients.map((ingredient, index) => (
+                    <Tag key={index} className="me-2 my-1">
+                      {ingredient}
+                    </Tag>
+                  ))}
+                </div>
+              )}
               <div className={style.quantityOptions}>
                 <span className={style.quantityTitle}>Quantity</span>
                 <div className={style.quantityItems}>
@@ -106,7 +114,7 @@ const ProductModal = ({ isOpen, onClose, product }) => {
               </div>
               <div className={style.productModalButtons}>
                 <button
-                  onClick={() =>  addToCart(product, quantity)}
+                  onClick={() => addToCart(product, quantity)}
                   className={style.addToCartBtn}
                 >
                   <IoMdCart className={style.modalBtnIcon} />

@@ -10,7 +10,7 @@ import { getProducts } from "API/API";
 import { ProductContext } from "Context/ProductContext";
 import ProductionBox from "Components/ProductionBox/ProductionBox";
 const HomeProducts = () => {
-  const {setAllProducts} = React.useContext(ProductContext);
+  const { setAllProducts } = React.useContext(ProductContext);
   const [products, setProducts] = React.useState([]);
   const [isFade, setIsFade] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState("pizza");
@@ -25,7 +25,7 @@ const HomeProducts = () => {
 
   const handleFilter = (type) => {
     const useProduct = data.filter((item) => item.productType === type);
-    setSelectedCategory("dishes");
+    setSelectedCategory(type);
 
     setProducts(useProduct);
     setIsFade(true);

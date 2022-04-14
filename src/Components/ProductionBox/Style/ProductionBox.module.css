@@ -193,6 +193,7 @@
 
 .productModal .productModalInfo {
   padding: 10px;
+  width: 100%;
 }
 
 .productModal .productModalInfo .productModalTitleWrapper {
@@ -388,5 +389,16 @@
 .loaderSpinner {
   display: inline-block;
   width: 25px;
+}
+
+.productModalIngredients {
+  padding: 5px 0;
+}
+
+.productModalIngredients .modalIngredientsTitle {
+  font-size: 16px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=ProductionBox.module.css.map */
