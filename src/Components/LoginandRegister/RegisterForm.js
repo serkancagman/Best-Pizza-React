@@ -15,7 +15,7 @@ const RegisterForm = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const showToast = (message, type) => {
+  const showToast = (message, type, path = "/") => {
     if (type === "success") {
       toast({
         title: "Register Successful",
@@ -24,6 +24,7 @@ const RegisterForm = () => {
         duration: 2000,
         position: "top",
       });
+      navigate(path);
     } else {
       toast({
         title: "Register Failed",
@@ -61,9 +62,6 @@ const RegisterForm = () => {
           });
           userData(response);
           showToast(response.user.name, "success");
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
         } catch (error) {
           showToast(error.response.data.message, "failed");
         }

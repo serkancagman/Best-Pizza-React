@@ -204,22 +204,106 @@
   font-size: 30px;
   color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 
+  transition: all 0.3s ease-in-out;
   &:hover {
     color: $secondaryColor !important;
     transform: scaleX(-1);
   }
 }
-
+.notLoginMenu{
+  width: 200px;
+}
+.searchIcon{
+  font-size: 20px;
+  color: $secondaryColor;
+}
+.searchMenu{
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px;
+  width: 260px;
+}
 .personMenu {
   background-color: #fff;
   border-top: 5px solid $secondaryColor;
-  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.personDefault {
+  padding: 10px;
+}
+.profileWrapper {
+  padding: 16px;
+  background-color: #a5311f21;
+  width: 260px;
+  .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .profileImg {
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 7px;
+  }
+  .personIcon {
+    font-size: 30px;
+    color: #a5311f21;
+  }
+  .profileName {
+    font-size: 17px;
+    color: #000;
+    font-family: $mainFont;
+  }
+  .profileMail {
+    font-size: 15px;
+    color: #333;
+    letter-spacing: 1px;
+    font-family: $mainFont;
+  }
+}
+.profileMenu {
+  padding-top: 10px;
+
+  .profileMenuItem {
+    list-style: none;
+    &:nth-child(2) {
+      margin-bottom: 10px;
+    }
+    .logoutLink {
+      border-top: 2px solid #efefef;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 15px;
+      color: #000;
+      display: block;
+      font-family: $mainFont;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+    .logoutIcon {
+      margin-right: 2px;
+      color: $mainColor;
+    }
+    .profileLink {
+      font-family: $mainFont;
+      font-size: 15px;
+      display: block;
+      padding: 10px;
+      color: #000;
+      &:hover {
+        background-color: #a5311f21;
+      }
+    }
+  }
 }
 .rightIconWrapper {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
+  cursor: pointer;
   position: relative;
   .cartCount {
     position: absolute;
@@ -236,4 +320,5 @@
 .searchInput {
   border: none;
   outline: none;
+  width: 90%;
 }

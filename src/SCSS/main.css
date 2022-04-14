@@ -144,4 +144,8 @@
 svg {
   display: inline-block !important;
 }
+
+.userMessageBox {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=main.css.map */

@@ -3,43 +3,87 @@ import style from "./style/Header.module.css";
 import logo from "Assets/Logo/logo.png";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { Menu, Dropdown, Badge,Alert } from "antd";
+import { Menu, Dropdown, Badge, Alert } from "antd";
 import { BsPersonFill } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { IoMdCart } from "react-icons/io";
+import { IoMdCart, IoMdClose } from "react-icons/io";
+import { FiLogOut } from "react-icons/fi";
 import ShopCart from "Components/ShopCart/ShopCart";
 import { ShopCartContext } from "Context/ShopCartContext";
+import { UserContext } from "Context/UserContext";
 const Header = () => {
-  const { cart} = React.useContext(ShopCartContext);
-  const [visible, setVisible] = React.useState(false);
+  const { cart } = React.useContext(ShopCartContext);
+  const { user } = React.useContext(UserContext);
+  const [cartvisible, setCartVisible] = React.useState(false);
+  const [searchVisible, setSearchVisible] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
-  const personItem = (
-    <Menu className={style.personMenu}>
-      <ul className={style.pizzaMenuList}>
-        <li className={style.pizzaMenuItem}>
-          <Link className={style.pizzaMenuLink} to="/">
-            Sign in
-          </Link>
-        </li>
-        <li className={style.pizzaMenuItem}>
-          <Link className={style.pizzaMenuLink} to="/">
-            Join us!
-          </Link>
-        </li>
-      </ul>
-    </Menu>
-  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   const handleVisibleChange = (flag) => {
-    setVisible(flag);
+    setCartVisible(flag);
   };
+  const handleVisibleSearch = (flag) => {
+    setSearchVisible(flag);
+  };
+
+  const personItem = (
+    <div className={style.personMenu}>
+      {user ? (
+        <>
+          <div className={style.profileWrapper}>
+            <div className={style.profile}>
+              <div className={style.profileImg}>
+                <BsPersonFill className={style.personIcon} />
+              </div>
+              <div className="d-flex justify-content-center flex-column">
+                <h5 className={style.profileName}>
+                  {user.name + " " + user.lastname}
+                </h5>
+                <h5 className={style.profileMail}>{user.email}</h5>
+              </div>
+            </div>
+          </div>
+          <ul className={style.profileMenu}>
+            <li className={style.profileMenuItem}>
+              <Link className={style.profileLink} to="/account">
+                My Account
+              </Link>
+            </li>
+            <li className={style.profileMenuItem}>
+              <Link className={style.profileLink} to="/orders">
+                Orders
+              </Link>
+            </li>
+            <li className={style.profileMenuItem}>
+              <span className={style.logoutLink}>
+                <FiLogOut className={style.logoutIcon} /> Logout
+              </span>
+            </li>
+          </ul>
+        </>
+      ) : (
+        <ul className={`${style.profileMenu} ${style.notLoginMenu}`}>
+          <li className={style.profileMenuItem}>
+            <Link className={style.profileLink} to="/login">
+              Sign in
+            </Link>
+          </li>
+          <li className={style.profileMenuItem}>
+            <Link className={style.profileLink} to="/register">
+              Join Us
+            </Link>
+          </li>
+        </ul>
+      )}
+    </div>
+  );
+
   const searchItem = (
-    <Menu className={style.personMenu}>
-      <form onSubmit={handleSubmit}>
+    <div className={style.searchMenu}>
+      <form className="w-100" onSubmit={handleSubmit}>
         <input
           value={searchValue}
           className={style.searchInput}
@@ -47,20 +91,26 @@ const Header = () => {
           type="text"
           placeholder="Search our foods"
         />
+        <button className={style.searchButton}> <BiSearchAlt2 className={style.searchIcon} /></button>
       </form>
-    </Menu>
+    </div>
   );
 
   const cartItem = (
     <div className={style.cartWrapperMenu}>
-    <div className={`${style.cartMenu} ${cart.length > 1 && style.inProduct}`}>
-      {cart.length > 0 ?  <ShopCart key="1" /> : <Alert
-      message="Your cart is empty"
-      description="Please add some items to your cart"
-      type="warning"
-    />}
-     
-    </div>
+      <div
+        className={`${style.cartMenu} ${cart.length >= 1 && style.inProduct}`}
+      >
+        {cart.length > 0 ? (
+          <ShopCart key="1" />
+        ) : (
+          <Alert
+            message="Your cart is empty"
+            description="Please add some items to your cart"
+            type="warning"
+          />
+        )}
+      </div>
     </div>
   );
 
@@ -78,9 +128,15 @@ const Header = () => {
                 placement="bottomRight"
                 overlay={searchItem}
                 trigger={["click"]}
+                onVisibleChange={handleVisibleSearch}
+                visible={searchVisible}
               >
                 <span className={style.rightIconWrapper}>
-                  <BiSearchAlt2 className={style.rightIcon} />
+                  {searchVisible ? (
+                    <IoMdClose className={style.rightIcon} />
+                  ) : (
+                    <BiSearchAlt2 className={style.rightIcon} />
+                  )}
                 </span>
               </Dropdown>
               <Dropdown
@@ -94,9 +150,10 @@ const Header = () => {
               </Dropdown>
               <Dropdown
                 onVisibleChange={handleVisibleChange}
-                visible={visible}
+                visible={cartvisible}
                 placement="bottomRight"
                 overlay={cartItem}
+                trigger={["click"]}
               >
                 <span className={style.rightIconWrapper}>
                   <IoMdCart className={style.rightIcon} />

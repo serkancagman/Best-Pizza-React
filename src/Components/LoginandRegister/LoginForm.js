@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Style/LoginandRegister.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrFacebook, GrGooglePlus } from "react-icons/gr";
 import { useFormik } from "formik";
 import { validationSchema } from "./LoginValidation";
@@ -11,7 +11,8 @@ import { useToast } from "@chakra-ui/react";
 const LoginForm = () => {
   const toast = useToast();
   const navigate = useNavigate();
-  const showToast = (message, type) => {
+
+  const showToast = (message, type, path = "/") => {
     if (type === "success") {
       toast({
         title: "Register Successful",
@@ -20,6 +21,7 @@ const LoginForm = () => {
         duration: 2000,
         position: "top",
       });
+      navigate(path);
     } else {
       toast({
         title: "Register Failed",
@@ -44,9 +46,6 @@ const LoginForm = () => {
           console.log(response);
           showToast(response.user.name, "success");
           userData(response);
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
         } catch (error) {
           showToast(error.response.data.message, "failed");
         }
