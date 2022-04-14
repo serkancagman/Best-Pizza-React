@@ -3,6 +3,6 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "Context/UserContext";
 
 export const ProtectedLoginRegisterRoute = ({ children }) => {
-  const { user } = React.useContext(UserContext);
-  return user ? <Navigate to="/" /> : children;
+  const isLoggeIn = localStorage.getItem("access-token");
+  return isLoggeIn ? <Navigate to="/" /> : children;
 };

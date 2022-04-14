@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import { Menu, Dropdown, Badge, Alert } from "antd";
 import { BsPersonFill } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
+import { getMe } from "API/API";
 import { IoMdCart, IoMdClose } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import ShopCart from "Components/ShopCart/ShopCart";
@@ -18,8 +19,19 @@ const Header = () => {
   const [searchVisible, setSearchVisible] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
 
+  const getUserInfo = async() => {
+    try{
+        const response = await getMe();
+        console.log(response);
+    }
+    catch(err){
+        console.log(err);
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    getUserInfo();
   };
 
   const handleVisibleChange = (flag) => {
