@@ -321,4 +321,75 @@
   border: none;
   outline: none;
   width: 90%;
+  margin: 10px 0;
+}
+
+// SEARCH RESULTS
+
+.searchResult {
+  overflow: auto;
+  max-height: 450px;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.5em;
+    height: 2em;
+    z-index: 99;
+    position: relative;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(187, 187, 187);
+    border-radius: 10px;
+    size: 1px;
+  }
+
+  .searchResultList {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .searchResultLink {
+    @include flexrowcenter;
+    cursor: pointer;
+
+    .searchResultImg {
+      margin-right: 5px;
+      width: 80px;
+      .ResultImg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .searchResultItem {
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  .searchResultInfo {
+    display: flex;
+    min-width: 150px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5px;
+  }
+}
+.shopCartItemPriceNew {
+  display: inline-block;
+  font-size: 15px;
+  color: $mainColor;
+  margin-right: 10px;
+  font-family: $mainFont;
+}
+.shopCartItemPriceOld {
+  font-family: $mainFont;
+  color: #666;
+  text-decoration: line-through;
+  font-size: 15px;
+}
+.searchResultName {
+  font-size: 15px;
+  color: #000;
+  font-family: $mainFont;
 }

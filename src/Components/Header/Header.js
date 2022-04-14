@@ -12,13 +12,38 @@ import { FiLogOut } from "react-icons/fi";
 import ShopCart from "Components/ShopCart/ShopCart";
 import { ShopCartContext } from "Context/ShopCartContext";
 import { UserContext } from "Context/UserContext";
+import { ProductContext } from "Context/ProductContext";
+import { useDisclosure } from "@chakra-ui/react";
+import ProductModal from "Components/ProductionBox/ProductModal";
 const Header = () => {
-  const { cart} = React.useContext(ShopCartContext);
-  const { user,handleLogout } = React.useContext(UserContext);
+  const { cart } = React.useContext(ShopCartContext);
+  const { user, handleLogout } = React.useContext(UserContext);
+  const { searchProduct } = React.useContext(ProductContext);
   const [cartvisible, setCartVisible] = React.useState(false);
   const [searchVisible, setSearchVisible] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
+  const [searchResult, setSearchResult] = React.useState([]);
+  const [currentData, setCurrentData] = React.useState("");
+ 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  React.useEffect(() => {
+    if (searchValue.length > 1) {
+      setSearchResult(searchProduct(searchValue));
+    } else {
+      setSearchResult([]);
+    }
+  }, [searchValue]);
 
+  React.useEffect(() => {
+    if(!searchVisible){
+      setSearchValue("");
+    }
+  },[searchVisible])
+
+  const handleModal = (product) => {
+    onOpen();
+    setCurrentData(product);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -97,6 +122,49 @@ const Header = () => {
           <BiSearchAlt2 className={style.searchIcon} />
         </button>
       </form>
+      <div className={style.searchResult}>
+        {searchResult.length > 0 && (
+          <ul className={style.searchResultList}>
+            {searchResult.map((product) => (
+              <li className={style.searchResultItem} key={product._id}>
+                <div
+                  className={style.searchResultLink}
+                  onClick={() => handleModal(product)}
+                >
+                  <div className={style.searchResultImg}>
+                    <img
+                      src={product.photos[0]}
+                      alt={product.title}
+                      className={style.ResultImg}
+                    />
+                  </div>
+                  <div className={style.searchResultInfo}>
+                    <h5 className={style.searchResultName}>
+                      {product.title}
+                    </h5>
+                    <div className={style.searchResultPrice}>
+                    {product.salePrice && (
+                      <span className={style.shopCartItemPriceNew}>
+                        ${product.salePrice}
+                      </span>
+                    )}
+                    <span
+                      className={
+                        product.salePrice
+                          ? style.shopCartItemPriceOld
+                          : style.shopCartItemPriceNew
+                      }
+                    >
+                      ${product.price}
+                    </span>{" "}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 
@@ -168,6 +236,11 @@ const Header = () => {
           </nav>
         </div>
       </div>
+      
+        {currentData !== "" && (
+          <ProductModal isOpen={isOpen} onClose={onClose} product={currentData} />
+        )}
+      
     </header>
   );
 };

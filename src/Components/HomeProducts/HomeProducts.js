@@ -7,8 +7,10 @@ import dishesIcon from "Assets/dishesIcon.png";
 import juicyIcon from "Assets/drinkIcon.png";
 import { useQuery } from "react-query";
 import { getProducts } from "API/API";
+import { ProductContext } from "Context/ProductContext";
 import ProductionBox from "Components/ProductionBox/ProductionBox";
 const HomeProducts = () => {
+  const {setAllProducts} = React.useContext(ProductContext);
   const [products, setProducts] = React.useState([]);
   const [isFade, setIsFade] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState("pizza");
@@ -18,23 +20,13 @@ const HomeProducts = () => {
     if (data) {
       setProducts(data.filter((item) => item.productType === "pizza"));
     }
+    setAllProducts(data);
   }, [data]);
 
   const handleFilter = (type) => {
-    let useProduct;
-    if (type === "pizza") {
-      useProduct = data.filter((item) => item.productType === "pizza");
-      setSelectedCategory("pizza");
-    } else if (type === "fastfood") {
-      useProduct = data.filter((item) => item.productType === "fastfood");
-      setSelectedCategory("fastfood");
-    } else if (type === "drinks") {
-      useProduct = data.filter((item) => item.productType === "drinks");
-      setSelectedCategory("drinks");
-    } else {
-      useProduct = data.filter((item) => item.productType === "dishes");
-      setSelectedCategory("dishes");
-    }
+    const useProduct = data.filter((item) => item.productType === type);
+    setSelectedCategory("dishes");
+
     setProducts(useProduct);
     setIsFade(true);
 
