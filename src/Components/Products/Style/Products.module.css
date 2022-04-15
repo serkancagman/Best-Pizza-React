@@ -187,4 +187,126 @@
   border: 1px solid #efefef;
   color: #333;
 }
+
+.filterWrapperMain {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.filterWrapper {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.filterWrapper .filterTitle {
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+}
+
+.filterWrapper .filterListItem {
+  list-style: none;
+}
+
+.filterList {
+  padding: 5px 0;
+}
+
+.filterText {
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+  color: #888;
+}
+
+.filterPriceWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.filterPriceWrapper .filterPrice {
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  color: #888;
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 40px;
+}
+
+.filterPriceWrapper .filterPriceRight {
+  margin-left: 10px;
+  margin-right: 0 !important;
+}
+
+.newProductWrapper {
+  margin-bottom: 20px;
+}
+
+.newProductsList {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.newProductsList .newProductsListItem {
+  padding: 5px;
+  list-style: none;
+  width: 100%;
+}
+
+.newProductsList .newProductsListItem .newProductLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newProductsList .newProductsListItem .newProductLink .newProductsImg {
+  width: 75px;
+  height: auto;
+  margin-right: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.newProductsList .newProductsListItem .newProductLink .newProductsInfo {
+  min-width: 150px;
+}
+
+.newProductsList .newProductsListItem .newProductLink .newProductsInfo .newProductsTitle {
+  font-size: 17px;
+  color: #777;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+}
+
+.newProductsList .newProductsListItem .newProductLink .newProductsInfo .newProductsPrice {
+  font-size: 17px;
+  color: #A5301F;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+}
 /*# sourceMappingURL=Products.module.css.map */

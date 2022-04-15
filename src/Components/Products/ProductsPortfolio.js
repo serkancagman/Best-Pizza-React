@@ -1,20 +1,31 @@
 import React from "react";
-import { Breadcrumb, Select } from "antd";
-import { AiOutlineHome } from "react-icons/ai";
+import { Breadcrumb, Checkbox, Select, Slider } from "antd";
 import { CgMenuGridR } from "react-icons/cg";
 import { FaList } from "react-icons/fa";
 import style from "./Style/Products.module.css";
 import ProductionBox from "Components/ProductionBox/ProductionBox";
 import { Link } from "react-router-dom";
+import adsImg from "Assets/advertising.jpg";
+import { ProductContext } from "Context/ProductContext";
 const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
+  const { allProducts } = React.useContext(ProductContext);
   const [gridStyle, setGridStyle] = React.useState("grid");
   const [sorted, setSorted] = React.useState([]);
-
+  const [sliderValue, setSliderValue] = React.useState(0);
+  const [newProducts, setNewProducts] = React.useState([]);
   const { Option } = Select;
 
   React.useEffect(() => {
     setSorted(products);
   }, [products]);
+
+  React.useEffect(() => {
+    const getNewProducts = allProducts.filter(
+      (item) => item.productIsNew === "true"
+    );
+    let randomize = getNewProducts.sort(() => Math.random() - 0.5).slice(0, 3);
+    setNewProducts(randomize);
+  }, [allProducts]);
 
   const sortProducts = (sortBy) => {
     let sortedProducts = [...products];
@@ -51,6 +62,16 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
     setSorted(sortedProducts);
   };
 
+  const sliderChange = (value) => {
+    setSliderValue(value);
+    let filteredProducts = [...products];
+    filteredProducts = filteredProducts.filter((product) => {
+      let salePrice = product.salePrice ? product.salePrice : product.price;
+      return salePrice <= value[1] && salePrice >= value[0];
+    });
+    setSorted(filteredProducts);
+  };
+
   return (
     <section className={style.productsPortfolio}>
       <div className={style.breadWrapper}>
@@ -67,7 +88,110 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
       </div>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-12 col-lg-3"></div>
+          <div className="col-md-12 col-lg-3">
+            <div className={style.filterWrapperMain}>
+              <div className={style.filterWrapper}>
+                <h5 className={style.filterTitle}>Filter By</h5>
+                <div className={style.filter}>
+                  <p className={style.filterText}>Ingredients</p>
+                  <ul className={style.filterList}>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Tomato</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Cheese</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Chicken</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Beef</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Mushroom</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Onion</span>{" "}
+                      </Checkbox>
+                    </li>
+                    <li className={style.filterListItem}>
+                      <Checkbox>
+                        {" "}
+                        <span className={style.filterItem}>Pineapple</span>{" "}
+                      </Checkbox>
+                    </li>
+                  </ul>
+                  <p className={style.filterText}>Price</p>
+                  <div className={style.filterPriceWrapper}>
+                    <span className={style.filterPrice}>
+                      ${sliderValue[0] || 0}
+                    </span>
+                    <Slider
+                      range
+                      defaultValue={[0, 100]}
+                      className="w-100"
+                      onChange={(value) => sliderChange(value)}
+                    />
+                    <span
+                      className={`${style.filterPrice} ${style.filterPriceRight}`}
+                    >
+                      ${sliderValue[1] || 100}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className={style.filterWrapper}>
+                <img src={adsImg} alt="banner" className="img-fluid" />
+              </div>
+              <div
+                className={`${style.filterWrapper} ${style.newProductWrapper}`}
+              >
+                <h5 className={style.filterTitle}>New Products</h5>
+                <ul className={style.newProductsList}>
+                  {newProducts.map((product) => (
+                    <li className={style.newProductsListItem} key={product._id}>
+                      <Link
+                        className={style.newProductLink}
+                        to={`/food/${product._id}`}
+                      >
+                        <img
+                          src={product.photos[0]}
+                          alt={product.title}
+                          className={style.newProductsImg}
+                        />
+                        <div className={style.newProductsInfo}>
+                          <h6 className={style.newProductsTitle}>
+                            {product.title}
+                          </h6>
+
+                          <span className={style.newProductsPrice}>
+                            ${product.price}
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
           <div className="col-md-12 col-lg-9">
             <div className={style.productBanner}>
               <img src={banner} className={style.bannerImage} alt="product" />
@@ -75,8 +199,8 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
             <div className={style.productDescription}>
               <h2 className={style.productTitle}>{title}</h2>
               <p className={style.productText}>
-                Alışık ipsum dolor sit amet consectetur adipisicing elit.
-                Facilis nihil a rem ex. Fugit minima necessitatibus distinctio
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                nihil a rem ex. Fugit minima necessitatibus distinctio
                 cupiditate ipsa nesciunt consequatur quam possimus soluta autem.
               </p>
             </div>
@@ -106,7 +230,7 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
                 </div>
                 <div className={style.productQuantity}>
                   <span className={style.productQuantityText}>
-                    {products.length} items
+                    {sorted.length} items
                   </span>
                 </div>
               </div>
