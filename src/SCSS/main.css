@@ -148,4 +148,8 @@ svg {
 .userMessageBox {
   margin-top: 20px;
 }
+
+.ant-breadcrumb-separator {
+  font-size: 20px;
+}
 /*# sourceMappingURL=main.css.map */

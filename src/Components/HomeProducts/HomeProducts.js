@@ -5,22 +5,19 @@ import pizzaIcon from "Assets/pizzaIcon.png";
 import burgerIcon from "Assets/burgerIcon.png";
 import dishesIcon from "Assets/dishesIcon.png";
 import juicyIcon from "Assets/drinkIcon.png";
+import ProductionBox from "Components/ProductionBox/ProductionBox";
 import { useQuery } from "react-query";
 import { getProducts } from "API/API";
-import { ProductContext } from "Context/ProductContext";
-import ProductionBox from "Components/ProductionBox/ProductionBox";
 const HomeProducts = () => {
-  const { setAllProducts } = React.useContext(ProductContext);
   const [products, setProducts] = React.useState([]);
   const [isFade, setIsFade] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState("pizza");
-  const { data, error, isLoading } = useQuery("homeProducts", getProducts);
+  const { data, error, isLoading } = useQuery(["homeProducts"], getProducts);
 
   React.useEffect(() => {
     if (data) {
       setProducts(data.filter((item) => item.productType === "pizza"));
     }
-    setAllProducts(data);
   }, [data]);
 
   const handleFilter = (type) => {

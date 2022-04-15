@@ -1,0 +1,120 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.productsPortfolio {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+
+  .breadWrapper {
+    background-color: #e5e5e5;
+    @include flexrowcenter;
+    padding: 25px 0;
+    margin-bottom: 30px;
+
+    .crumbLink {
+      font-size: 20px;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+    .crumbTitle {
+      font-family: $mainFont;
+      font-size: 20px;
+    }
+  }
+}
+
+.productBanner {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.productDescription {
+  margin-bottom: 20px;
+
+  .productTitle {
+    font-size: 20px;
+    font-family: $mainFont;
+    margin-bottom: 5px;
+  }
+  .productText {
+    color: #999;
+  }
+}
+.bannerImage {
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover contain;
+}
+
+.productSortBar {
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+  margin: 20px 0;
+  @include flexrowbetween;
+
+  .productSortBarLeft {
+    @include flexrowcenter;
+
+    .productSortListType {
+      @include flexrowcenter;
+      margin-right: 10px;
+
+      .productGridOption {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 5px;
+
+        .optionIcon {
+          font-size: 31px;
+          color: #999;
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+      .productListOption {
+        cursor: pointer;
+        display: inline-block;
+     
+
+        .optionIcon {
+          font-size: 25px;
+          color: #999;
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+.activeGrid {
+  color: #333 !important;
+}
+.productSortBarRight{
+    @include flexrowcenter;
+
+    .productSortText{
+        display: inline-block;
+        margin-right: 10px;
+        color: #888;
+        font-size: 18px;
+        font-family: $mainFont;
+    }
+}
+.productQuantity{
+    margin: 0 10px;
+
+}
+
+.productQuantityText{
+    font-size: 15px;
+    font-family: $mainFont;
+}
+.sortInput{
+    border: 1px solid #efefef;
+    color: #333;
+
+
+}

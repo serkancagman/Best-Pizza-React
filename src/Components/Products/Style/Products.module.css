@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.productsPortfolio {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.productsPortfolio .breadWrapper {
+  background-color: #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0;
+  margin-bottom: 30px;
+}
+
+.productsPortfolio .breadWrapper .crumbLink {
+  font-size: 20px;
+}
+
+.productsPortfolio .breadWrapper .crumbLink:hover {
+  color: #A5301F;
+}
+
+.productsPortfolio .breadWrapper .crumbTitle {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.productBanner {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.productDescription {
+  margin-bottom: 20px;
+}
+
+.productDescription .productTitle {
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+}
+
+.productDescription .productText {
+  color: #999;
+}
+
+.bannerImage {
+  max-width: 100%;
+  height: 300px;
+  -o-object-fit: cover contain;
+     object-fit: cover contain;
+}
+
+.productSortBar {
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productSortBar .productSortBarLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productSortBar .productSortBarLeft .productSortListType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productGridOption {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productGridOption .optionIcon {
+  font-size: 31px;
+  color: #999;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productGridOption .optionIcon:hover {
+  color: #A5301F;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productListOption {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productListOption .optionIcon {
+  font-size: 25px;
+  color: #999;
+}
+
+.productSortBar .productSortBarLeft .productSortListType .productListOption .optionIcon:hover {
+  color: #A5301F;
+}
+
+.activeGrid {
+  color: #333 !important;
+}
+
+.productSortBarRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productSortBarRight .productSortText {
+  display: inline-block;
+  margin-right: 10px;
+  color: #888;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+}
+
+.productQuantity {
+  margin: 0 10px;
+}
+
+.productQuantityText {
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+}
+
+.sortInput {
+  border: 1px solid #efefef;
+  color: #333;
+}
+/*# sourceMappingURL=Products.module.css.map */

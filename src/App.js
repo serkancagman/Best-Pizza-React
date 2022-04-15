@@ -13,7 +13,7 @@ function App() {
   });
   return (
     <>
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider contextSharing={true} client={queryClient}>
         <MainRouter />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

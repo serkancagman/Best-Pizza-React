@@ -1,4 +1,4 @@
-import { Home, Login, Register } from "Components/Pages";
+import { Home, Login, Register,Pizzas } from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ProtectedLoginRegisterRoute } from "./ProtectedRoute";
@@ -22,6 +22,7 @@ const MainRouter = () => {
           </ProtectedLoginRegisterRoute>
         }
       />
+      <Route path="/pizza" element={<Pizzas />} />
     </Routes>
   );
 };
