@@ -34,19 +34,19 @@ const ProductionBox = ({ data }) => {
                     <div className={style.productUpperInfo}>New Product</div>
                   )}
                   <div className={style.productOptions}>
-                    <div
+                    <button
                       onClick={()=> addToCart(item,1)}
                       className={style.productOption}
                     >
                       
                       <IoMdCart className={style.productOptionIcon} />
-                    </div>
-                    <div
+                    </button>
+                    <button
                       onClick={() => handleModal(item)}
                       className={style.productOption}
                     >
                       <AiFillEye className={style.productOptionIcon} />
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>

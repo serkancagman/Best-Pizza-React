@@ -6,6 +6,7 @@ import style from "./Style/Products.module.css";
 import ProductionBox from "Components/ProductionBox/ProductionBox";
 import { Link } from "react-router-dom";
 import adsImg from "Assets/advertising.jpg";
+import ProductionList from "Components/ProductionBox/ProductionList";
 import { ProductContext } from "Context/ProductContext";
 const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
   const { allProducts } = React.useContext(ProductContext);
@@ -251,7 +252,12 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
             </div>
 
             <div className="row">
-              {!isLoading ? <ProductionBox data={sorted} /> : ""}
+              {
+                gridStyle === "grid" ? (!isLoading && <ProductionBox data={sorted} />) : (
+                  <ProductionList product={sorted} />
+                )
+              }
+      
             </div>
             <div className={style.productSortBar}>
               <span className={style.productQuantityText}>

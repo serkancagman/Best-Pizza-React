@@ -75,7 +75,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.productItem .productOptionView .productOptions {
+.productOptions {
   margin-top: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,7 +92,7 @@
           align-items: center;
 }
 
-.productItem .productOptionView .productOptions .productOption {
+.productOption {
   margin: 0 10px;
   cursor: pointer;
   text-align: center;
@@ -101,7 +101,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.productItem .productOptionView .productOptions .productOption .productOptionIcon {
+.productOption .productOptionIcon {
   font-size: 35px;
   color: #fff;
   background-color: #A5301F;
@@ -111,7 +111,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.productItem .productOptionView .productOptions .productOption .productOptionIcon:hover {
+.productOption .productOptionIcon:hover {
   background-color: #F5BF1A !important;
   color: #000 !important;
 }
@@ -400,5 +400,87 @@
   color: #000;
   font-family: "Oswald", sans-serif;
   margin-bottom: 5px;
+}
+
+.listProductWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 7px double #e6e6e6;
+}
+
+.listProductWrapper .listImage {
+  margin: 15px;
+}
+
+.listProductWrapper .listImage .listImg {
+  width: 250px;
+  height: auto;
+}
+
+.listProductWrapper .listProductionInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.listProductWrapper .listItemTitle {
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: #333;
+}
+
+.listIngredients {
+  margin: 15px 0;
+}
+
+.listIngredientsTitle {
+  font-size: 16px;
+  color: #666;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 10px;
+}
+
+.listPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listPrice .listCurrentPrice {
+  margin-right: 10px;
+}
+
+.listPrice .listCurrentPrice {
+  font-size: 18px;
+  color: #A5301F;
+  font-family: "Oswald", sans-serif;
+}
+
+.listPrice .listPriceTitle {
+  font-size: 18px;
+  color: #666;
+  font-family: "Oswald", sans-serif;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=ProductionBox.module.css.map */
