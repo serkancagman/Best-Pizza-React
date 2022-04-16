@@ -1,4 +1,11 @@
-import { Home, Login, Register,Pizzas } from "Components/Pages";
+import {
+  Home,
+  Login,
+  Register,
+  Pizza,
+  Fastfood,
+  Dishes,
+} from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ProtectedLoginRegisterRoute } from "./ProtectedRoute";
@@ -22,7 +29,9 @@ const MainRouter = () => {
           </ProtectedLoginRegisterRoute>
         }
       />
-      <Route path="/pizza" element={<Pizzas />} />
+      <Route path="/pizza" element={<Pizza />} />
+      <Route path="/fastfood" element={<Fastfood />} />
+      <Route path="/dishes" element={<Dishes />} />
     </Routes>
   );
 };
