@@ -8,15 +8,15 @@ import {
 } from "Components";
 import { ProductContext } from "Context/ProductContext";
 import bannerImage from "Assets/sideboard.jpg";
-const Dishes = () => {
-  const { dishes, setDishes, isLoading } = React.useContext(ProductContext);
+const Drinks = () => {
+  const { drinks, setDrinks, isLoading } = React.useContext(ProductContext);
   return (
     <>
       <Header />
       <ProductsPortfolio
-        products={dishes}
+        products={drinks}
         isLoading={isLoading}
-        setProducts={setDishes}
+        setProducts={setDrinks}
         title="Pizza"
         banner={bannerImage}
       />
@@ -28,4 +28,4 @@ const Dishes = () => {
   );
 };
 
-export default Dishes;
+export default Drinks;

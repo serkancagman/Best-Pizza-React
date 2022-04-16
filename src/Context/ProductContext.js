@@ -16,7 +16,7 @@ export const ProductProvider = ({ children }) => {
         const response = await getProducts();
         setAllProducts(response);
         setPizzas(response.filter((item) => item.productType === "pizza"));
-        setDrinks(response.filter((item) => item.productType === "drink"));
+        setDrinks(response.filter((item) => item.productType === "drinks"));
         setFastFoods(
           response.filter((item) => item.productType === "fastfood")
         );

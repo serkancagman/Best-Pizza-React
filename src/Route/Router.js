@@ -5,6 +5,7 @@ import {
   Pizza,
   Fastfood,
   Dishes,
+  Drinks
 } from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
@@ -32,6 +33,7 @@ const MainRouter = () => {
       <Route path="/pizza" element={<Pizza />} />
       <Route path="/fastfood" element={<Fastfood />} />
       <Route path="/dishes" element={<Dishes />} />
+      <Route path="/drinks" element={<Drinks />} />
     </Routes>
   );
 };
