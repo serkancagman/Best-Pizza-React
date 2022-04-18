@@ -31,7 +31,6 @@
   margin: 0 20px;
   font-size: 30px;
   transition: all 0.3s ease-in-out;
-  color: #888;
   color: $secondaryColor;
 }
 .title {
@@ -45,4 +44,25 @@
   border-radius: 25px;
   padding: 10px 20px;
   margin: 0 20px;
+}
+
+@media screen and (max-width: 539.99px) {
+  .title {
+    font-size: 20px !important;
+  }
+  .icon {
+    font-size: 3rem !important;
+  }
+}
+@media screen and (max-width:279.99px) {
+
+  .title {
+    font-size: 15px !important;
+  }
+  .icon {
+    font-size: 3rem !important;
+  }
+  .promoCode{
+    margin: 0 2px !important; 
+  }
 }
