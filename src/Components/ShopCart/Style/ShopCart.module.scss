@@ -119,3 +119,19 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width:540px) {
+  .shopCartItemInfo{
+    min-width: 130px !important;
+  }
+  .shopCartItemImg{
+    width: 70px !important;
+  }
+  .shopCartItemTitle{
+    font-size: 16px !important;
+   
+  }
+  .quantityNumber{
+    width: 40px !important;
+  }
+}
