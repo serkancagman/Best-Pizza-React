@@ -12,11 +12,11 @@
 }
 
 .brandImgWrapper .brandImg {
-  opacity: .6;
+  opacity: 0.6;
   width: 150px;
   height: auto;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin: 0 auto;
 }
 /*# sourceMappingURL=Brands.module.css.map */

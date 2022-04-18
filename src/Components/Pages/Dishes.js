@@ -17,7 +17,7 @@ const Dishes = () => {
         products={dishes}
         isLoading={isLoading}
         setProducts={setDishes}
-        title="Pizza"
+        title="Dishes"
         banner={bannerImage}
       />
 

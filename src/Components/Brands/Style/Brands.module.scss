@@ -1,23 +1,21 @@
-
-
-.brandImgWrapper{
-    padding: 1rem 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    cursor: pointer;
-    margin: 1rem 0;
-     &:hover{
-        .brandImg{
-            opacity: 1 !important;
-        }
-     }
-
-    .brandImg{
-        opacity: .6;
-        width: 150px;
-        height: auto;
-        transition: all .3s ease-in-out;
-        margin: 0 auto;
+.brandImgWrapper {
+  padding: 1rem 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  margin: 1rem 0;
+  &:hover {
+    .brandImg {
+      opacity: 1 !important;
     }
+  }
+
+  .brandImg {
+    opacity: 0.6;
+    width: 150px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+    margin: 0 auto;
+  }
 }

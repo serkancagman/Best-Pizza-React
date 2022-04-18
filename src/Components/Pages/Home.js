@@ -12,7 +12,10 @@ import {
   Promo,
   Footer,
   HomeProducts,
+  DeliveryAnimation,
+  GoTop
 } from "Components";
+
 
 import React from "react";
 
@@ -32,6 +35,8 @@ const Home = () => {
       <Subscribe />
       <Promo />
       <Footer />
+      <DeliveryAnimation/>
+      <GoTop />
     </>
   );
 };

@@ -1,50 +1,48 @@
 import React from "react";
-import { Menu, Dropdown } from "antd";
+import {Dropdown } from "antd";
 import style from "./style/Header.module.css";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import burger from "Assets/Foods/burger.jpg";
-import burger2 from "Assets/Foods/burger2.jpg";
 import navImage from "Assets/menu-banner.jpg";
 import DropdownItem from "./DropdownItem";
 
 import "swiper/css";
 const Navbar = () => {
-  const { SubMenu } = Menu;
   const pizzaItem = [
     {
       title: "Margarita",
-      link: "margarita",
+      link: "/pizza",
     },
     {
       title: "Pepperoni",
-      link: "pepperoni",
+      link: "/pizza",
     },
     {
       title: "Vegetarian",
-      link: "vegetarian",
+      link: "/pizza",
     },
     {
       title: "Chicago Pizza",
-      link: "chicago",
+      link: "/pizza",
     },
     {
       title: "Sicilian Pizza",
-      link: "sicilian",
+      link: "/pizza",
     },
   ];
   const fastItem = [
     {
       title: "Margarita",
-      link: "margarita",
+      link: "/fastfood",
     },
     {
       title: "Pepperoni",
-      link: "pepperoni",
+      link: "/fastfood",
     },
     {
       title: "Vegetarian",
-      link: "vegetarian",
+      link: "/fastfood",
     },
   ];
 
@@ -66,7 +64,6 @@ const Navbar = () => {
             <div className={style.fastFoodItem}>
               <DropdownItem title="Pizza" items={fastItem} />
             </div>
-
             <DropdownItem title="Dishes" items={fastItem} />
           </div>
           <div className={style.fastFood}>

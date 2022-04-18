@@ -8,7 +8,7 @@ const DropdownItem = ({ title, items }) => {
       {items.map((item, index) => {
         return (
           <li key={index} className={style.pizzaMenuItem}>
-            <Link className={style.pizzaMenuLink} to={`/pizza/${item.link}`}>
+            <Link className={style.pizzaMenuLink} to={item.link}>
               {item.title}
             </Link>
           </li>

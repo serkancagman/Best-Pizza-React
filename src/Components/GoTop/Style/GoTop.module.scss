@@ -1,0 +1,27 @@
+@import "../../../SCSS/Variables.scss";
+
+
+.goTop{
+    background-color: $secondaryColor;
+   display: flex;
+   align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+    &:hover{
+        background-color: $mainColor;
+        color: #fff;
+
+    }
+}

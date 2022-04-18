@@ -1,0 +1,33 @@
+.deliveryAnimation {
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+  right: auto;
+  width: 150px;
+  z-index: 999;
+  transition: all 1s ease-in-out;
+}
+.deliveryImg {
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1);
+}
+.deliveryMan {
+  width: 100%;
+}
+.startAnimation {
+  animation: delivery-move;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+}
+@keyframes delivery-move {
+  0% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    transform: translateX(2000px);
+    -webkit-transform: translateX(2000px);
+  }
+}

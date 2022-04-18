@@ -14,3 +14,5 @@ export {default as HomeProducts} from './HomeProducts/HomeProducts';
 export {default as LoginForm} from './LoginandRegister/LoginForm';
 export {default as RegisterForm} from './LoginandRegister/RegisterForm';
 export {default as ProductsPortfolio} from './Products/ProductsPortfolio';
+export {default as DeliveryAnimation} from './DeliveryAnimation/DeliveryAnimation';
+export {default as GoTop} from './GoTop/GoTop';

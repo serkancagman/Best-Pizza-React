@@ -5,7 +5,7 @@ import {
   Pizza,
   Fastfood,
   Dishes,
-  Drinks
+  Drinks,
 } from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";

@@ -32,8 +32,8 @@ const LoginForm = () => {
       });
     }
   };
-  const { userData, user } = React.useContext(UserContext);
-  const { handleChange, handleSubmit, handleBlur, touched, values, errors } =
+  const { userData} = React.useContext(UserContext);
+  const { handleChange, handleSubmit, handleBlur, touched, errors } =
     useFormik({
       initialValues: {
         email: "",
@@ -44,7 +44,11 @@ const LoginForm = () => {
         try {
           const response = await userLogin(values);
           showToast(response.user.name, "success");
-          userData(response);
+
+        //  setTimeout(() => {
+        //   userData(response);
+        // }, 2000);
+        
         } catch (error) {
           showToast(error.response.data.message, "failed");
         }

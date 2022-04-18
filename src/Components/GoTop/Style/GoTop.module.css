@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.goTop {
+  background-color: #F5BF1A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  border-radius: 50%;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.goTop:hover {
+  background-color: #A5301F;
+  color: #fff;
+}
+/*# sourceMappingURL=GoTop.module.css.map */

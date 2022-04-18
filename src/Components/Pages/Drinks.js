@@ -17,7 +17,7 @@ const Drinks = () => {
         products={drinks}
         isLoading={isLoading}
         setProducts={setDrinks}
-        title="Pizza"
+        title="Drinks"
         banner={bannerImage}
       />
 

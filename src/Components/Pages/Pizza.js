@@ -14,7 +14,6 @@ const Pizza = () => {
         title="Pizza"
         banner={bannerImage}
       />
-      
       <Subscribe/>
       <Promo/>
       <Footer/>
