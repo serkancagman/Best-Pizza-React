@@ -21,7 +21,7 @@ const ProductionBox = ({ data }) => {
     <>
       {data.map((item, index) => {
         return (
-          <div key={index} className="col-md-3">
+          <div key={index} className="col-md-3 col-6 col-lg-3">
             <div className={style.productItem}>
               <div className={style.productImage}>
                 <img
