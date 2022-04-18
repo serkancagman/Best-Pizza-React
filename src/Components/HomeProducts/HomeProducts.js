@@ -40,6 +40,24 @@ const HomeProducts = () => {
             className="mySwiper categorySwipper"
             navigation={true}
             slidesPerView={4}
+            breakpoints={{
+              270: {
+                slidesPerView: 1,
+
+              },
+              340: {
+                slidesPerView: 2,
+
+              },
+              768: {
+                slidesPerView: 4,
+   
+              },
+              1024: {
+                slidesPerView: 4,
+       
+              },
+            }}
           >
             <SwiperSlide>
               <div

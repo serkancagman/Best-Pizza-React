@@ -1,6 +1,11 @@
 @import "../../../SCSS/Variables.scss";
 @import "../../../SCSS/Mixins.scss";
 
+.homeProducts {
+  width: 100%;
+  height: 100%;
+}
+
 .categoryWrapper {
   background-color: $secondaryColor;
 }
@@ -38,11 +43,11 @@
   color: #000;
   text-align: center;
 }
-.activeCat{
+.activeCat {
   color: $mainColor !important;
 }
-.catproductFade{
- animation: fadeIn 0.3s ease-in-out;
+.catproductFade {
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
