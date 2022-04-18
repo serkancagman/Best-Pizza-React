@@ -58,8 +58,40 @@
   font-family: "Oswald", sans-serif;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  background-color: $secondaryColor;
   &:hover {
-    background-color: $secondaryColor;
+    background-color: $mainColor;
     color: #fff !important;
+  }
+}
+
+@media screen and (max-width: 1023.99px) and (min-width: 540px) {
+  .slideItemTitle {
+    font-size: 4rem !important;
+  }
+  .slideIcon {
+    width: 80px !important;
+  }
+  .sloganTitle {
+    font-size: 3rem !important;
+  }
+}
+@media screen and (max-width: 539.99px) {
+  .slideItemTitle {
+    font-size: 1.3rem !important;
+  }
+  .slideIcon {
+    width: 40px !important;
+  }
+  .sloganTitle {
+    font-size: 1.2rem !important;
+  }
+  .sloganText {
+    font-size: 0.5rem !important;
+    padding: 2px !important;
+  }
+  .orderBtn {
+    padding: 5px !important;
+    font-size: 13px !important;
   }
 }
