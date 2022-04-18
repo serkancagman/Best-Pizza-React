@@ -18,7 +18,19 @@ const News = () => {
             <img src={headerIcon} alt="news" className={style.headerIcon} />
           </div>
         <Swiper className="mySwiper newsSwiper" navigation={true}
-        modules={[Navigation]} slidesPerView={3} >
+        modules={[Navigation]} slidesPerView={3}
+          breakpoints={{
+            270: {
+              slidesPerView: 1,
+            },
+            320: {
+              slidesPerView:1,
+            },
+            768: {
+              slidesPerView:3,
+            }
+          }}
+        >
           <SwiperSlide>
             <NewsBox
               title="Lorem ipsum dolor sit amet consectetur "

@@ -167,4 +167,15 @@ svg {
       -ms-flex-positive: unset !important;
           flex-grow: unset !important;
 }
+
+@media screen and (max-width: 1023.99px) {
+  .newsSwiper .swiper-button-prev {
+    margin-left: 20px !important;
+    opacity: 1 !important;
+  }
+  .newsSwiper .swiper-button-next {
+    margin-right: 20px !important;
+    opacity: 1 !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */

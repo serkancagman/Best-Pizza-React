@@ -127,4 +127,10 @@
   font-size: 17px;
   color: #000;
 }
+
+@media screen and (max-width: 500px) {
+  .newsTitle {
+    font-size: 1rem !important;
+  }
+}
 /*# sourceMappingURL=News.module.css.map */
