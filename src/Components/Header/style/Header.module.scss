@@ -32,13 +32,11 @@
 }
 
 .logo {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
 }
 
-.navbarNav {
-  @include flexrowcenter;
-  margin-bottom: 0 !important;
+
   .navItem {
     margin: 0 10px;
     list-style: none;
@@ -84,7 +82,7 @@
       z-index: 0;
     }
   }
-}
+
 
 .pizzaMenu {
   background-color: #fff;
@@ -396,4 +394,17 @@
   font-size: 15px;
   color: #000;
   font-family: $mainFont;
+}
+
+.navbarToggler{
+   margin-right: 10px;
+   font-size: 25px;
+   color: #fff;
+}
+// MOBILE MENU
+
+@media screen and (max-width:540px) {
+  .fastFoodSlide{
+    display: none;
+  }
 }

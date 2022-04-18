@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style/Header.module.css";
 import logo from "Assets/Logo/logo.png";
+import { ScreenWidthContext } from "Context/ScreenWidthContext";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { Dropdown, Badge, Alert } from "antd";
@@ -13,17 +14,20 @@ import { ShopCartContext } from "Context/ShopCartContext";
 import { UserContext } from "Context/UserContext";
 import { ProductContext } from "Context/ProductContext";
 import { useDisclosure } from "@chakra-ui/react";
+import { FaHamburger } from "react-icons/fa";
 import ProductModal from "Components/ProductionBox/ProductModal";
 const Header = () => {
   const { cart } = React.useContext(ShopCartContext);
   const { user, handleLogout } = React.useContext(UserContext);
   const { searchProduct } = React.useContext(ProductContext);
+  const { windowDimensions } = React.useContext(ScreenWidthContext);
   const [cartvisible, setCartVisible] = React.useState(false);
   const [searchVisible, setSearchVisible] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [searchResult, setSearchResult] = React.useState([]);
   const [currentData, setCurrentData] = React.useState("");
 
+  const [place, setPlace] = React.useState("bottomLeft");
   const { isOpen, onOpen, onClose } = useDisclosure();
   React.useEffect(() => {
     if (searchValue.length > 1) {
@@ -39,6 +43,13 @@ const Header = () => {
     }
   }, [searchVisible]);
 
+  React.useEffect(() => {
+    if (windowDimensions.width <= 768) {
+      setPlace("bottomCenter");
+    } else {
+      setPlace("bottomLeft");
+    }
+  }, [windowDimensions]);
   const handleModal = (product) => {
     onOpen();
     setCurrentData(product);
@@ -187,14 +198,30 @@ const Header = () => {
     <header className={style.mainHeader}>
       <div className={style.headerWrapper}>
         <div className="container">
-          <nav className="navbar justify-content-between">
-            <Link className="navbar-brand" to="/">
+          <nav className="navbar navbar-expand-lg justify-content-between">
+            <button
+              className={`navbar-toggler ${style.navbarToggler}`}
+              data-bs-target="#navbarContent"
+              data-bs-toggle="collapse"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              type="button"
+            >
+              <FaHamburger className={style.navbarIcon} />
+            </button>
+            <Link className="navbar-brand me-auto" to="/">
               <img className={style.logo} src={logo} alt="Main Logo" />
             </Link>
-            <Navbar />
-            <div className="d-flex justify-content-center align-items-center">
+            <div
+              id="navbarContent"
+              className="mx-auto navbar-collapse collapse"
+            >
+              <Navbar />
+            </div>
+            <div className="d-flex mx-auto justify-content-center align-items-center">
               <Dropdown
-                placement="bottomRight"
+                placement={place}
                 overlay={searchItem}
                 trigger={["click"]}
                 onVisibleChange={handleVisibleSearch}
@@ -212,6 +239,7 @@ const Header = () => {
                 placement="bottomRight"
                 overlay={personItem}
                 trigger={["click"]}
+                
               >
                 <span className={style.rightIconWrapper}>
                   <BsPersonFill className={style.rightIcon} />
@@ -220,7 +248,7 @@ const Header = () => {
               <Dropdown
                 onVisibleChange={handleVisibleChange}
                 visible={cartvisible}
-                placement="bottomRight"
+                
                 overlay={cartItem}
                 trigger={["click"]}
               >

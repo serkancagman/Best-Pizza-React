@@ -45,28 +45,11 @@
 }
 
 .logo {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
 }
 
-.navbarNav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 0 !important;
-}
-
-.navbarNav .navItem {
+.navItem {
   margin: 0 10px;
   list-style: none;
   position: relative;
@@ -89,23 +72,23 @@
           align-items: center;
 }
 
-.navbarNav .navItem:hover {
+.navItem:hover {
   background-color: #F5BF1A;
 }
 
-.navbarNav .navItem:hover .navLink {
+.navItem:hover .navLink {
   color: #000 !important;
 }
 
-.navbarNav .navItem:hover .navLink .arrowIcon {
+.navItem:hover .navLink .arrowIcon {
   color: #000 !important;
 }
 
-.navbarNav .navItem:hover .promotionTitle {
+.navItem:hover .promotionTitle {
   color: #000 !important;
 }
 
-.navbarNav .navItem .navLink {
+.navItem .navLink {
   padding: 10px;
   font-size: 17px;
   display: inline-block;
@@ -116,12 +99,12 @@
   z-index: 2;
 }
 
-.navbarNav .navItem .arrowIcon {
+.navItem .arrowIcon {
   font-size: 20px;
   color: #fff;
 }
 
-.navbarNav .navItem .promotionTitle {
+.navItem .promotionTitle {
   font-size: 12px;
   color: #F5BF1A;
   font-family: "Oswald", sans-serif;
@@ -574,5 +557,17 @@
   font-size: 15px;
   color: #000;
   font-family: "Oswald", sans-serif;
+}
+
+.navbarToggler {
+  margin-right: 10px;
+  font-size: 25px;
+  color: #fff;
+}
+
+@media screen and (max-width: 540px) {
+  .fastFoodSlide {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Header.module.css.map */

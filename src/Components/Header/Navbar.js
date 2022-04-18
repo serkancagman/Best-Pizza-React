@@ -6,9 +6,23 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import burger from "Assets/Foods/burger.jpg";
 import navImage from "Assets/menu-banner.jpg";
 import DropdownItem from "./DropdownItem";
-
 import "swiper/css";
+import { ScreenWidthContext } from "Context/ScreenWidthContext";
 const Navbar = () => {
+    const {windowDimensions} = React.useContext(ScreenWidthContext);
+    const [triggerType, setTriggerType] = React.useState("click");
+    const [place, setPlace] = React.useState("bottomLeft");
+    
+    React.useEffect(() => {
+        if (windowDimensions.width <= 768) {
+            setTriggerType("click");
+            setPlace("bottomCenter");
+        } else {
+            setTriggerType("hover");
+            setPlace("bottomLeft");
+        }
+    }, [windowDimensions]);
+
   const pizzaItem = [
     {
       title: "Margarita",
@@ -116,9 +130,9 @@ const Navbar = () => {
   );
 
   return (
-    <ul className={style.navbarNav}>
+    <ul className="navbar-nav">
       <li className={style.navItem}>
-        <Dropdown overlay={pizzaMenu}>
+        <Dropdown trigger={[triggerType]} placement={place} overlay={pizzaMenu}>
           <span className={style.navLink}>
             PIZZA
             <MdOutlineKeyboardArrowDown className={style.arrowIcon} />
@@ -128,7 +142,7 @@ const Navbar = () => {
         <span className={style.promotionTitle}>SALE</span>
       </li>
       <li className={style.navItem}>
-        <Dropdown overlay={fastFood}>
+        <Dropdown overlay={fastFood} trigger={[triggerType]} placement={place} >
           <span className={style.navLink}>
             FAST FOOD
             <MdOutlineKeyboardArrowDown className={style.arrowIcon} />
@@ -138,7 +152,7 @@ const Navbar = () => {
         <span className={style.promotionTitle}>NEW</span>
       </li>
       <li className={style.navItem}>
-        <Dropdown overlay={juiceMenu}>
+        <Dropdown overlay={juiceMenu} trigger={[triggerType]} placement={place}>
           <span className={style.navLink}>
             JUICE
             <MdOutlineKeyboardArrowDown className={style.arrowIcon} />
@@ -146,7 +160,7 @@ const Navbar = () => {
         </Dropdown>
       </li>
       <li className={style.navItem}>
-        <Dropdown overlay={burgerMenu}>
+        <Dropdown overlay={burgerMenu} trigger={[triggerType]} placement={place}>
           <span className={style.navLink}>
             BURGER
             <MdOutlineKeyboardArrowDown className={style.arrowIcon} />
@@ -161,7 +175,7 @@ const Navbar = () => {
       </li>
 
       <li className={style.navItem}>
-        <Dropdown overlay={juiceMenu}>
+        <Dropdown overlay={juiceMenu} trigger={[triggerType]} placement={place}>
           <span className={style.navLink}>
             MORE
             <MdOutlineKeyboardArrowDown className={style.arrowIcon} />

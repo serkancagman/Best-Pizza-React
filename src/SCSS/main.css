@@ -161,4 +161,10 @@ svg {
 .ant-slider-track {
   background-color: #a5301f !important;
 }
+
+.navbar-collapse {
+  -webkit-box-flex: unset !important;
+      -ms-flex-positive: unset !important;
+          flex-grow: unset !important;
+}
 /*# sourceMappingURL=main.css.map */
