@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="col-lg-8 col-md-12">
             <h3 className={style.instagramTitle}>INSTAGRAM FEEDS</h3>
             <div className="row justify-content-center align-items-center">
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <div className={style.instagramImg}>
                     <div className={style.instaImgFade}>
                         <BsFillEyeFill className={style.instaImgIcon} />
@@ -45,7 +45,7 @@ const Footer = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <div className={style.instagramImg}>
                     <div className={style.instaImgFade}>
                         <BsFillEyeFill className={style.instaImgIcon} />
@@ -57,7 +57,7 @@ const Footer = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <div className={style.instagramImg}>
                     <div className={style.instaImgFade}>
                         <BsFillEyeFill className={style.instaImgIcon} />
@@ -69,7 +69,7 @@ const Footer = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <div className={style.instagramImg}>
                     <div className={style.instaImgFade}>
                         <BsFillEyeFill className={style.instaImgIcon} />
@@ -85,7 +85,6 @@ const Footer = () => {
            
           </div>
           <div className="col-lg-4 col-md-12">
-              <h3 className={style.instagramTitle}>INSTAGRAM FEEDS</h3>
               <div className="d-flex flex-column justify-content-center align-items-center">
                 <ul className={style.contactList}>
                   <li className={style.contactListItem}>

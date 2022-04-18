@@ -108,3 +108,22 @@
 .payImg {
   margin: 5px 10px;
 }
+
+@media screen and (max-width: 499.99px) {
+  .footerBottomText{
+    text-align: center;
+  }
+  .footerTitleDash{
+    display: none !important;
+  }
+  .footerMainTitle{
+    flex-wrap: wrap !important;
+  }
+  .footerTitle{
+    margin: 10px !important;
+  }
+.footerBottom{
+  flex-direction: column-reverse !important;
+}
+
+}
