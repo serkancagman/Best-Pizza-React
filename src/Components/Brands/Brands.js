@@ -9,22 +9,22 @@ const Brands = () => {
     <section className={style.brands}>
         <div className="container">
             <div className="row justify-content-center align-items-center g-3">
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-6">
                     <div className={style.brandImgWrapper}>
                     <img src={brandImg} alt="brand" className={style.brandImg} />
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-6">
                 <div className={style.brandImgWrapper}>
                     <img src={brandImg1} alt="brand" className={style.brandImg} />
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-6">
                 <div className={style.brandImgWrapper}>
                     <img src={brandImg2} alt="brand" className={style.brandImg} />
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-6">
                 <div className={style.brandImgWrapper}>
                     <img src={brandImg3} alt="brand" className={style.brandImg} />
                     </div>
