@@ -55,7 +55,9 @@ const Banner = () => {
                 <div className="container-fluid">
                   <div
                     className={`${style.slideItemArea} ${
-                      index === 1 ? style.slideItemAreaSecond : ""
+                      index === 1
+                        ? style.slideItemAreaSecond
+                        : style.slideItemAreaFirst
                     }`}
                   >
                     <div className="d-flex flex-column align-items-center justify-content-center">

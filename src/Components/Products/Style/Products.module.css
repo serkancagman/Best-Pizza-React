@@ -61,8 +61,8 @@
 .bannerImage {
   max-width: 100%;
   height: 300px;
-  -o-object-fit: cover contain;
-     object-fit: cover contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .productSortBar {
@@ -308,5 +308,33 @@
   color: #A5301F;
   font-family: "Oswald", sans-serif;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 767.99px) {
+  .bannerImage {
+    height: 100% !important;
+  }
+  .newProductWrapper {
+    display: none !important;
+  }
+  .leftBannerWrapper {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 400.99px) {
+  .productQuantity {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 279.99px) {
+  .productSortBarLeft {
+    display: none !important;
+  }
+  .productSortText {
+    font-size: 13px !important;
+    margin-right: 5px !important;
+  }
 }
 /*# sourceMappingURL=Products.module.css.map */

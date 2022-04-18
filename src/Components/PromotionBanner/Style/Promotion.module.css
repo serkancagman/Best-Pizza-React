@@ -60,4 +60,16 @@
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 279.99px) {
+  .promotionTitleArea {
+    padding: 0 5px !important;
+  }
+  .promotionTitle {
+    font-size: 1.5rem !important;
+  }
+  .promotionSubTitle {
+    font-size: 1.3rem !important;
+  }
+}
 /*# sourceMappingURL=Promotion.module.css.map */

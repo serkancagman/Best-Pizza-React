@@ -83,15 +83,43 @@
   @include subscribeIcon(#1ab7ea);
 }
 
-@media screen and (max-width:539.99px) {
-  .subscribeTitle{
+@media screen and (max-width: 539.99px) {
+  .subscribeTitle {
     font-size: 20px !important;
   }
-  .subscribeInput{
+  .subscribeInput {
     font-size: 16px !important;
-
+   padding: 0 80px 0 20px;
   }
-  .subscribeForm{
+  .subscribeForm {
     width: 100% !important;
   }
+}
+@media screen and (max-width: 279.99px) {
+  .subscribeButton {
+    width: 70px !important;
+    font-size: 15px !important;
+  }
+  .facebook {
+    @include phoneSocialIcon;
+  }
+  .twitter {
+    @include phoneSocialIcon;
+  }
+  .instagram {
+    @include phoneSocialIcon;
+  }
+  .youtube {
+    @include phoneSocialIcon;
+  }
+  .rss {
+    @include phoneSocialIcon;
+  }
+  .pinterest {
+    @include phoneSocialIcon;
+  }
+  .vimeo {
+    @include phoneSocialIcon;
+  }
+
 }

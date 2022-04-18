@@ -174,9 +174,38 @@
   }
   .subscribeInput {
     font-size: 16px !important;
+    padding: 0 80px 0 20px;
   }
   .subscribeForm {
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 279.99px) {
+  .subscribeButton {
+    width: 70px !important;
+    font-size: 15px !important;
+  }
+  .facebook {
+    padding: 10px !important;
+  }
+  .twitter {
+    padding: 10px !important;
+  }
+  .instagram {
+    padding: 10px !important;
+  }
+  .youtube {
+    padding: 10px !important;
+  }
+  .rss {
+    padding: 10px !important;
+  }
+  .pinterest {
+    padding: 10px !important;
+  }
+  .vimeo {
+    padding: 10px !important;
   }
 }
 /*# sourceMappingURL=Subscribe.module.css.map */

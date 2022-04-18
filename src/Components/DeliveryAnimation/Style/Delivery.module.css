@@ -31,3 +31,16 @@
     -webkit-transform: translateX(2000px);
   }
 }
+
+@media screen and (max-width: 499.99px) {
+  .deliveryAnimation {
+    width: 60px !important;
+
+  }
+} 
+@media screen and (max-width: 767.99px) and (min-width:499.99px) {
+  .deliveryAnimation {
+    width: 80px !important;
+
+  }
+}

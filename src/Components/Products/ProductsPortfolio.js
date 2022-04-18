@@ -158,11 +158,11 @@ const ProductsPortfolio = ({ title, products, isLoading, banner }) => {
                   </div>
                 </div>
               </div>
-              <div className={style.filterWrapper}>
+              <div className={`${style.filterWrapper} ${style.leftBannerWrapper}`}>
                 <img src={adsImg} alt="banner" className="img-fluid" />
               </div>
               <div
-                className={`${style.filterWrapper} ${style.newProductWrapper}`}
+                className={`${style.filterWrapper} ${style.newProductWrapper}`} 
               >
                 <h5 className={style.filterTitle}>New Products</h5>
                 <ul className={style.newProductsList}>

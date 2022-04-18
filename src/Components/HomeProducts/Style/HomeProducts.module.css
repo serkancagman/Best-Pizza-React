@@ -89,4 +89,17 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 279.99px) {
+  .categoryItem {
+    padding: .5rem 0 !important;
+  }
+  .categoryIcon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .categoryTitle {
+    font-size: 18px !important;
+  }
+}
 /*# sourceMappingURL=HomeProducts.module.css.map */

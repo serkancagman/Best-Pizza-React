@@ -177,5 +177,11 @@ svg {
     margin-right: 20px !important;
     opacity: 1 !important;
   }
+  .bannerSwiper .swiper-button-prev {
+    display: none !important;
+  }
+  .bannerSwiper .swiper-button-next {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

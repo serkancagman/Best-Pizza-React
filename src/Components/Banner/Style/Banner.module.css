@@ -19,13 +19,16 @@
           transform: translateY(-50%);
   z-index: 99;
   padding: 0 20px;
-  left: 10%;
+}
+
+.slideItemAreaFirst {
   right: auto;
+  left: 9%;
 }
 
 .slideItemAreaSecond {
-  left: auto !important;
-  right: 10% !important;
+  left: auto;
+  right: 9%;
 }
 
 .slideItemTitle {
@@ -90,6 +93,12 @@
 }
 
 @media screen and (max-width: 539.99px) {
+  .slideItemAreaFirst {
+    left: 3% !important;
+  }
+  .slideItemAreaSecond {
+    right: 3% !important;
+  }
   .slideItemTitle {
     font-size: 1.3rem !important;
   }

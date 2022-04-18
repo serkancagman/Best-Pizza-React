@@ -173,4 +173,12 @@ svg {
       opacity: 1 !important;
     }
   }
+  .bannerSwiper {
+    .swiper-button-prev {
+      display: none !important;
+    }
+    .swiper-button-next {
+      display: none !important;
+    }
+  }
 }

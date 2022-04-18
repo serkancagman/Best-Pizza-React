@@ -5,23 +5,31 @@ import { useDisclosure } from "@chakra-ui/react";
 import { AiFillEye } from "react-icons/ai";
 import ProductModal from "./ProductModal";
 import { ShopCartContext } from "Context/ShopCartContext";
-
+import { ScreenWidthContext } from "Context/ScreenWidthContext";
 const ProductionBox = ({ data }) => {
-
+  const {windowDimensions} = React.useContext(ScreenWidthContext);
   const {addToCart} = React.useContext(ShopCartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentData, setCurrentData] = React.useState("");
+  const [smallPhone, setSmallPhone] = React.useState(false);
   const handleModal = (product) => {
     onOpen();
     setCurrentData(product);
   };
 
+  React.useEffect(() => {
+    if (windowDimensions.width < 281) {
+      setSmallPhone(true);
+    } else {
+      setSmallPhone(false);
+    }
+  }, [windowDimensions.width]);
 
   return (
     <>
       {data.map((item, index) => {
         return (
-          <div key={index} className="col-md-3 col-6 col-lg-3">
+          <div key={index} className={`col-md-3 col-lg-3 ${smallPhone ? "col-12" : "col-6"}`}>
             <div className={style.productItem}>
               <div className={style.productImage}>
                 <img
