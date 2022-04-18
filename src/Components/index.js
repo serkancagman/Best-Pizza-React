@@ -16,3 +16,4 @@ export {default as RegisterForm} from './LoginandRegister/RegisterForm';
 export {default as ProductsPortfolio} from './Products/ProductsPortfolio';
 export {default as DeliveryAnimation} from './DeliveryAnimation/DeliveryAnimation';
 export {default as GoTop} from './GoTop/GoTop';
+export {default as CheckCart} from './OrderProccess/CheckCart';

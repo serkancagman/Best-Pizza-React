@@ -53,6 +53,13 @@ export const ShopCartProvider = ({ children }) => {
     setCart(cart.filter((item) => item._id !== product._id));
   };
 
+  const handleDecrease = (product) => {
+    if (product.quantity > 1) {
+      productQuantity(product, product.quantity - 1);
+    } else {
+      return;
+    }
+  };
   const values = {
     cart,
     addToCart,
@@ -60,7 +67,9 @@ export const ShopCartProvider = ({ children }) => {
     totalPrice,
     cartTotalDiscount,
     removeFromCart,
-    productQuantity
+    productQuantity,
+    handleDecrease,
+    setCart
   };
 
   return (

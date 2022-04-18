@@ -6,10 +6,11 @@ import {
   Fastfood,
   Dishes,
   Drinks,
+  Cart
 } from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { ProtectedLoginRegisterRoute } from "./ProtectedRoute";
+import { ProtectedLoginRegisterRoute,ProtectedCartRoute } from "./ProtectedRoute";
 const MainRouter = () => {
   return (
     <Routes>
@@ -34,6 +35,13 @@ const MainRouter = () => {
       <Route path="/fastfood" element={<Fastfood />} />
       <Route path="/dishes" element={<Dishes />} />
       <Route path="/drinks" element={<Drinks />} />
+      
+      <Route path="/cart" element={
+      <ProtectedCartRoute>
+      <Cart />
+      </ProtectedCartRoute>
+      } />
+    
     </Routes>
   );
 };

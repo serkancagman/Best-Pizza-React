@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.checkCart {
+  padding: 2rem 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cartItemsHeader {
+  margin: 1rem 0;
+}
+
+.cartTitle {
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  font-size: 20px;
+}
+
+.deleteAllItems {
+  cursor: pointer;
+}
+
+.deleteIcon {
+  color: #A5301F;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.deleteText {
+  color: #333;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+.cartProductList {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.cartProductWrapper {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cartProductImgArea {
+  width: 90px;
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  height: 90px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.cartProductImg {
+  width: 100%;
+  height: auto;
+}
+
+.cartProductPrice {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: #A5301F;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.oldCartProductPrice {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 10px;
+  text-decoration: line-through;
+}
+
+.cartProductTitle {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.quantityOptions {
+  margin: 1rem 0;
+}
+
+.quantityOptions .quantityTitle {
+  font-size: 16px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+}
+
+.quantityOptions .quantityItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.quantityOptions .quantityItems .quantityIcon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px;
+  background-color: #efefef;
+}
+
+.quantityOptions .quantityItems .quantityIcon:hover {
+  background-color: #e6e6e6;
+}
+
+.quantityOptions .quantityItems .quantityNumber {
+  text-align: center;
+  width: 60px;
+  outline: none;
+  background-color: #F5BF1A;
+  padding: 7px 10px;
+}
+
+.quantityIconTrash {
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px;
+  color: #A5301F;
+  background-color: #efefef;
+}
+
+.quantityIconTrash:hover {
+  background-color: #e6e6e6;
+}
+
+.cartItemBottomTitle {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.cartItemBottomTitle .cartItemBottomTitleText {
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  color: #777;
+}
+/*# sourceMappingURL=Order.module.css.map */

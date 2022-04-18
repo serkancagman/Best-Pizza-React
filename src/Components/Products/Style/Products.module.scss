@@ -202,7 +202,7 @@
 }
 
 @media screen and (max-width: 767.99px) {
-  .bannerImage{
+  .bannerImage {
     height: 100% !important;
   }
   .newProductWrapper {
@@ -213,19 +213,16 @@
   }
 }
 @media screen and (max-width: 400.99px) {
-  .productQuantity{
+  .productQuantity {
     display: none !important;
   }
-
 }
 @media screen and (max-width: 279.99px) {
-
-
-.productSortBarLeft{
-  display: none !important;
-}
-.productSortText{
-  font-size: 13px !important;
-  margin-right: 5px !important;
-}
+  .productSortBarLeft {
+    display: none !important;
+  }
+  .productSortText {
+    font-size: 13px !important;
+    margin-right: 5px !important;
+  }
 }

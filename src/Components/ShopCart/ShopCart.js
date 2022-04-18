@@ -4,16 +4,8 @@ import style from "./Style/ShopCart.module.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 const ShopCart = () => {
-  const { cart, productQuantity,totalPrice, removeFromCart } =
+  const { cart, productQuantity, totalPrice, removeFromCart, handleDecrease } =
     React.useContext(ShopCartContext);
-
-  const handleDecrease = (product) => {
-    if (product.quantity > 1) {
-      productQuantity(product, product.quantity - 1);
-    } else {
-      return;
-    }
-  };
 
   return (
     <ul className={style.shopCartList}>
@@ -76,10 +68,10 @@ const ShopCart = () => {
         );
       })}
       <div className={style.totalPriceWrapper}>
-      <div className={style.goToCart}>
-        <button className={style.goToCartBtn}>Go to cart</button>
-        <span className={style.totalTitle}>${totalPrice}</span>
-      </div>
+        <div className={style.goToCart}>
+          <button className={style.goToCartBtn}>Go to cart</button>
+          <span className={style.totalTitle}>${totalPrice}</span>
+        </div>
       </div>
     </ul>
   );
