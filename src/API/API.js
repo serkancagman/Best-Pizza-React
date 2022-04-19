@@ -54,3 +54,11 @@ export const userLogout = async () => {
   return data;
 }
   
+// Order 
+export const takeOrder = async (inputs) => {
+  const { data } = await axios.post(
+    `${process.env.REACT_APP_API_URL}/order`,
+    inputs
+  );
+  return data;
+}

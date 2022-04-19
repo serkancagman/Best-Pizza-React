@@ -9,30 +9,44 @@ import {
   FormLabel,
   InputLeftElement,
   InputGroup,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   Select,
   Textarea,
+  FormErrorMessage,
 } from "@chakra-ui/react";
+import { takeOrder } from "API/API";
 import { validationSchema } from "./Validation";
+import { ShopCartContext } from "Context/ShopCartContext";
 const OrderAddress = () => {
-
-  const {handleSubmit, handleChange,handleBlur, values, errors, touched} = useFormik({
-    initialValues: {
-      addressHeader: "",
-      phone: "",
-      address: "",
-      city: "",
-      zipCode: "",
-    },
-    validationSchema,
-    onSubmit: values => {
-      console.log(values);
-    },
-  });
+  const { cart } = React.useContext(ShopCartContext);
+  const [addressError, setAddressError] = React.useState("");
 
 
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
+    useFormik({
+      initialValues: {
+        addressHeader: "",
+        phone: "",
+        address: "",
+        city: "",
+        zipCode: "",
+      },
+      validationSchema,
+      onSubmit: async () => {
+        try {
+          const response = await takeOrder({
+            phone: values.phone,
+            address: values.address,
+            city: values.city,
+            zipCode: values.zipCode,
+            items: cart,
+          });
+       
+        } catch (error) {
+          setAddressError(error.response.data.message)
+        }
+      },
+    });
 
   return (
     <section className={style.orderMain}>
@@ -41,7 +55,10 @@ const OrderAddress = () => {
         <div className="row justify-content-center g-3">
           <div className="col-lg-8">
             <div className={style.orderForm}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmitCapture={handleSubmit}>
+                {
+                  addressError && <FormErrorMessage>{addressError}</FormErrorMessage>
+                }
                 <div className="row align-items-center g-3">
                   <div className="col-lg-2">
                     <FormLabel htmlFor="icon" className={style.label}>
@@ -77,12 +94,11 @@ const OrderAddress = () => {
                         borderColor="gray.300"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        isInvalid={errors.addressHeader && touched.addressHeader && true}
+                        isInvalid={
+                          errors.addressHeader && touched.addressHeader && true
+                        }
                         errorBorderColor="red.500"
                       />
-                   
-                          
-                   
                     </FormControl>
                   </div>
                 </div>
@@ -139,9 +155,9 @@ const OrderAddress = () => {
                           focusBorderColor="green.500"
                           placeholder="Without +1"
                           onChange={handleChange}
-                        onBlur={handleBlur}
-                        isInvalid={errors.phone && touched.phone && true}
-                        errorBorderColor="red.500"
+                          onBlur={handleBlur}
+                          isInvalid={errors.phone && touched.phone && true}
+                          errorBorderColor="red.500"
                         />
                       </InputGroup>
                     </FormControl>
@@ -158,12 +174,19 @@ const OrderAddress = () => {
                       borderColor="gray.300"
                       focusBorderColor="green.500"
                       onChange={handleChange}
-                        onBlur={handleBlur}
-                        isInvalid={errors.address && touched.address && true}
-                        errorBorderColor="red.500"
+                      onBlur={handleBlur}
+                      isInvalid={errors.address && touched.address && true}
+                      errorBorderColor="red.500"
                     />
                   </FormControl>
                 </div>
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className={style.submit}
+                >
+                  submit
+                </button>
               </form>
             </div>
           </div>
