@@ -215,4 +215,14 @@
   margin-bottom: 10px;
   font-size: 25px;
 }
+
+.orderForm {
+  margin: 1rem 0;
+  padding: .7rem 0;
+}
+
+.label {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px !important;
+}
 /*# sourceMappingURL=Order.module.css.map */

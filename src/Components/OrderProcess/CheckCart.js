@@ -4,7 +4,6 @@ import { BsTrash } from "react-icons/bs";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { ShopCartContext } from "Context/ShopCartContext";
 import { Popconfirm, Tag } from "antd";
-import { Link } from "react-router-dom";
 import Step from "./Step";
 import Summary from "./Summary";
 const CheckCart = () => {

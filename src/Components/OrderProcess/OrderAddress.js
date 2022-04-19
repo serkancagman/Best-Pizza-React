@@ -1,19 +1,123 @@
-import React from 'react'
-import Step from './Step';
+import React from "react";
+import Step from "./Step";
 import style from "./Style/Order.module.css";
-import Summary from './Summary';
+import Summary from "./Summary";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import {
+  FormControl,
+  FormLabel,
+  InputLeftElement,
+  InputGroup,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Select,
+  Textarea
+} from "@chakra-ui/react";
 const OrderAddress = () => {
   return (
     <section className={style.orderMain}>
-        <div className="container">
-            <Step/>
-            <div className="row justify-content-center g-3">
-          <div className="col-lg-8"></div>
+      <div className="container">
+        <Step />
+        <div className="row justify-content-center g-3">
+          <div className="col-lg-8">
+            <div className={style.orderForm}>
+              <form>
+                <div className="row align-items-center g-3">
+                  <div className="col-lg-2">
+                    <FormLabel htmlFor="icon" className={style.label}>
+                      Icon
+                    </FormLabel>
+                    <Select
+                      focusBorderColor="green.500"
+                      className="fs-3"
+                      id="icon"
+                      name="icon"
+                      borderColor="gray.300"
+                    >
+                      <option className="text-center">🏡</option>
+                      <option className="text-center">🏢</option>
+                      <option className="text-center">🏬</option>
+                      <option className="text-center">🏭</option>
+                      <option className="text-center">🏪</option>
+                      <option className="text-center">🏩</option>
+                    </Select>
+                  </div>
+                  <div className="col-lg-10">
+                    <FormControl isRequired>
+                      <FormLabel
+                        htmlFor="addressHeader"
+                        className={style.label}
+                      >
+                        Address Header ( Home, Office )
+                      </FormLabel>
+                      <Input
+                        name="addressHeader"
+                        focusBorderColor="green.500"
+                        id="addressHeader"
+                        borderColor="gray.300"
+                      />
+                    </FormControl>
+                  </div>
+                </div>
+                <div className="row align-items-center g-3">
+                  <div className="col-lg-4">
+                    <FormControl className="my-2" isRequired>
+                      <FormLabel htmlFor="city" className={style.label}>
+                        City
+                      </FormLabel>
+                      <Input
+                        focusBorderColor="green.500"
+                        name="city"
+                        id="city"
+                        borderColor="gray.300"
+                      />
+                    </FormControl>
+                  </div>
+                  <div className="col-lg-4">
+                    <FormControl className="my-2" isRequired>
+                      <FormLabel htmlFor="zipCode" className={style.label}>
+                        Zip Code
+                      </FormLabel>
+                      <Input
+                      borderColor="gray.300"
+                        focusBorderColor="green.500"
+                        name="zipCode"
+                        id="zipCode"
+                      />
+                    </FormControl>
+                  </div>
+                 <div className="col-lg-4">
+                 <FormControl className="my-2" isRequired>
+                    <FormLabel htmlFor="phone" className={style.label}>
+                      Phone Number
+                    </FormLabel>
+                    <InputGroup>
+                      <InputLeftElement
+                        pointerEvents="none"
+                        children={<BsFillTelephoneFill color="gray.300" />}
+                      />
+                      <Input type="tel" borderColor="gray.300" id="phone" name="phone" focusBorderColor="green.500" placeholder="Without +1" />
+                    </InputGroup>
+                  </FormControl>
+                 </div>
+                </div>
+                <div className="col-12">
+                  <FormControl isRequired>
+                    <FormLabel htmlFor="address" className={style.label}>
+                      Address
+                    </FormLabel>
+                    <Textarea id="address" name="address" borderColor="gray.300" focusBorderColor="green.500" />
+                  </FormControl>
+                </div>
+              </form>
+            </div>
           </div>
           <Summary buttonTitle="Go to pay" process="address" />
         </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default OrderAddress
+export default OrderAddress;
