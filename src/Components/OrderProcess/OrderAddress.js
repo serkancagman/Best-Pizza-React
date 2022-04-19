@@ -3,6 +3,7 @@ import Step from "./Step";
 import style from "./Style/Order.module.css";
 import Summary from "./Summary";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { useFormik } from "formik";
 import {
   FormControl,
   FormLabel,
@@ -12,9 +13,27 @@ import {
   FormHelperText,
   Input,
   Select,
-  Textarea
+  Textarea,
 } from "@chakra-ui/react";
+import { validationSchema } from "./Validation";
 const OrderAddress = () => {
+
+  const {handleSubmit, handleChange,handleBlur, values, errors, touched} = useFormik({
+    initialValues: {
+      addressHeader: "",
+      phone: "",
+      address: "",
+      city: "",
+      zipCode: "",
+    },
+    validationSchema,
+    onSubmit: values => {
+      console.log(values);
+    },
+  });
+
+
+
   return (
     <section className={style.orderMain}>
       <div className="container">
@@ -22,7 +41,7 @@ const OrderAddress = () => {
         <div className="row justify-content-center g-3">
           <div className="col-lg-8">
             <div className={style.orderForm}>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="row align-items-center g-3">
                   <div className="col-lg-2">
                     <FormLabel htmlFor="icon" className={style.label}>
@@ -56,7 +75,14 @@ const OrderAddress = () => {
                         focusBorderColor="green.500"
                         id="addressHeader"
                         borderColor="gray.300"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={errors.addressHeader && touched.addressHeader && true}
+                        errorBorderColor="red.500"
                       />
+                   
+                          
+                   
                     </FormControl>
                   </div>
                 </div>
@@ -71,6 +97,10 @@ const OrderAddress = () => {
                         name="city"
                         id="city"
                         borderColor="gray.300"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={errors.city && touched.city && true}
+                        errorBorderColor="red.500"
                       />
                     </FormControl>
                   </div>
@@ -80,34 +110,58 @@ const OrderAddress = () => {
                         Zip Code
                       </FormLabel>
                       <Input
-                      borderColor="gray.300"
+                        borderColor="gray.300"
                         focusBorderColor="green.500"
                         name="zipCode"
                         id="zipCode"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={errors.zipCode && touched.zipCode && true}
+                        errorBorderColor="red.500"
                       />
                     </FormControl>
                   </div>
-                 <div className="col-lg-4">
-                 <FormControl className="my-2" isRequired>
-                    <FormLabel htmlFor="phone" className={style.label}>
-                      Phone Number
-                    </FormLabel>
-                    <InputGroup>
-                      <InputLeftElement
-                        pointerEvents="none"
-                        children={<BsFillTelephoneFill color="gray.300" />}
-                      />
-                      <Input type="tel" borderColor="gray.300" id="phone" name="phone" focusBorderColor="green.500" placeholder="Without +1" />
-                    </InputGroup>
-                  </FormControl>
-                 </div>
+                  <div className="col-lg-4">
+                    <FormControl className="my-2" isRequired>
+                      <FormLabel htmlFor="phone" className={style.label}>
+                        Phone Number
+                      </FormLabel>
+                      <InputGroup>
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<BsFillTelephoneFill color="gray.300" />}
+                        />
+                        <Input
+                          type="tel"
+                          borderColor="gray.300"
+                          id="phone"
+                          name="phone"
+                          focusBorderColor="green.500"
+                          placeholder="Without +1"
+                          onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={errors.phone && touched.phone && true}
+                        errorBorderColor="red.500"
+                        />
+                      </InputGroup>
+                    </FormControl>
+                  </div>
                 </div>
                 <div className="col-12">
                   <FormControl isRequired>
                     <FormLabel htmlFor="address" className={style.label}>
                       Address
                     </FormLabel>
-                    <Textarea id="address" name="address" borderColor="gray.300" focusBorderColor="green.500" />
+                    <Textarea
+                      id="address"
+                      name="address"
+                      borderColor="gray.300"
+                      focusBorderColor="green.500"
+                      onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={errors.address && touched.address && true}
+                        errorBorderColor="red.500"
+                    />
                   </FormControl>
                 </div>
               </form>
