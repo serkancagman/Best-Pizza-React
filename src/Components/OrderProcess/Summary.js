@@ -1,14 +1,9 @@
 import React from "react";
 import style from "./Style/Order.module.css";
 import { ShopCartContext } from "Context/ShopCartContext";
-const Summary = ({buttonTitle,process}) => {
-  const {
-    cartTotalPrice,
-    totalPrice,
-    cartTotalDiscount,
-    shipping,
-    handleStep,
-  } = React.useContext(ShopCartContext);
+const Summary = ({ children }) => {
+  const { cartTotalPrice, totalPrice, cartTotalDiscount, shipping } =
+    React.useContext(ShopCartContext);
   return (
     <div className="col-lg-4">
       <div className={style.cartSummary}>
@@ -46,14 +41,7 @@ const Summary = ({buttonTitle,process}) => {
               <span className={style.cartSummaryItemTitle}>Total</span>
               <span className={style.cartSummaryItemPrice}> ${totalPrice}</span>
             </div>
-            <button
-              type="button"
-              onClick={() => handleStep(process)}
-              className={style.nextStepBtn}
-              to="/checkout"
-            >
-              {buttonTitle}
-            </button>
+            {children}
           </div>
         </div>
       </div>

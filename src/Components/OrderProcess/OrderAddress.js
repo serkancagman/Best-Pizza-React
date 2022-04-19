@@ -13,14 +13,14 @@ import {
   Select,
   Textarea,
   FormErrorMessage,
+  Checkbox,
 } from "@chakra-ui/react";
 import { takeOrder } from "API/API";
 import { validationSchema } from "./Validation";
 import { ShopCartContext } from "Context/ShopCartContext";
 const OrderAddress = () => {
-  const { cart } = React.useContext(ShopCartContext);
+  const { cart,handleStep } = React.useContext(ShopCartContext);
   const [addressError, setAddressError] = React.useState("");
-
 
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
@@ -41,9 +41,11 @@ const OrderAddress = () => {
             zipCode: values.zipCode,
             items: cart,
           });
-       
+          
+            handleStep("address");
+          
         } catch (error) {
-          setAddressError(error.response.data.message)
+          setAddressError(error.response.data.message);
         }
       },
     });
@@ -56,9 +58,9 @@ const OrderAddress = () => {
           <div className="col-lg-8">
             <div className={style.orderForm}>
               <form onSubmitCapture={handleSubmit}>
-                {
-                  addressError && <FormErrorMessage>{addressError}</FormErrorMessage>
-                }
+                {addressError && (
+                  <FormErrorMessage>{addressError}</FormErrorMessage>
+                )}
                 <div className="row align-items-center g-3">
                   <div className="col-lg-2">
                     <FormLabel htmlFor="icon" className={style.label}>
@@ -180,6 +182,18 @@ const OrderAddress = () => {
                     />
                   </FormControl>
                 </div>
+                <div className="col-12 my-2">
+                  <FormControl>
+                    <Checkbox
+                      id="saveAddress"
+                      colorScheme="green"
+                      name="saveAddress"
+                      onChange={handleChange}
+                    >
+                      Save address for the future orders{" "}
+                    </Checkbox>
+                  </FormControl>
+                </div>
                 <button
                   type="submit"
                   onClick={handleSubmit}
@@ -190,7 +204,15 @@ const OrderAddress = () => {
               </form>
             </div>
           </div>
-          <Summary buttonTitle="Go to pay" process="address" />
+          <Summary>
+          <button
+              type="button"
+              onClick={handleSubmit}
+              className={style.nextStepBtn}
+            >
+             Go to Pay
+            </button>
+          </Summary>
         </div>
       </div>
     </section>

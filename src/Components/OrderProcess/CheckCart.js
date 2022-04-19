@@ -7,7 +7,7 @@ import { Popconfirm, Tag } from "antd";
 import Step from "./Step";
 import Summary from "./Summary";
 const CheckCart = () => {
-  const { cart, removeFromCart, handleDecrease, productQuantity, setCart } =
+  const { cart, removeFromCart, handleDecrease, productQuantity,    handleStep, setCart } =
     React.useContext(ShopCartContext);
 
   const handleOk = () => {
@@ -135,7 +135,15 @@ const CheckCart = () => {
               </div>
             </div>
           </div>
-          <Summary buttonTitle="Add to address" process="check" />
+          <Summary>
+          <button
+              type="button"
+              onClick={() => handleStep("check")}
+              className={style.nextStepBtn}
+            >
+             Add to Address
+            </button>
+          </Summary>
         </div>
       </div>
     </section>
