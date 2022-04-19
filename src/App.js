@@ -1,8 +1,9 @@
 import MainRouter from "./Route/Router";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-
+import {UserProvider} from "Context/UserContext";
 function App() {
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -10,11 +11,16 @@ function App() {
         refetchOnWindowFocus: false,
       },
     },
+  
+
   });
+
   return (
     <>
-      <QueryClientProvider contextSharing={true} client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <UserProvider>
         <MainRouter />
+        </UserProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>

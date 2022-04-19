@@ -4,11 +4,32 @@ export const ShopCartContext = React.createContext();
 
 export const ShopCartProvider = ({ children }) => {
   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
+  const localStep = JSON.parse(localStorage.getItem("step")) || [
+    {
+      name: "check",
+      status: "process",
+    },
+    {
+      name: "address",
+      status: "wait",
+    },
+    {
+      name: "pay",
+      status: "wait",
+    },
+    {
+      name: "done",
+      status: "wait",
+    },
+  ];
+
   const [cart, setCart] = React.useState(localCart);
   const [totalPrice, setTotalPrice] = React.useState(0);
   const [cartTotalPrice, setCartTotalPrice] = React.useState(0);
   const [cartTotalDiscount, setCartTotalDiscount] = React.useState(0);
   const [shipping, setShipping] = React.useState(7.99);
+  const [orderStep, setOrderStep] = React.useState(localStep);
+  const processStepIndex = orderStep.findIndex((step) => step.status === "process")
   React.useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -66,6 +87,18 @@ export const ShopCartProvider = ({ children }) => {
       return;
     }
   };
+
+  const handleStep = (stepValue) => {
+    const findStep = orderStep.findIndex((item) => item.name === stepValue);
+
+      orderStep[findStep].status = "finish";
+      orderStep[findStep + 1].status = "process";
+      setOrderStep([...orderStep]);
+  
+  };
+  React.useEffect(() => {
+   localStorage.setItem("step", JSON.stringify(orderStep));
+  }, [orderStep]);
   const values = {
     cart,
     addToCart,
@@ -77,6 +110,9 @@ export const ShopCartProvider = ({ children }) => {
     handleDecrease,
     setCart,
     shipping,
+    handleStep,
+    orderStep,
+    processStepIndex
   };
 
   return (

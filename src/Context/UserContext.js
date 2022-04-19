@@ -1,5 +1,6 @@
 import React from "react";
 import { getMe, userLogout } from "API/API";
+import { useQuery } from "react-query";
 export const UserContext = React.createContext();
 
 export const UserProvider = ({ children }) => {
@@ -14,15 +15,18 @@ export const UserProvider = ({ children }) => {
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
   };
-console.log("render")
-  React.useEffect(() => {
-    (async () => {
-      try {
-        const me = await getMe();
-        setUser(me);
-      } catch (err) {}
-    })();
-  }, []);
+console.log(user)
+  
+  const { data, error,isLoading } = useQuery("me", getMe);
+
+
+
+React.useEffect(() => {
+  if (data) {
+    setUser(data);
+  }
+
+  }, [data]);
 
   const handleLogout = async () => {
     setUser(null);

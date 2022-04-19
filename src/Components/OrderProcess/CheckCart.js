@@ -6,25 +6,17 @@ import { ShopCartContext } from "Context/ShopCartContext";
 import { Popconfirm, Tag } from "antd";
 import { Link } from "react-router-dom";
 import Step from "./Step";
+import Summary from "./Summary";
 const CheckCart = () => {
-  const {
-    cart,
-    removeFromCart,
-    handleDecrease,
-    productQuantity,
-    setCart,
-    cartTotalPrice,
-    totalPrice,
-    cartTotalDiscount,
-    shipping,
-  } = React.useContext(ShopCartContext);
+  const { cart, removeFromCart, handleDecrease, productQuantity, setCart } =
+    React.useContext(ShopCartContext);
 
   const handleOk = () => {
     setCart([]);
   };
 
   return (
-    <section className={style.checkCart}>
+    <section className={style.orderMain}>
       <div className="container">
         <Step />
         <div className="row justify-content-center g-3">
@@ -144,52 +136,7 @@ const CheckCart = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
-            <div className={style.cartSummary}>
-              <div className="my-2">
-                <h5 className={style.cartTitle}>Summary</h5>
-              </div>
-              <div className={style.cartSummaryInner}>
-                <div className={style.cartSummaryItems}>
-                  <div className="d-flex mb-2 justify-content-between align-items-center">
-                    <span className={style.cartSummaryItemTitle}>Subtotal</span>
-                    <span className={style.cartSummaryItemPrice}>
-                      ${totalPrice}
-                    </span>
-                  </div>
-                  <div className="d-flex mb-2  justify-content-between align-items-center">
-                    <span className={style.cartSummaryItemTitle}>Discount</span>
-                    <span className={style.cartSummaryItemIneffective}>
-                      {" "}
-                      - ${cartTotalDiscount}
-                    </span>
-                  </div>
-                  <div className="d-flex  mb-2 justify-content-between align-items-center">
-                    <span className={style.cartSummaryItemTitle}>Shipping</span>
-                    <span
-                      className={
-                        shipping > 0
-                          ? style.cartSummaryItemPrice
-                          : style.cartSummaryItemIneffective
-                      }
-                    >
-                      ${shipping}
-                    </span>
-                  </div>
-                  <div className="d-flex  mb-2 justify-content-between align-items-center">
-                    <span className={style.cartSummaryItemTitle}>Total</span>
-                    <span className={style.cartSummaryItemPrice}>
-                      {" "}
-                      ${cartTotalPrice}
-                    </span>
-                  </div>
-                  <Link className={style.nextStepBtn} to="/checkout">
-                    Add to adress
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Summary buttonTitle="Add to address" process="check" />
         </div>
       </div>
     </section>

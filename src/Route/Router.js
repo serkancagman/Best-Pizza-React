@@ -6,7 +6,7 @@ import {
   Fastfood,
   Dishes,
   Drinks,
-  Cart
+  Order
 } from "Components/Pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
@@ -36,11 +36,12 @@ const MainRouter = () => {
       <Route path="/dishes" element={<Dishes />} />
       <Route path="/drinks" element={<Drinks />} />
       
-      <Route path="/cart" element={
+      <Route path="/order" element={
       <ProtectedCartRoute>
-      <Cart />
+      <Order />
       </ProtectedCartRoute>
       } />
+      
     
     </Routes>
   );

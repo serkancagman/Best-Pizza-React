@@ -1,7 +1,7 @@
 @import "../../../SCSS/Variables.scss";
 @import "../../../SCSS/Mixins.scss";
 
-.checkCart {
+.orderMain {
   padding: 2rem 0;
   width: 100%;
   height: 100%;
@@ -171,4 +171,11 @@
     background-color: $secondaryColor !important;
     color: #000 !important;
   }
+}
+
+// Steps 
+
+.stepIcon{
+    margin-bottom: 10px;
+    font-size: 25px;
 }

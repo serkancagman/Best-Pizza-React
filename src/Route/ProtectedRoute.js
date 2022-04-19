@@ -8,7 +8,8 @@ export const ProtectedLoginRegisterRoute = ({ children }) => {
 };
 
 export const ProtectedCartRoute = ({ children }) => {
-  const { cart } = React.useContext(ShopCartContext);
+  const { cart, orderStep, processStepIndex } =
+    React.useContext(ShopCartContext);
   const { user } = React.useContext(UserContext);
   if (cart.length > 0 && user) {
     return children;
