@@ -8,7 +8,7 @@ export const ShopCartProvider = ({ children }) => {
   const [totalPrice, setTotalPrice] = React.useState(0);
   const [cartTotalPrice, setCartTotalPrice] = React.useState(0);
   const [cartTotalDiscount, setCartTotalDiscount] = React.useState(0);
-
+  const [shipping, setShipping] = React.useState(7.99);
   React.useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -20,13 +20,21 @@ export const ShopCartProvider = ({ children }) => {
       }
     });
     const calculateTotalPrice = cart
-    .reduce((a, b) => a + b.price * b.quantity, 0)
-    .toFixed(2);
-    let useTotal = calculateTotalPrice - discount
+      .reduce((a, b) => a + b.price * b.quantity, 0)
+      .toFixed(2);
+    let useTotal = calculateTotalPrice - discount;
     setCartTotalDiscount(discount.toFixed(2));
-    setCartTotalPrice(calculateTotalPrice);
+    setCartTotalPrice(calculateTotalPrice + shipping);
     setTotalPrice(useTotal.toFixed(2));
   }, [cart]);
+
+  React.useEffect(() => {
+    if (totalPrice > 100) {
+      setShipping(0);
+    } else {
+      setShipping(7.99);
+    }
+  }, [totalPrice]);
 
   const addToCart = (product, quantity) => {
     const productIndex = cart.findIndex((item) => item._id === product._id);
@@ -43,11 +51,9 @@ export const ShopCartProvider = ({ children }) => {
     const productIndex = cart.findIndex((item) => item._id === product._id);
     cart[productIndex].quantity = quantity;
     setCart([...cart]);
-    };
+  };
 
   // Cart Calculates
-
-  
 
   const removeFromCart = (product) => {
     setCart(cart.filter((item) => item._id !== product._id));
@@ -69,7 +75,8 @@ export const ShopCartProvider = ({ children }) => {
     removeFromCart,
     productQuantity,
     handleDecrease,
-    setCart
+    setCart,
+    shipping,
   };
 
   return (
