@@ -3,6 +3,7 @@ import { ShopCartContext } from "Context/ShopCartContext";
 import style from "./Style/ShopCart.module.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const ShopCart = () => {
   const { cart, productQuantity, totalPrice, removeFromCart, handleDecrease } =
     React.useContext(ShopCartContext);
@@ -68,10 +69,10 @@ const ShopCart = () => {
         );
       })}
       <div className={style.totalPriceWrapper}>
-        <div className={style.goToCart}>
+        <Link to="/cart" className={style.goToCart}>
           <button className={style.goToCartBtn}>Go to cart</button>
           <span className={style.totalTitle}>${totalPrice}</span>
-        </div>
+        </Link>
       </div>
     </ul>
   );

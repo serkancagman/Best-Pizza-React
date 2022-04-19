@@ -26,7 +26,7 @@ export const ShopCartProvider = ({ children }) => {
     setCartTotalDiscount(discount.toFixed(2));
     setCartTotalPrice(calculateTotalPrice + shipping);
     setTotalPrice(useTotal.toFixed(2));
-  }, [cart]);
+  }, [cart, shipping]);
 
   React.useEffect(() => {
     if (totalPrice > 100) {

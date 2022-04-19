@@ -38,7 +38,7 @@
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .cartProductImgArea {
   width: 90px;
@@ -84,7 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     .quantityIcon {
       cursor: pointer;
@@ -135,7 +135,7 @@
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .cartSummaryItemTitle {
   display: inline-block;

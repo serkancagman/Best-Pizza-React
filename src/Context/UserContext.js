@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
   };
-
+console.log("render")
   React.useEffect(() => {
     (async () => {
       try {

@@ -32,9 +32,9 @@ const LoginForm = () => {
       });
     }
   };
-  const { userData} = React.useContext(UserContext);
-  const { handleChange, handleSubmit, handleBlur, touched, errors } =
-    useFormik({
+  const { userData } = React.useContext(UserContext);
+  const { handleChange, handleSubmit, handleBlur, touched, errors } = useFormik(
+    {
       initialValues: {
         email: "",
         password: "",
@@ -45,15 +45,15 @@ const LoginForm = () => {
           const response = await userLogin(values);
           showToast(response.user.name, "success");
 
-        //  setTimeout(() => {
-        //   userData(response);
-        // }, 2000);
-        
+          setTimeout(() => {
+            userData(response);
+          }, 2000);
         } catch (error) {
           showToast(error.response.data.message, "failed");
         }
       },
-    });
+    }
+  );
   return (
     <section className={style.loginForm}>
       <div className="container">
