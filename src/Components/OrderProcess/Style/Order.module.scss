@@ -210,6 +210,10 @@
   transform: rotateY(180deg) !important;
 }
 
+.showCvvArea{
+  transform: rotateY(180deg) !important;
+}
+
 .card {
   max-width: 420px;
   min-height: 270px;
@@ -286,7 +290,7 @@
   @include flexcolstart;
 }
 .cardLabel {
-  color: #fff;
+  color: rgb(192, 192, 192);
   font-size: 21px;
   font-family: $mainFont;
   margin-bottom: 5px;
@@ -303,7 +307,7 @@
   font-family: $mainFont;
 
   &::placeholder {
-    color: #999;
+    color: #fff;
   }
 }
 .cardOwner {
@@ -321,7 +325,7 @@
   font-family: $mainFont;
   margin-right: 5px;
   &::placeholder {
-    color: #999;
+    color: #fff;
   }
 }
 
@@ -335,7 +339,7 @@
   font-family: $mainFont;
   text-align: center;
   &::placeholder {
-    color: #999;
+    color: #fff;
   }
 }
 .cardExpirySlash {
@@ -373,7 +377,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  background-color: #333;
+  background-color: rgb(87, 87, 87);
   margin: 10px 0;
   padding: 10px;
 }
@@ -388,6 +392,6 @@
   text-align: center;
   margin-bottom: 5px;
   &::placeholder {
-    color: #999;
+    color: #fff;
   }
 }

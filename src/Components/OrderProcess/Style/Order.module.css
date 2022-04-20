@@ -243,6 +243,11 @@
           transform: rotateY(180deg) !important;
 }
 
+.showCvvArea {
+  -webkit-transform: rotateY(180deg) !important;
+          transform: rotateY(180deg) !important;
+}
+
 .card {
   max-width: 420px;
   min-height: 270px;
@@ -392,7 +397,7 @@
 }
 
 .cardLabel {
-  color: #fff;
+  color: silver;
   font-size: 21px;
   font-family: "Oswald", sans-serif;
   margin-bottom: 5px;
@@ -411,19 +416,19 @@
 }
 
 .cardNumberInput::-webkit-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardNumberInput:-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardNumberInput::-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardNumberInput::placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardOwner {
@@ -444,19 +449,19 @@
 }
 
 .cardOwnerInput::-webkit-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardOwnerInput:-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardOwnerInput::-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardOwnerInput::placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardExpiryInput {
@@ -471,19 +476,19 @@
 }
 
 .cardExpiryInput::-webkit-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardExpiryInput:-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardExpiryInput::-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardExpiryInput::placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardExpirySlash {
@@ -531,7 +536,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #333;
+  background-color: #575757;
   margin: 10px 0;
   padding: 10px;
 }
@@ -549,18 +554,18 @@
 }
 
 .cardCvvInput::-webkit-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardCvvInput:-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardCvvInput::-ms-input-placeholder {
-  color: #999;
+  color: #fff;
 }
 
 .cardCvvInput::placeholder {
-  color: #999;
+  color: #fff;
 }
 /*# sourceMappingURL=Order.module.css.map */

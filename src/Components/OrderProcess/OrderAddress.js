@@ -16,7 +16,7 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import { takeOrder } from "API/API";
-import { validationSchema } from "./Validation";
+import { validationSchemaAddress } from "./Validation";
 import { ShopCartContext } from "Context/ShopCartContext";
 const OrderAddress = () => {
   const { cart,handleStep } = React.useContext(ShopCartContext);
@@ -31,7 +31,7 @@ const OrderAddress = () => {
         city: "",
         zipCode: "",
       },
-      validationSchema,
+      validationSchema: validationSchemaAddress,
       onSubmit: async () => {
         try {
           const response = await takeOrder({

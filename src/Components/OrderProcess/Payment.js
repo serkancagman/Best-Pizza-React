@@ -6,27 +6,29 @@ import chipImg from "Assets/Payment/creditCardChip.png";
 import contactlessImg from "Assets/Payment/contactless.png";
 import { useFormik } from "formik";
 import Types from "creditcards-types";
+import { validationSchemaPayment } from "./Validation";
 import { FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
 const Payment = () => {
-  const [formattedCardNumber, setFormattedCardNumber] = React.useState("");
   const [cardType, setCardType] = React.useState("");
+  const [cvvFocus, setCvvFocus] = React.useState(false);
   const { values, handleChange, handleBlur, touched, errors, handleSubmit } =
     useFormik({
       initialValues: {
-        cardNumber: formattedCardNumber,
+        cardNumber: "",
         ownerName: "",
         ownerLastName: "",
         cardExpiryMonth: "",
         cardExpiryYear: "",
         cardCvv: "",
       },
+      validationSchema: validationSchemaPayment,
       onSubmit: (values) => {
         console.log(values);
       },
     });
 
-  const handleCardNumber = (e) => {
-    const cardNumber = e.target.value;
+  React.useEffect(() => {
+    const cardNumber = values.cardNumber;
     const type = Types.find((type) => type.test(cardNumber, true));
     setCardType(type?.name);
     if (cardNumber.length > 3) {
@@ -36,12 +38,13 @@ const Payment = () => {
         .match(/.{1,4}/g)
         .join(" ");
 
-      setFormattedCardNumber(formattedCardNumber);
+      values.cardNumber = formattedCardNumber;
     } else {
-      setFormattedCardNumber(cardNumber);
+      values.cardNumber = cardNumber;
     }
-  };
+  }, [values.cardNumber]);
 
+  console.log(values.cardNumber);
   return (
     <section className={style.orderMain}>
       <div className="container">
@@ -52,7 +55,11 @@ const Payment = () => {
               <div className="row g-3 justify-content-center align-items-center">
                 <div className="col-md-12 col-lg-6 text-center">
                   <div className={style.flipCard}>
-                    <div className={style.card}>
+                    <div
+                      className={`${style.card} ${
+                        cvvFocus && style.showCvvArea
+                      }`}
+                    >
                       <div className={style.cardFrontMain}>
                         <div className={style.cardFront}>
                           <div className={style.cardFade}></div>
@@ -97,7 +104,7 @@ const Payment = () => {
                                   id="cardNoShow"
                                   disabled
                                   className={style.cardNumberInput}
-                                  value={formattedCardNumber}
+                                  value={values.cardNumber}
                                   onChange={null}
                                   placeholder="**** **** **** ****"
                                 />
@@ -125,7 +132,7 @@ const Payment = () => {
                                       type="text"
                                       id="cardOwner"
                                       className={style.cardOwnerInput}
-                                      placeholder="SURNAME"
+                                      placeholder="LAST NAME"
                                       disabled
                                       value={values.ownerLastName}
                                       onChange={null}
@@ -222,6 +229,10 @@ const Payment = () => {
                               textTransform={
                                 values.ownerName.length > 0 && "uppercase"
                               }
+                              isInvalid={
+                                errors.ownerName && touched.ownerName && true
+                              }
+                              errorBorderColor="red.500"
                             />
                           </FormControl>
                         </div>
@@ -245,6 +256,12 @@ const Payment = () => {
                               textTransform={
                                 values.ownerLastName.length > 0 && "uppercase"
                               }
+                              isInvalid={
+                                errors.ownerLastName &&
+                                touched.ownerLastName &&
+                                true
+                              }
+                              errorBorderColor="red.500"
                             />
                           </FormControl>
                         </div>
@@ -260,11 +277,17 @@ const Payment = () => {
                             <Input
                               id="cardNumber"
                               type="text"
-                              value={formattedCardNumber}
+                              name="cardNumber"
+                              value={values.cardNumber}
                               focusBorderColor="green.500"
                               borderColor="gray.300"
-                              onChange={handleCardNumber}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
                               maxLength={19}
+                              isInvalid={
+                                errors.cardNumber && touched.cardNumber && true
+                              }
+                              errorBorderColor="red.500"
                             />
                           </FormControl>
                         </div>
@@ -339,6 +362,8 @@ const Payment = () => {
                               CVV{" "}
                             </FormLabel>
                             <Input
+                              onFocus={() => setCvvFocus(true)}
+                              onBlur={() => setCvvFocus(false) && handleBlur}
                               focusBorderColor="green.500"
                               borderColor="gray.300"
                               id="cardCvv"
@@ -346,7 +371,6 @@ const Payment = () => {
                               type="text"
                               className={style.cvvInput}
                               onChange={handleChange}
-                              onBlur={handleBlur}
                               maxLength="3"
                             />
                           </FormControl>
