@@ -4,26 +4,16 @@ import Summary from "./Summary";
 import Step from "./Step";
 import chipImg from "Assets/Payment/creditCardChip.png";
 import contactlessImg from "Assets/Payment/contactless.png";
-import visa from "Assets/Payment/visa.svg";
 import { useFormik } from "formik";
-import {
-  FormControl,
-  FormLabel,
-  InputLeftElement,
-  InputGroup,
-  Input,
-  Select,
-  Textarea,
-  FormErrorMessage,
-  Checkbox,
-  PinInput,
-  PinInputField,
-} from "@chakra-ui/react";
+import Types from "creditcards-types";
+import { FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
 const Payment = () => {
+  const [formattedCardNumber, setFormattedCardNumber] = React.useState("");
+  const [cardType, setCardType] = React.useState("");
   const { values, handleChange, handleBlur, touched, errors, handleSubmit } =
     useFormik({
       initialValues: {
-        cardNumber: "",
+        cardNumber: formattedCardNumber,
         ownerName: "",
         ownerLastName: "",
         cardExpiryMonth: "",
@@ -34,6 +24,23 @@ const Payment = () => {
         console.log(values);
       },
     });
+
+  const handleCardNumber = (e) => {
+    const cardNumber = e.target.value;
+    const type = Types.find((type) => type.test(cardNumber, true));
+    setCardType(type?.name);
+    if (cardNumber.length > 3) {
+      const formattedCardNumber = cardNumber
+        .replace(/\s/g, "")
+        .replace(/[^0-9]/g, "")
+        .match(/.{1,4}/g)
+        .join(" ");
+
+      setFormattedCardNumber(formattedCardNumber);
+    } else {
+      setFormattedCardNumber(cardNumber);
+    }
+  };
 
   return (
     <section className={style.orderMain}>
@@ -67,13 +74,15 @@ const Payment = () => {
                                   />
                                 </div>
                               </div>
-                              <div className={style.cardFrontTopRight}>
-                                <img
-                                  src={visa}
-                                  alt="card brand"
-                                  className="img-fluid"
-                                />
-                              </div>
+                              {cardType && cardType !== "American Express" && (
+                                <div className={style.cardFrontTopRight}>
+                                  <img
+                                    src={require(`Assets/Payment/${cardType}.svg`)}
+                                    alt="card brand"
+                                    className="img-fluid"
+                                  />
+                                </div>
+                              )}
                             </div>
                             <div className={style.cardFrontBottom}>
                               <div className={style.cardNumber}>
@@ -88,13 +97,15 @@ const Payment = () => {
                                   id="cardNoShow"
                                   disabled
                                   className={style.cardNumberInput}
+                                  value={formattedCardNumber}
+                                  onChange={null}
                                   placeholder="**** **** **** ****"
                                 />
                               </div>
                               <div className="d-flex justify-content-between align-items-center">
                                 <div className={style.cardOwner}>
                                   <label
-                                    htmlFor="cardOwner"
+                                    htmlFor="cardOwnerName"
                                     className={style.cardLabel}
                                   >
                                     {" "}
@@ -103,10 +114,12 @@ const Payment = () => {
                                   <div className="d-flex justify-content-center align-items-center">
                                     <input
                                       type="text"
-                                      id="cardOwner"
+                                      id="cardOwnerName"
                                       className={style.cardOwnerInput}
                                       placeholder="NAME"
                                       disabled
+                                      value={values.ownerName}
+                                      onChange={null}
                                     />
                                     <input
                                       type="text"
@@ -114,6 +127,8 @@ const Payment = () => {
                                       className={style.cardOwnerInput}
                                       placeholder="SURNAME"
                                       disabled
+                                      value={values.ownerLastName}
+                                      onChange={null}
                                     />
                                   </div>
                                 </div>
@@ -132,6 +147,8 @@ const Payment = () => {
                                       className={style.cardExpiryInput}
                                       placeholder="MM"
                                       disabled
+                                      value={values.cardExpiryMonth}
+                                      onChange={null}
                                     />
                                     <span className={style.cardExpirySlash}>
                                       /
@@ -142,6 +159,8 @@ const Payment = () => {
                                       className={style.cardExpiryInput}
                                       placeholder="YY"
                                       disabled
+                                      value={values.cardExpiryYear.slice(2, 4)}
+                                      onChange={null}
                                     />
                                   </div>
                                 </div>
@@ -168,6 +187,8 @@ const Payment = () => {
                                   id="cardCvv"
                                   className={style.cardCvvInput}
                                   placeholder="***"
+                                  value={values.cardCvv}
+                                  onChange={null}
                                 />
                               </div>
                             </div>
@@ -194,11 +215,13 @@ const Payment = () => {
                               id="cardOwnerName"
                               name="ownerName"
                               type="text"
-                              placeholder="Name"
                               onChange={handleChange}
                               onBlur={handleBlur}
                               focusBorderColor="green.500"
                               borderColor="gray.300"
+                              textTransform={
+                                values.ownerName.length > 0 && "uppercase"
+                              }
                             />
                           </FormControl>
                         </div>
@@ -215,11 +238,13 @@ const Payment = () => {
                               id="cardOwnerLastName"
                               name="ownerLastName"
                               type="text"
-                              placeholder="Last Name"
                               focusBorderColor="green.500"
                               borderColor="gray.300"
                               onChange={handleChange}
                               onBlur={handleBlur}
+                              textTransform={
+                                values.ownerLastName.length > 0 && "uppercase"
+                              }
                             />
                           </FormControl>
                         </div>
@@ -234,13 +259,12 @@ const Payment = () => {
 
                             <Input
                               id="cardNumber"
-                              name="cardNumber"
                               type="text"
-                              placeholder="Last Name"
+                              value={formattedCardNumber}
                               focusBorderColor="green.500"
                               borderColor="gray.300"
-                              onChange={handleChange}
-                              onBlur={handleBlur}
+                              onChange={handleCardNumber}
+                              maxLength={19}
                             />
                           </FormControl>
                         </div>
@@ -259,6 +283,7 @@ const Payment = () => {
                               focusBorderColor="green.500"
                               borderColor="gray.300"
                               onChange={handleChange}
+                              onBlur={handleBlur}
                             >
                               <option>01</option>
                               <option>02</option>
@@ -314,10 +339,15 @@ const Payment = () => {
                               CVV{" "}
                             </FormLabel>
                             <Input
+                              focusBorderColor="green.500"
+                              borderColor="gray.300"
                               id="cardCvv"
                               name="cardCvv"
                               type="text"
                               className={style.cvvInput}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              maxLength="3"
                             />
                           </FormControl>
                         </div>
