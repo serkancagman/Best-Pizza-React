@@ -43,19 +43,15 @@ const HomeProducts = () => {
             breakpoints={{
               270: {
                 slidesPerView: 1,
-
               },
               340: {
                 slidesPerView: 2,
-
               },
               768: {
                 slidesPerView: 4,
-   
               },
               1024: {
                 slidesPerView: 4,
-       
               },
             }}
           >

@@ -1,6 +1,5 @@
 import MainRouter from "./Route/Router";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import {UserProvider} from "Context/UserContext";
 function App() {
 
@@ -21,7 +20,6 @@ function App() {
         <UserProvider>
         <MainRouter />
         </UserProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );

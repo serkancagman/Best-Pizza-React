@@ -145,6 +145,10 @@
   overflow: hidden;
 }
 
+.goToCart:hover {
+  color: #000;
+}
+
 .goToCart .goToCartBtn {
   width: 100%;
   background-color: #A5301F;

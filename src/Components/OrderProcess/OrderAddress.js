@@ -218,13 +218,6 @@ const OrderAddress = () => {
                     </Checkbox>
                   </FormControl>
                 </div>
-                <button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className={style.submit}
-                >
-                  submit
-                </button>
               </form>
             </div>
           </div>

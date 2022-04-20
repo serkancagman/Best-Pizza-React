@@ -2,11 +2,11 @@ import React from "react";
 import Step from "./Step";
 import style from "./Style/Order.module.css";
 import { myOrders } from "API/API";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ShopCartContext } from "Context/ShopCartContext";
 import checkedImage from "Assets/Payment/checked.png";
 const OrderSuccess = () => {
-  const { handleStep } = React.useContext(ShopCartContext);
+  const {setOrderStep } = React.useContext(ShopCartContext);
   const [isLoading, setIsLoading] = React.useState(true);
   const [myOrder, setMyOrder] = React.useState([]);
   const navigate = useNavigate();
@@ -18,8 +18,24 @@ const OrderSuccess = () => {
         setMyOrder(response[response.length - 1]);
         setIsLoading(false);
         setTimeout(() => {
-          // localStorage.removeItem("step");
-          // navigate("/");
+          setOrderStep([
+            {
+              name: "check",
+              status: "process",
+            },
+            {
+              name: "address",
+              status: "wait",
+            },
+            {
+              name: "pay",
+              status: "wait",
+            },
+            {
+              name: "done",
+              status: "wait",
+            },
+          ]);
         }, 15000);
       } catch (error) {
         console.log(error);
@@ -29,7 +45,26 @@ const OrderSuccess = () => {
     gerOrderInfo();
   }, []);
 
-  console.log(myOrder);
+  const handleClick = () => {
+    setOrderStep([
+      {
+        name: "check",
+        status: "process",
+      },
+      {
+        name: "address",
+        status: "wait",
+      },
+      {
+        name: "pay",
+        status: "wait",
+      },
+      {
+        name: "done",
+        status: "wait",
+      },
+    ]);
+  };
   return (
     <section className={style.orderMain}>
       <div className="container">
@@ -147,9 +182,9 @@ const OrderSuccess = () => {
           </div>
         </div>
         <div className="d-flex align-items-center my-3 justify-content-center">
-        <Link to="/">
-          <button className={style.goShopButton}>Continue Shopping</button>
-        </Link>
+          <button onClick={handleClick} className={style.goShopButton}>
+            Continue Shopping
+          </button>
         </div>
       </div>
     </section>

@@ -101,7 +101,9 @@
   border-radius: 10px;
   border: 1px solid $mainColor;
   overflow: hidden;
-
+  &:hover{
+    color: #000;
+  }
   .goToCartBtn {
     width: 100%;
     background-color: $mainColor;
