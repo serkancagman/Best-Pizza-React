@@ -23,7 +23,7 @@ export const ProductProvider = ({ children }) => {
         setDishes(response.filter((item) => item.productType === "dishes"));
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+      
         setIsLoading(false);
       }
     };
