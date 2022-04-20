@@ -18,3 +18,4 @@ export {default as DeliveryAnimation} from './DeliveryAnimation/DeliveryAnimatio
 export {default as GoTop} from './GoTop/GoTop';
 export {default as CheckCart} from './OrderProcess/CheckCart';
 export {default as OrderAddress} from './OrderProcess/OrderAddress';
+export {default as Payment} from './OrderProcess/Payment';

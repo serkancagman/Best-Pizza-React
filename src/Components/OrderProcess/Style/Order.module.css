@@ -218,11 +218,346 @@
 
 .orderForm {
   margin: 1rem 0;
-  padding: .7rem 0;
+  padding: 0.7rem 0;
 }
 
 .label {
   font-family: "Oswald", sans-serif;
   font-size: 17px !important;
+}
+
+.cardWrapper {
+  margin: 1rem 0;
+  padding: 0.7rem 0;
+  position: relative;
+  height: 100%;
+}
+
+.flipCard {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.cardShowBack {
+  -webkit-transform: rotateY(180deg) !important;
+          transform: rotateY(180deg) !important;
+}
+
+.card {
+  max-width: 420px;
+  min-height: 270px;
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.cardFrontMain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.cardFront {
+  background: url("Assets/Payment/cardWallpaper.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.cardFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
+  border-radius: 20px;
+}
+
+.cardFrontWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cardFrontTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.cardFrontTopLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+}
+
+.cardChipArea {
+  width: 65px;
+  height: 65px;
+}
+
+.contactless {
+  width: 40px;
+  height: 40px;
+}
+
+.contactlessImage {
+  width: 100%;
+  height: auto;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.cardFrontTopRight {
+  width: 80px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.cardFrontBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.cardNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.cardLabel {
+  color: #fff;
+  font-size: 21px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 5px;
+  text-align: start;
+  text-transform: uppercase;
+}
+
+.cardNumberInput {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 30px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+}
+
+.cardNumberInput::-webkit-input-placeholder {
+  color: #999;
+}
+
+.cardNumberInput:-ms-input-placeholder {
+  color: #999;
+}
+
+.cardNumberInput::-ms-input-placeholder {
+  color: #999;
+}
+
+.cardNumberInput::placeholder {
+  color: #999;
+}
+
+.cardOwner {
+  margin-top: 5px;
+}
+
+.cardOwnerInput {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 19px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  margin-right: 5px;
+}
+
+.cardOwnerInput::-webkit-input-placeholder {
+  color: #999;
+}
+
+.cardOwnerInput:-ms-input-placeholder {
+  color: #999;
+}
+
+.cardOwnerInput::-ms-input-placeholder {
+  color: #999;
+}
+
+.cardOwnerInput::placeholder {
+  color: #999;
+}
+
+.cardExpiryInput {
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 19px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.cardExpiryInput::-webkit-input-placeholder {
+  color: #999;
+}
+
+.cardExpiryInput:-ms-input-placeholder {
+  color: #999;
+}
+
+.cardExpiryInput::-ms-input-placeholder {
+  color: #999;
+}
+
+.cardExpiryInput::placeholder {
+  color: #999;
+}
+
+.cardExpirySlash {
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.cardBack {
+  height: 100%;
+  width: 100%;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.cardBackWrapper {
+  position: relative;
+  z-index: 0;
+  max-width: 420px;
+  min-height: 270px;
+  padding: 10px 0;
+  border-radius: 20px;
+  background: url("Assets/Payment/cardWallpaper.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.cardBackInner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.cardBackCvvArea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #333;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.cardCvvInput {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  font-family: "Oswald", sans-serif;
+  width: 60px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.cardCvvInput::-webkit-input-placeholder {
+  color: #999;
+}
+
+.cardCvvInput:-ms-input-placeholder {
+  color: #999;
+}
+
+.cardCvvInput::-ms-input-placeholder {
+  color: #999;
+}
+
+.cardCvvInput::placeholder {
+  color: #999;
 }
 /*# sourceMappingURL=Order.module.css.map */

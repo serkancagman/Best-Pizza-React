@@ -6,6 +6,7 @@ import {
   Footer,
   CheckCart,
   OrderAddress,
+  Payment
 } from "Components";
 import { ShopCartContext } from "Context/ShopCartContext";
 const Order = () => {
@@ -17,6 +18,8 @@ const Order = () => {
       {orderStep[0].status === "process" && <CheckCart />}
 
       {orderStep[1].status === "process" && <OrderAddress />}
+
+      {orderStep[2].status === "process" && <Payment />}
 
       <Promo />
       <Subscribe />
