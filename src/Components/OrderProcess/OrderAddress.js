@@ -4,6 +4,7 @@ import style from "./Style/Order.module.css";
 import Summary from "./Summary";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useFormik } from "formik";
+import {IoMdAlert} from "react-icons/io";
 import {
   FormControl,
   FormLabel,
@@ -14,12 +15,15 @@ import {
   Textarea,
   FormErrorMessage,
   Checkbox,
+  Alert
 } from "@chakra-ui/react";
 import { takeOrder } from "API/API";
 import { validationSchemaAddress } from "./Validation";
 import { ShopCartContext } from "Context/ShopCartContext";
+import Lottie  from "lottie-react";
 const OrderAddress = () => {
   const { cart,handleStep } = React.useContext(ShopCartContext);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [addressError, setAddressError] = React.useState("");
 
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
@@ -33,6 +37,7 @@ const OrderAddress = () => {
       },
       validationSchema: validationSchemaAddress,
       onSubmit: async () => {
+        setIsLoading(true);
         try {
           const response = await takeOrder({
             phone: values.phone,
@@ -42,10 +47,16 @@ const OrderAddress = () => {
             items: cart,
           });
           
-            handleStep("address");
+            
+            setTimeout(() => {
+              setIsLoading(false);
+              handleStep("address");
+            }, 2500);
           
         } catch (error) {
           setAddressError(error.response.data.message);
+
+                setIsLoading(false);
         }
       },
     });
@@ -54,12 +65,24 @@ const OrderAddress = () => {
     <section className={style.orderMain}>
       <div className="container">
         <Step />
-        <div className="row justify-content-center g-3">
+        <div className="row position-relative justify-content-center g-3">
+        {isLoading && (
+            <div className={style.loader}>
+              <Lottie
+                  className={style.lottiePay}
+                  loop="true"
+                  animationData={require("Assets/pizzaLoader.json")}
+                />
+            </div>
+          )}
           <div className="col-lg-8">
             <div className={style.orderForm}>
               <form onSubmitCapture={handleSubmit}>
                 {addressError && (
-                  <FormErrorMessage>{addressError}</FormErrorMessage>
+                  <Alert className="my-2" status='error'>
+                    <IoMdAlert className="text-danger fs-4 me-2" />
+                  {addressError}
+                </Alert>
                 )}
                 <div className="row align-items-center g-3">
                   <div className="col-lg-2">

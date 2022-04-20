@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./Style/Order.module.css";
 import Summary from "./Summary";
 import Step from "./Step";
@@ -8,9 +8,13 @@ import { useFormik } from "formik";
 import Types from "creditcards-types";
 import { validationSchemaPayment } from "./Validation";
 import { FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
+import { ShopCartContext } from "Context/ShopCartContext";
+import Lottie  from "lottie-react";
 const Payment = () => {
+  const { handleStep } = useContext(ShopCartContext);
   const [cardType, setCardType] = React.useState("");
   const [cvvFocus, setCvvFocus] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const { values, handleChange, handleBlur, touched, errors, handleSubmit } =
     useFormik({
       initialValues: {
@@ -23,7 +27,11 @@ const Payment = () => {
       },
       validationSchema: validationSchemaPayment,
       onSubmit: (values) => {
-        console.log(values);
+        setIsLoading(true);
+        setTimeout(() => {
+          setIsLoading(false);
+          handleStep("pay");
+        }, 5000);
       },
     });
 
@@ -40,19 +48,27 @@ const Payment = () => {
 
       values.cardNumber = formattedCardNumber;
     } else {
-      values.cardNumber = cardNumber;
+      return;
     }
   }, [values.cardNumber]);
 
-  console.log(values.cardNumber);
   return (
     <section className={style.orderMain}>
       <div className="container">
         <Step />
-        <div className="row justify-content-center g-3">
+        <div className="row position-relative justify-content-center g-3">
+          {isLoading && (
+            <div className={style.loader}>
+              <Lottie
+                  className={style.lottiePay}
+                  loop="true"
+                  animationData={require("Assets/Payment/pay.json")}
+                />
+            </div>
+          )}
           <div className="col-lg-8">
             <div className={style.cardWrapper}>
-              <div className="row g-3 justify-content-center align-items-center">
+              <div className="row g-3  justify-content-center align-items-center">
                 <div className="col-md-12 col-lg-6 text-center">
                   <div className={style.flipCard}>
                     <div
@@ -105,7 +121,7 @@ const Payment = () => {
                                   disabled
                                   className={style.cardNumberInput}
                                   value={values.cardNumber}
-                                  onChange={null}
+                                  onChange={handleChange}
                                   placeholder="**** **** **** ****"
                                 />
                               </div>
@@ -126,7 +142,7 @@ const Payment = () => {
                                       placeholder="NAME"
                                       disabled
                                       value={values.ownerName}
-                                      onChange={null}
+                                      onChange={handleChange}
                                     />
                                     <input
                                       type="text"
@@ -135,7 +151,7 @@ const Payment = () => {
                                       placeholder="LAST NAME"
                                       disabled
                                       value={values.ownerLastName}
-                                      onChange={null}
+                                      onChange={handleChange}
                                     />
                                   </div>
                                 </div>
@@ -155,7 +171,7 @@ const Payment = () => {
                                       placeholder="MM"
                                       disabled
                                       value={values.cardExpiryMonth}
-                                      onChange={null}
+                                      onChange={handleChange}
                                     />
                                     <span className={style.cardExpirySlash}>
                                       /
@@ -167,7 +183,7 @@ const Payment = () => {
                                       placeholder="YY"
                                       disabled
                                       value={values.cardExpiryYear.slice(2, 4)}
-                                      onChange={null}
+                                      onChange={handleChange}
                                     />
                                   </div>
                                 </div>
@@ -195,7 +211,7 @@ const Payment = () => {
                                   className={style.cardCvvInput}
                                   placeholder="***"
                                   value={values.cardCvv}
-                                  onChange={null}
+                                  onChange={handleChange}
                                 />
                               </div>
                             </div>
@@ -363,7 +379,8 @@ const Payment = () => {
                             </FormLabel>
                             <Input
                               onFocus={() => setCvvFocus(true)}
-                              onBlur={() => setCvvFocus(false) && handleBlur}
+                              onBlur={handleBlur}
+                              onBlurCapture={() => setCvvFocus(false)}
                               focusBorderColor="green.500"
                               borderColor="gray.300"
                               id="cardCvv"
@@ -372,6 +389,10 @@ const Payment = () => {
                               className={style.cvvInput}
                               onChange={handleChange}
                               maxLength="3"
+                              isInvalid={
+                                errors.cardCvv && touched.cardCvv && true
+                              }
+                              errorBorderColor="red.500"
                             />
                           </FormControl>
                         </div>
@@ -384,7 +405,7 @@ const Payment = () => {
           </div>
 
           <Summary>
-            <button type="button" onClick={null} className={style.nextStepBtn}>
+            <button type="button" onClick={handleSubmit} className={style.nextStepBtn}>
               Go to Pay
             </button>
           </Summary>

@@ -6,7 +6,9 @@ import { ShopCartContext } from "Context/ShopCartContext";
 import { Popconfirm, Tag } from "antd";
 import Step from "./Step";
 import Summary from "./Summary";
+import Lottie  from "lottie-react";
 const CheckCart = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
   const { cart, removeFromCart, handleDecrease, productQuantity,    handleStep, setCart } =
     React.useContext(ShopCartContext);
 
@@ -18,7 +20,16 @@ const CheckCart = () => {
     <section className={style.orderMain}>
       <div className="container">
         <Step />
-        <div className="row justify-content-center g-3">
+        <div className="row position-relative justify-content-center g-3">
+        {isLoading && (
+            <div className={style.loader}>
+              <Lottie
+                  className={style.lottiePay}
+                  loop="true"
+                  animationData={require("Assets/pizzaLoader.json")}
+                />
+            </div>
+          )}
           <div className="col-lg-8">
             <div className={style.cartItemsWrapper}>
               <div className="d-flex my-2 justify-content-between align-items-center">
@@ -138,7 +149,13 @@ const CheckCart = () => {
           <Summary>
           <button
               type="button"
-              onClick={() => handleStep("check")}
+              onClick={() => 
+               { setIsLoading(true)
+                setTimeout(() => {
+                  setIsLoading(false)
+                  handleStep("check")
+                }, 2500)}
+              }
               className={style.nextStepBtn}
             >
              Add to Address

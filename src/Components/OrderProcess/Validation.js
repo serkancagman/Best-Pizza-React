@@ -14,5 +14,5 @@ export const validationSchemaPayment = Yup.object({
     ownerLastName: Yup.string().required(),
     cardExpiryMonth: Yup.string().required(),
     cardExpiryYear: Yup.string().required(),
-    cardCvv: Yup.string().required(),
+    cardCvv: Yup.string().required().min(3),
 })

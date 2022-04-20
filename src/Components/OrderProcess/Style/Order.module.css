@@ -568,4 +568,32 @@
 .cardCvvInput::placeholder {
   color: #fff;
 }
+
+.cardInfoWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.616);
+  z-index: 99999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lottiePay {
+  width: 200px;
+}
 /*# sourceMappingURL=Order.module.css.map */
