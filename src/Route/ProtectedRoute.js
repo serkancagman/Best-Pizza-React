@@ -8,10 +8,11 @@ export const ProtectedLoginRegisterRoute = ({ children }) => {
 };
 
 export const ProtectedCartRoute = ({ children }) => {
-  const { cart } =
+  const { cart,orderStep } =
     React.useContext(ShopCartContext);
   const { user } = React.useContext(UserContext);
-  if (cart.length > 0 && user) {
+
+  if (cart.length > 0 && user || orderStep[3].status === "finish") {
     return children;
   } else if (cart.length > 0 && !user) {
     return <Navigate to="/login" />;

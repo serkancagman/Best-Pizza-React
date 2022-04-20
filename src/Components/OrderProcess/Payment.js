@@ -11,7 +11,7 @@ import { FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
 import { ShopCartContext } from "Context/ShopCartContext";
 import Lottie  from "lottie-react";
 const Payment = () => {
-  const { handleStep } = useContext(ShopCartContext);
+  const { handleStep,setCart } = useContext(ShopCartContext);
   const [cardType, setCardType] = React.useState("");
   const [cvvFocus, setCvvFocus] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -31,6 +31,7 @@ const Payment = () => {
         setTimeout(() => {
           setIsLoading(false);
           handleStep("pay");
+          setCart([]);
         }, 5000);
       },
     });

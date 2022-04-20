@@ -93,9 +93,13 @@ export const ShopCartProvider = ({ children }) => {
   const handleStep = (stepValue) => {
     const findStep = orderStep.findIndex((item) => item.name === stepValue);
 
-    if (orderStep.length - 1 === findStep) {
+    if (orderStep.length -2 === findStep) {
       orderStep[findStep].status = "finish";
-    } else {
+      orderStep[findStep + 1].status = "finish";
+    }else if(stepValue === "finish"){
+      localStorage.removeItem("step");
+    }
+    else {
       orderStep[findStep].status = "finish";
       orderStep[findStep + 1].status = "process";
     }

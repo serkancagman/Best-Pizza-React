@@ -62,3 +62,9 @@ export const takeOrder = async (inputs) => {
   );
   return data;
 }
+export const myOrders = async (user_id) => {
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_API_URL}/order/my-orders`,user_id
+  );
+  return data;
+}

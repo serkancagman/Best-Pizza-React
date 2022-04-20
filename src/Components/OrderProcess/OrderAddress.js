@@ -21,6 +21,7 @@ import { takeOrder } from "API/API";
 import { validationSchemaAddress } from "./Validation";
 import { ShopCartContext } from "Context/ShopCartContext";
 import Lottie  from "lottie-react";
+
 const OrderAddress = () => {
   const { cart,handleStep } = React.useContext(ShopCartContext);
   const [isLoading, setIsLoading] = React.useState(false);
