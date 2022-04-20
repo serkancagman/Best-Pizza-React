@@ -637,4 +637,170 @@
 .orderSuccessId .successId {
   color: #A5301F;
 }
+
+.orderInformationWrapper {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 20px;
+}
+
+.orderInformationHeader {
+  margin: 20px 0;
+}
+
+.orderInformationTitle {
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: #333;
+}
+
+.orderInformationBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.orderProduct {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orderProductImage {
+  width: 100px;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+}
+
+.orderProductInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+}
+
+.orderProductName {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+}
+
+.orderProductPrice {
+  color: #A5301F;
+  font-size: 17px;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  margin-right: 5px;
+}
+
+.orderProductOldPrice {
+  color: #999;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.orderProductQuantity {
+  margin-left: 10px;
+  color: #333;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+}
+
+.addressInformationWrapper {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 20px;
+}
+
+.addressInformationBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.addressList {
+  margin: 5px 0;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addressInformationIcon {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.addressInformationText {
+  font-size: 17px;
+  font-family: "Oswald", sans-serif;
+  color: #555;
+}
+
+.addressInformationTitle {
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  color: #333;
+  margin-right: 10px;
+}
+
+.goShopButton {
+  width: 180px;
+  height: 60px;
+  background-color: #F5BF1A;
+  border-radius: 10px;
+  color: #000;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.goShopButton:hover {
+  background-color: #A5301F !important;
+  color: #fff !important;
+}
 /*# sourceMappingURL=Order.module.css.map */

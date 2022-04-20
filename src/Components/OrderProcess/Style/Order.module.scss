@@ -210,7 +210,7 @@
   transform: rotateY(180deg) !important;
 }
 
-.showCvvArea{
+.showCvvArea {
   transform: rotateY(180deg) !important;
 }
 
@@ -395,15 +395,14 @@
     color: #fff;
   }
 }
-.cardInfoWrapper{
+.cardInfoWrapper {
   width: 100%;
   height: 100%;
 }
 
-
 //Loader
 
-.loader{
+.loader {
   position: absolute;
   top: 0;
   left: 0;
@@ -415,34 +414,151 @@
   justify-content: center;
   align-items: center;
 }
-.lottiePay{
+.lottiePay {
   width: 200px;
 }
 
 // Order Success
 
-.orderSuccess{
-padding: 20px 0;
+.orderSuccess {
+  padding: 20px 0;
 }
-.orderSuccessHeader{
+.orderSuccessHeader {
   @include flexcolcenter;
 }
-.succesImg{
+.succesImg {
   width: 150px;
   height: auto;
 }
 
-.orderSuccessTitle{
+.orderSuccessTitle {
   font-family: $mainFont;
   margin: 1rem 0;
   font-size: 27px;
 }
-.orderSuccessId{
+.orderSuccessId {
   font-size: 20px;
   color: #000;
   font-family: $mainFont;
 
-  .successId{
+  .successId {
     color: $mainColor;
+  }
+}
+.orderInformationWrapper {
+  width: 100%;
+
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 20px;
+}
+.orderInformationHeader {
+  margin: 20px 0;
+}
+.orderInformationTitle {
+  font-size: 20px;
+  font-family: $mainFont;
+  color: #333;
+}
+.orderInformationBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.orderProduct {
+  padding: 5px;
+  @include flexcolcenter;
+}
+.orderProductImage {
+  width: 100px;
+  margin-bottom: 10px;
+  height: 100px;
+}
+.productImg {
+  width: 100%;
+  height: 100%;
+}
+.orderProductInfo {
+  @include flexcolstart;
+  height: 100%;
+}
+.orderProductName {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 18px;
+  font-family: $mainFont;
+}
+.orderProductPrice {
+  color: $mainColor;
+  font-size: 17px;
+  display: inline-block;
+  font-family: $mainFont;
+  margin-right: 5px;
+}
+.orderProductOldPrice {
+  color: #999;
+  font-family: $mainFont;
+  font-size: 17px;
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 5px;
+}
+.orderProductQuantity {
+  margin-left: 10px;
+  color: #333;
+  font-size: 18px;
+  font-family: $mainFont;
+  display: inline-block;
+}
+
+.addressInformationWrapper {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 20px;
+}
+.addressInformationBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.addressList {
+  margin: 5px 0;
+  padding: 5px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.addressInformationIcon {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.addressInformationText {
+  font-size: 17px;
+  font-family: $mainFont;
+  color: #555;
+}
+.addressInformationTitle {
+  font-size: 18px;
+  font-family: $mainFont;
+  color: #333;
+  margin-right: 10px;
+}
+.goShopButton {
+  width: 180px;
+  height: 60px;
+  background-color: $secondaryColor;
+  border-radius: 10px;
+  color: #000;
+  font-size: 18px;
+  font-family: $mainFont;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: $mainColor !important;
+    color: #fff !important;
   }
 }
